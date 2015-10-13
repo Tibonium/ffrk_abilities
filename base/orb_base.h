@@ -7,12 +7,12 @@
  * Rarity Enumerations
  */
 typedef enum {
-    STAR_1 = 1,
-    STAR_2 = 2,
-    STAR_3 = 3,
-    STAR_4 = 4,
-    STAR_5 = 5,
-    STAR_6 = 6
+    STAR_1 = 0x0001,
+    STAR_2 = 0x0002,
+    STAR_3 = 0x0004,
+    STAR_4 = 0x0008,
+    STAR_5 = 0x0010,
+    STAR_6 = 0x0020
 } rarity_type ;
 
 /**
@@ -44,12 +44,12 @@ typedef enum {
  * 6 Star = Crystal
  */
 typedef enum {
-    MINOR   = 1,
-    LESSER  = 2,
-    NORMAL  = 3,
-    GREATER = 4,
-    MAJOR   = 5,
-    CRYSTAL = 6
+    MINOR   = 0,
+    LESSER  = 1,
+    NORMAL  = 2,
+    GREATER = 3,
+    MAJOR   = 4,
+    CRYSTAL = 5
 } orb_rarity ;
 
 /**

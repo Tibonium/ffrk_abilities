@@ -16,21 +16,12 @@ public:
     /**
      * Constructor
      */
-    spell_parser(const char* filename) ;
+    spell_parser() ;
 
     /**
      * Destructor
      */
     virtual ~spell_parser() ;
-
-    /**
-     * Returns a pointer to the list of spells parsed from file
-     */
-    std::list<ability_base>* abilities() {
-        return &_abilities._spells ;
-    }
-
-private:
 
     /**
      * Parses the files as the following format:
@@ -46,6 +37,15 @@ private:
      * meaning.
      */
     void parse_file(const char* filename) ;
+
+    /**
+     * Returns a pointer to the list of spells parsed from file
+     */
+    std::list<ability_base>* abilities() {
+        return &_abilities._spells ;
+    }
+
+private:
 
     /** Helper functions for parsing an individual ability **/
     void parse_ability(std::string line, std::fstream &fi) ;

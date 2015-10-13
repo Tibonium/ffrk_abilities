@@ -29,8 +29,9 @@ HEADERS  += ffrk_abilities.h \
     base/ability_base.h \
     base/orb_base.h \
     base/spells_base.h \
-    base/orb_counts.h \
-    base/spell_parser.h
+    base/spell_parser.h \
+    ability_table_entry.h \
+    base/orb_ranks.h \
 
 FORMS    += ffrk_abilities.ui
 

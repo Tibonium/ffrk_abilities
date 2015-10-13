@@ -1,8 +1,8 @@
 #include "spell_parser.h"
 
-spell_parser::spell_parser(const char *filename)
+spell_parser::spell_parser()
 {
-    parse_file( filename ) ;
+
 }
 
 spell_parser::~spell_parser()
@@ -56,7 +56,28 @@ void spell_parser::extract_rank(std::fstream &fi, ability_base *a)
     iss >> line ;
     if( line.substr(0,4) == "Rank" ) {
         iss >> tmprank ;
-        a->_rarity = rarity_type(std::atoi(tmprank.c_str())) ;
+        rarity_type _type ;
+        if( tmprank == "1" ) {
+            _type = STAR_1 ;
+        } else
+        if( tmprank == "2" ) {
+            _type = STAR_2 ;
+        } else
+        if( tmprank == "3" ) {
+            _type = STAR_3 ;
+        } else
+        if( tmprank == "4" ) {
+            _type = STAR_4 ;
+        } else
+        if( tmprank == "5" ) {
+            _type = STAR_5 ;
+        } else
+        if( tmprank == "6" ) {
+            _type = STAR_6 ;
+        } else {
+            std::cout << "Unknown Rarity: " << _type << std::endl ;
+        }
+        a->_rarity = _type ;
     }
 }
 
@@ -146,7 +167,7 @@ void spell_parser::extract_orb_ranks(std::fstream &fi, ability_base *a)
             if( type == "Lesser" ) {
                 _type = LESSER ;
             } else
-            if( type == "NORMAL" ) {
+            if( type == "Normal" ) {
                 _type = NORMAL ;
             } else
             if( type == "Greater" ) {
@@ -248,7 +269,7 @@ void spell_parser::determine_ability_class(std::string line, ability_base *a)
         a->_class = BLM ;
     } else
     if( acl == "White" ) {
-        a->_class = WHT ;
+        a->_class = WHM ;
     } else
     if( acl == "Summon" ) {
         a->_class = SMN ;
@@ -294,9 +315,6 @@ void spell_parser::determine_ability_class(std::string line, ability_base *a)
     } else
     if( acl == "Blue" ) {
         a->_class = BLU ;
-    } else
-    if( acl == "White" ) {
-        a->_class = WHT ;
     } else {
         std::cout << "Unknown Ability Class: " << acl << std::endl ;
     }

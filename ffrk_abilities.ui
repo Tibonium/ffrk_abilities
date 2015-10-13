@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ffrk_abilities</string>
+   <string>FFRK Ability Orb Calculator</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
@@ -187,7 +187,7 @@
       </widget>
      </item>
      <item row="1" column="0" colspan="2">
-      <widget class="QTableWidget" name="orb_count_table">
+      <widget class="QTableWidget" name="orb_table">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -195,7 +195,7 @@
         </size>
        </property>
        <property name="rowCount">
-        <number>12</number>
+        <number>13</number>
        </property>
        <attribute name="horizontalHeaderMinimumSectionSize">
         <number>31</number>
@@ -266,34 +266,39 @@
          <string>DARK</string>
         </property>
        </row>
+       <row>
+        <property name="text">
+         <string>BLUE</string>
+        </property>
+       </row>
        <column>
         <property name="text">
-         <string>1 Star</string>
+         <string>Minor</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>2 Star</string>
+         <string>Lesser</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>3 Star</string>
+         <string>Normal</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>4 Star</string>
+         <string>Greater</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>5 Star</string>
+         <string>Major</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>6 Star</string>
+         <string>Crystal</string>
         </property>
        </column>
       </widget>
@@ -305,6 +310,9 @@
      <attribute name="horizontalHeaderStretchLastSection">
       <bool>true</bool>
      </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
      <column>
       <property name="text">
        <string>Name</string>
@@ -312,7 +320,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Level</string>
+       <string>Rank</string>
       </property>
      </column>
      <column>
@@ -342,7 +350,7 @@
   <zorder>support_cb</zorder>
   <zorder>white_cb</zorder>
   <zorder>rarity_filter</zorder>
-  <zorder>orb_count_table</zorder>
+  <zorder>orb_table</zorder>
   <zorder>ability_table</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

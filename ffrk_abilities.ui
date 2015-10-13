@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ffrk_abilities</class>
+ <widget class="QWidget" name="ffrk_abilities">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>632</width>
+    <height>610</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ffrk_abilities</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QCheckBox" name="bard_cb">
+           <property name="text">
+            <string>Bard</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="black_cb">
+           <property name="text">
+            <string>Black</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="blue_cb">
+           <property name="text">
+            <string>Blue</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="celerity_cb">
+           <property name="text">
+            <string>Celerity</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="combat_cb">
+           <property name="text">
+            <string>Combat</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="dance_cb">
+           <property name="text">
+            <string>Dancer</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="dragoon_cb">
+           <property name="text">
+            <string>Dragoon</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="engineer_cb">
+           <property name="text">
+            <string>Engineer</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="knight_cb">
+           <property name="text">
+            <string>Knight</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QCheckBox" name="monk_cb">
+           <property name="text">
+            <string>Monk</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="ninja_cb">
+           <property name="text">
+            <string>Ninja</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="samurai_cb">
+           <property name="text">
+            <string>Samurai</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="spellblade_cb">
+           <property name="text">
+            <string>Spellblade</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="summon_cb">
+           <property name="text">
+            <string>Summon</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="support_cb">
+           <property name="text">
+            <string>Support</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="theif_cb">
+           <property name="text">
+            <string>Thief</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="white_cb">
+           <property name="text">
+            <string>White</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="rarity_filter">
+       <item>
+        <property name="text">
+         <string>All Rarities</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Star</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Star</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3 Star</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4 Star</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5 Star</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>6 Star</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QTableWidget" name="orb_count_table">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="rowCount">
+        <number>12</number>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>31</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>true</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>PWR</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>WHT</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>BLK</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>SMN</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>N-EL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>FIRE</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>ICE</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>LGTN</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>ERTH</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>WIND</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>HOLY</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>DARK</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1 Star</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2 Star</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3 Star</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4 Star</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>5 Star</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>6 Star</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="ability_table">
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Level</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Count</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+  <zorder>knight_cb</zorder>
+  <zorder>summon_cb</zorder>
+  <zorder>white_cb</zorder>
+  <zorder>black_cb</zorder>
+  <zorder>theif_cb</zorder>
+  <zorder>dragoon_cb</zorder>
+  <zorder>monk_cb</zorder>
+  <zorder>bard_cb</zorder>
+  <zorder>dance_cb</zorder>
+  <zorder>engineer_cb</zorder>
+  <zorder>blue_cb</zorder>
+  <zorder>spellblade_cb</zorder>
+  <zorder>ninja_cb</zorder>
+  <zorder>samurai_cb</zorder>
+  <zorder>combat_cb</zorder>
+  <zorder>celerity_cb</zorder>
+  <zorder>support_cb</zorder>
+  <zorder>white_cb</zorder>
+  <zorder>rarity_filter</zorder>
+  <zorder>orb_count_table</zorder>
+  <zorder>ability_table</zorder>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

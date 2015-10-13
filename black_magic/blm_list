@@ -1,0 +1,27 @@
+Ability: Black
+Name: Fire
+Rank: 1
+Orb_Types: [Black, Fire]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Black
+Name: Blizzard
+Rank: 1
+Orb_Types: [Black, Ice]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Black
+Name: Thunder
+Rank: 1
+Orb_Types: [Black, Lightning]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Black
+Name: Water
+Rank: 1
+Orb_Types: [Black, Fire, Ice]
+Orb_Ranks: [Minor, Minor, Minor]
+Lvl_Ranks: [2A, 2, 2]

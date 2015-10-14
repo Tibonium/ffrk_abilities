@@ -1,0 +1,41 @@
+Ability: Bard
+Name: Requiem
+Rank: 2
+Orb_Types: [White, Dark]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [8, 5]
+
+Ability: Bard
+Name: Rallying Etude
+Rank: 3
+Orb_Types: [Power, White, Wind]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [3, 5, 3]
+
+Ability: Bard
+Name: Lullaby
+Rank: 2
+Orb_Types: [White, Ice]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [8, 5]
+
+Ability: Bard
+Name: Mana's Paean
+Rank: 3
+Orb_Types: [Power, White, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [3, 5, 3]
+
+Ability: Bard
+Name: Spellbend Etude
+Rank: 4
+Orb_Types: [Power, White, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [3, 5, 3]
+
+Ability: Bard
+Name: Strong Defense Etude
+Rank: 4
+Orb_Types: [Power, White, Earth]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [3, 5, 3]

@@ -1,0 +1,41 @@
+Ability: Ninja
+Name: Shuriken
+Rank: 2
+Orb_Types: [Power, Lightning, Wind]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Ninja
+Name: Lightning Scroll
+Rank: 3
+Orb_Types: [Power, Lightning, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Ninja
+Name: Katon
+Rank: 3
+Orb_Types: [Power, Fire, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Ninja
+Name: Scatter Blossom
+Rank: 4
+Orb_Types: [Power, Dark]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [5, 8]
+
+Ability: Ninja
+Name: Shadow Blade
+Rank: 4
+Orb_Types: [Power, Ice, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Ninja
+Name: Illusion Dream
+Rank: 4
+Orb_Types: [Power, Black, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]

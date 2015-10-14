@@ -1,0 +1,111 @@
+Ability: Combat
+Name: Blade Bash
+Rank: 1
+Orb_Types: [Power, Lightning]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Combat
+Name: Body Slam
+Rank: 1
+Orb_Types: [Power, Non-Elem]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Combat
+Name: Double Cut
+Rank: 2
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Combat
+Name: Charge
+Rank: 2
+Orb_Types: [Power, Non-Elem]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Combat
+Name: Armor Break
+Rank: 3
+Orb_Types: [Power, Non-Elem, Earth]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Magic Break
+Rank: 3
+Orb_Types: [Power, Non-Elem, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Mental Break
+Rank: 3
+Orb_Types: [Power, Non-Elem, Ice]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Power Break
+Rank: 3
+Orb_Types: [Power, Non-Elem, Lightning]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Cripple
+Rank: 3
+Orb_Types: [Power, Fire, Earth]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Launch
+Rank: 3
+Orb_Types: [Power, Non-Elem, Wind]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Bladeblitz
+Rank: 4
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [5, 8]
+
+Ability: Combat
+Name: Pound
+Rank: 4
+Orb_Types: [Power, Non-Elem, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Barrage
+Rank: 5
+Orb_Types: [Power, Earth, Wind]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Ranks: [10A, 6, 6]
+
+Ability: Combat
+Name: Unholy Blitz
+Rank: 4
+Orb_Types: [Power, Non-Elem, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Bonecrusher
+Rank: 4
+Orb_Types: [Power, Fire, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Combat
+Name: Lifesiphon
+Rank: 4
+Orb_Types: [Power, Fire, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]

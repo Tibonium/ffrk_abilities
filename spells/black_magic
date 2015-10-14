@@ -242,3 +242,52 @@ Rank: 4
 Orb_Types: [Black, Non-Elem, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Ranks: [5, 3, 3]
+
+Ability: Black
+Name: Blind
+Rank: 1
+Orb_Types: [Black, Dark]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Black
+Name: Fireball
+Rank: 2
+Orb_Types: [Black, Fire]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Black
+Name: Rainstorm
+Rank: 2
+Orb_Types: [Black, Ice]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Black
+Name: Ruin
+Rank: 2
+Orb_Types: [Black, Non-Elem, Dark]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Black
+Name: Thunderstorm
+Rank: 2
+Orb_Types: [Black, Lightning]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Black
+Name: Cheerful Snowball
+Rank: 2
+Orb_Types: [Black, Ice]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Black
+Name: Blindga
+Rank: 3
+Orb_Types: [Black, Dark]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]

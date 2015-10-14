@@ -1,0 +1,69 @@
+Ability: Celerity
+Name: Aim
+Rank: 1
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Celerity
+Name: Dagger Toss
+Rank: 2
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Celerity
+Name: Wind Slash
+Rank: 2
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Celerity
+Name: Leg Shot
+Rank: 3
+Orb_Types: [Power, Earth]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: Celerity
+Name: Quickness
+Rank: 3
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: Celerity
+Name: Tempo Flurry
+Rank: 3
+Orb_Types: [Power, Lightning, Wind]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Celerity
+Name: Dismissal
+Rank: 4
+Orb_Types: [Power, Lightning, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Celerity
+Name: Shadowbind
+Rank: 4
+Orb_Types: [Power, Non-Elem]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [5, 8]
+
+Ability: Celerity
+Name: Quick Hit
+Rank: 5
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Major, Major]
+Lvl_Ranks: [10A, 15]
+
+Ability: Celerity
+Name: Paralyze Shot
+Rank: 4
+Orb_Types: [Power, Lightning, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]

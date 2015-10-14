@@ -1,0 +1,62 @@
+Ability: Knight
+Name: Guard
+Rank: 2
+Orb_Types: [Power, Earth]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Knight
+Name: Draw Fire
+Rank: 3
+Orb_Types: [Power, Holy]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [8, 5]
+
+Ability: Knight
+Name: Minus Strike
+Rank: 4
+Orb_Types: [Non-Elem, Lightning, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [3, 3, 5]
+
+Ability: Knight
+Name: Mental Bash
+Rank: 3
+Orb_Types: [Power, Non-Elem, Earth]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Knight
+Name: Memento of Defense
+Rank: 3
+Orb_Types: [Power, Earth]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [8, 5]
+
+Ability: Knight
+Name: Shield Bash
+Rank: 3
+Orb_Types: [Power, Earth, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Knight
+Name: Magic Taunt
+Rank: 4
+Orb_Types: [Power, Black, Lightning]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Knight
+Name: Armor Strike
+Rank: 4
+Orb_Types: [Power, White, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Knight
+Name: Banish Blade
+Rank: 4
+Orb_Types: [Power, Non-Elem, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]

@@ -1,0 +1,223 @@
+Ability: White
+Name: Cure
+Rank: 1
+Orb_Types: [White, Holy]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: White
+Name: Cura
+Rank: 2
+Orb_Types: [White, Holy]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Curaga
+Rank: 3
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Curaja
+Rank: 4
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Blindna
+Rank: 1
+Orb_Types: [White, Dark]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: White
+Name: Poisona
+Rank: 1
+Orb_Types: [White, Dark]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: White
+Name: Protect
+Rank: 1
+Orb_Types: [White, Earth]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: White
+Name: Shell
+Rank: 1
+Orb_Types: [White, Earth, Holy]
+Orb_Ranks: [Minor, Minor, Minor]
+Lvl_Ranks: [2A, 2, 2]
+
+Ability: White
+Name: Silence
+Rank: 1
+Orb_Types: [White, Ice]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: White
+Name: Slow
+Rank: 1
+Orb_Types: [White, Wind]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: White
+Name: Vox
+Rank: 1
+Orb_Types: [White, Lightning]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: White
+Name: Dia
+Rank: 2
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Hold
+Rank: 2
+Orb_Types: [White, Earth, Holy]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Regen
+Rank: 2
+Orb_Types: [White, Holy]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Stona
+Rank: 2
+Orb_Types: [White, Earth]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Berserk
+Rank: 3
+Orb_Types: [White, Non-Elem]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Diara
+Rank: 3
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Dispel
+Rank: 3
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Faith
+Rank: 3
+Orb_Types: [White, Dark]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Esuna
+Rank: 3
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Haste
+Rank: 3
+Orb_Types: [White, Wind]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Reflect
+Rank: 3
+Orb_Types: [White, Holy]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Silencega
+Rank: 3
+Orb_Types: [White, Ice]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Diaga
+Rank: 4
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Protectga
+Rank: 4
+Orb_Types: [White, Earth]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Raise
+Rank: 4
+Orb_Types: [White, Holy]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Shellga
+Rank: 4
+Orb_Types: [White, Earth, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Slowga
+Rank: 4
+Orb_Types: [White, Wind]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Holy
+Rank: 5
+Orb_Types: [White, Ice, Holy]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Ranks: [10A, 6, 6]
+
+Ability: White
+Name: Power Water
+Rank: 3
+Orb_Types: [White, Power]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: White
+Name: Therapy Cure
+Rank: 3
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: White
+Name: Memento of Prayer
+Rank: 3
+Orb_Types: [White, Earth, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]

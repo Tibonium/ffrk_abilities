@@ -1,0 +1,146 @@
+Ability: Summon
+Name: Goblin
+Rank: 1
+Orb_Types: [Summon, Non-Elem]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [6B, 3B]
+
+Ability: Summon
+Name: Bomb
+Rank: 1
+Orb_Types: [Summon, Fire]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [6B, 3B]
+
+Ability: Summon
+Name: Chocobo
+Rank: 2
+Orb_Types: [Summon, Non-Elem]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [10, 5]
+
+Ability: Summon
+Name: Dragon
+Rank: 2
+Orb_Types: [Summon, Non-Elem]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [10, 5]
+
+Ability: Summon
+Name: Kirin
+Rank: 2
+Orb_Types: [Summon, White, Holy]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [10, 6, 6]
+
+Ability: Summon
+Name: Ifrit
+Rank: 3
+Orb_Types: [Summon, Fire]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [10, 5]
+
+Ability: Summon
+Name: Shiva
+Rank: 3
+Orb_Types: [Summon, Ice]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [10, 5]
+
+Ability: Summon
+Name: Ramuh
+Rank: 3
+Orb_Types: [Summon, Lightning]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [10, 5]
+
+Ability: Summon
+Name: Alexander
+Rank: 4
+Orb_Types: [White, Summon, Holy, Holy]
+Orb_Ranks: [Greater, Greater, Greater, Major]
+Lvl_Ranks: [3C, 5, 5, 1]
+
+Ability: Summon
+Name: Carbuncle
+Rank: 4
+Orb_Types: [Summon, Wind]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [10, 5]
+
+Ability: Summon
+Name: Ixion
+Rank: 4
+Orb_Types: [Summon, Lightning, Lightning, Wind]
+Orb_Ranks: [Greater, Greater, Major, Greater]
+Lvl_Ranks: [5, 5, 1, 3C]
+
+Ability: Summon
+Name: Leviathan
+Rank: 4
+Orb_Types: [Summon, Fire, Ice]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [10, 6A, 6A]
+
+Ability: Summon
+Name: Maduin
+Rank: 4
+Orb_Types: [Summon, Non-Elem]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [10, 5]
+
+Ability: Summon
+Name: Phoenix
+Rank: 4
+Orb_Types: [Summon, Fire, Fire, Holy]
+Orb_Ranks: [Greater, Greater, Major, Greater]
+Lvl_Ranks: [5, 5, 1, 3C]
+
+Ability: Summon
+Name: Quetzalcatl
+Rank: 4
+Orb_Types: [Summon, Non-Elem, Lightning, Lightning]
+Orb_Ranks: [Greater, Greater, Greater, Major]
+Lvl_Ranks: [5, 3C, 5, 1]
+
+Ability: Summon
+Name: Syldra
+Rank: 4
+Orb_Types: [Summon, Lightning, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [10, 6A, 6A]
+
+Ability: Summon
+Name: Valefor
+Rank: 4
+Orb_Types: [Summon, Non-Elem, Wind, Wind]
+Orb_Ranks: [Greater, Greater, Greater, Major]
+Lvl_Ranks: [5, 3C, 5, 1]
+
+Ability: Summon
+Name: Bahamut
+Rank: 5
+Orb_Types: [Summon, Non-Elem, Dark]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Ranks: [10, 6A, 6A]
+
+Ability: Summon
+Name: Odin
+Rank: 5
+Orb_Types: [Summon, Lightning, Dark]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Ranks: [10, 6A, 6A]
+
+Ability: Summon
+Name: Cactuar
+Rank: 4
+Orb_Types: [Summon, Non-Elem, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [10, 6, 6]
+
+Ability: Summon
+Name: Ultros
+Rank: 4
+Orb_Types: [Power, Ice, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [10, 6A, 6A]

@@ -1,0 +1,118 @@
+Ability: Spellblade
+Name: Aero Strike
+Rank: 2
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Spellblade
+Name: Blizzard Strike
+Rank: 2
+Orb_Types: [Power, Black, Ice]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Fire Strike
+Rank: 2
+Orb_Types: [Power, Black, Fire]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Thunder Strike
+Rank: 2
+Orb_Types: [Power, Black, Lightning]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Water Strike
+Rank: 2
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Blizzara Strike
+Rank: 3
+Orb_Types: [Power, Black, Ice]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Fira Strike
+Rank: 3
+Orb_Types: [Power, Black, Fire]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Thundara Strike
+Rank: 3
+Orb_Types: [Power, Black, Lightning]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Drain Strike
+Rank: 3
+Orb_Types: [Power, Black, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Break Strike
+Rank: 4
+Orb_Types: [Power, Black, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Flare Strike
+Rank: 5
+Orb_Types: [Power, Non-Elem, Fire]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Ranks: [10, 6, 6]
+
+Ability: Spellblade
+Name: Aerora Strike
+Rank: 3
+Orb_Types: [Power, Black, Wind]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Watera Strike
+Rank: 3
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Bio Strike
+Rank: 3
+Orb_Types: [Power, Black, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Firaga Strike
+Rank: 4
+Orb_Types: [Power, Black, Fire]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Blizzaga Strike
+Rank: 4
+Orb_Types: [Power, Black, Ice]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Spellblade
+Name: Thundaga Strike
+Rank: 4
+Orb_Types: [Power, Black, Lightning]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]

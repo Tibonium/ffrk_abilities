@@ -1,0 +1,146 @@
+Ability: Support
+Name: Pulse of Life
+Rank: 2
+Orb_Types: [Power, Holy]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Full Break
+Rank: 5
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Ranks: [10, 6, 6]
+
+Ability: Support
+Name: Boost
+Rank: 1
+Orb_Types: [Power, Holy]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Support
+Name: Salve
+Rank: 1
+Orb_Types: [Power, Holy]
+Orb_Ranks: [Minor, Minor]
+Lvl_Ranks: [3B, 3A]
+
+Ability: Support
+Name: Cry
+Rank: 2
+Orb_Types: [White, Non-Elem, Dark]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Support
+Name: Revive 
+Rank: 2
+Orb_Types: [Power, Holy]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Dark Attack
+Rank: 2
+Orb_Types: [Power, Dark]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Silence Attack
+Rank: 2
+Orb_Types: [Power, Ice]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Sleep Attack
+Rank: 2
+Orb_Types: [Power, Ice]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Venom Attack
+Rank: 2
+Orb_Types: [Power, Dark]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Dark Buster
+Rank: 3
+Orb_Types: [Power, Non-Elem]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Silence Buster
+Rank: 3
+Orb_Types: [Power, Ice]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Sleep Buster
+Rank: 3
+Orb_Types: [Power, Ice, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Support
+Name: Venom Buster
+Rank: 3
+Orb_Types: [Power, Non-Elem, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Support
+Name: Intimidate
+Rank: 3
+Orb_Types: [Power, Lightning]
+Orb_Ranks: [Normal, Normal]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Armor Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Support
+Name: Magic Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Support
+Name: Mental Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Ice]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Support
+Name: Power Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Lightning]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Ranks: [5, 3, 3]
+
+Ability: Support
+Name: Wraith
+Rank: 4
+Orb_Types: [Power, Fire]
+Orb_Ranks: [Greater, Greater]
+Lvl_Ranks: [5, 8]
+
+Ability: Support
+Name: Entrust
+Rank: 5
+Orb_Types: [Power, White, Black]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Ranks: [10, 6, 6]

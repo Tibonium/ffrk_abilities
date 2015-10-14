@@ -1,41 +1,41 @@
-Ability: Samurai
+Class: Samurai
 Name: Retaliate
 Rank: 2
 Orb_Types: [Power, Non-Elem, Earth]
 Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Samurai
+Class: Samurai
 Name: Iai Strike
 Rank: 3
 Orb_Types: [Power, Lightning, Dark]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Samurai
+Class: Samurai
 Name: Yukikaze
 Rank: 4
 Orb_Types: [Power, Non-Elem, Ice]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Samurai
+Class: Samurai
 Name: Meikyo
 Rank: 4
 Orb_Types: [Power, Lightning, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Samurai
+Class: Samurai
 Name: Burning Flower
 Rank: 4
 Orb_Types: [Power, Non-Elem, Fire]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Samurai
+Class: Samurai
 Name: Sword Flash
 Rank: 5
 Orb_Types: [Power, Non-Elem, Ice]
 Orb_Ranks: [Major, Major, Major]
-Lvl_Ranks: [10, 6A, 6A]
+Lvl_Schema: [10, 6A, 6A]

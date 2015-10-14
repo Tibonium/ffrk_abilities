@@ -3,7 +3,6 @@
  */
 #pragma once
 
-#include <list>
 #include <cstring>
 #include "orb_base.h"
 
@@ -38,6 +37,25 @@ struct ability_base {
     std::string           _name ;
     short                 _rarity ;
     std::list<orb_type>   _types ;
+    std::list<short>      _type_code ;
     std::list<orb_rarity> _rare ;
     std::list<rank_type>  _counts ;
+};
+
+/**
+ * Searchs the orb types and determines if this ability has
+ * the type of requested orb
+ */
+struct check_types {
+    static bool has_orb_type(ability_base* a, short type) {
+        std::list<short>::iterator It = a->_type_code.begin() ;
+        std::list<short>::iterator It_end = a->_type_code.end() ;
+        while( It != It_end ) {
+            if( *It & type ) {
+                return true ;
+            }
+            It++ ;
+        }
+        return false ;
+    }
 };

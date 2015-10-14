@@ -1,21 +1,120 @@
 #include "ffrk_abilities.h"
 #include "ui_ffrk_abilities.h"
 
+/**
+ * Constructor
+ */
 ffrk_abilities::ffrk_abilities(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ffrk_abilities),
+    _settings("Tibonium Inc.", "FFRK Ability Orb Calculator"),
     _initialized(false),
+    _ability_count(0),
     _ranks(),
     _class_filter(0),
     _rarity_filter(0),
+    _orb_filter(0),
     _max_row(13),
     _max_col(6)
 {
     ui->setupUi(this) ;
     spell_parser p ;
 
-    p.parse_file("../../ffrk_abilities/black_magic/black_magic") ;
-    _black = *(p.abilities()) ;
+    p.parse_file("../../ffrk_abilities/spells/black_magic") ;
+    _black = p.abilities() ;
+    _ability_count = _black.size() ;
+    _ability_list.push_back( _black ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/white_magic") ;
+    _white = p.abilities() ;
+    _ability_count += _white.size() ;
+    _ability_list.push_back( _white ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/summon_magic") ;
+    _summon = p.abilities() ;
+    _ability_count += _summon.size() ;
+    _ability_list.push_back( _summon ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/knight_magic") ;
+    _knight = p.abilities() ;
+    _ability_count += _knight.size() ;
+    _ability_list.push_back( _knight ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/ninja_magic") ;
+    _ninja = p.abilities() ;
+    _ability_count += _ninja.size() ;
+    _ability_list.push_back( _ninja ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/thief_magic") ;
+    _thief = p.abilities() ;
+    _ability_count += _thief.size() ;
+    _ability_list.push_back( _thief ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/samurai_magic") ;
+    _samurai = p.abilities() ;
+    _ability_count += _samurai.size() ;
+    _ability_list.push_back( _samurai ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/dancer_magic") ;
+    _dancer = p.abilities() ;
+    _ability_count += _dancer.size() ;
+    _ability_list.push_back( _dancer ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/bard_magic") ;
+    _bard = p.abilities() ;
+    _ability_count += _thief.size() ;
+    _ability_list.push_back( _thief ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/spellblade_magic") ;
+    _spellblade = p.abilities() ;
+    _ability_count += _thief.size() ;
+    _ability_list.push_back( _thief ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/celerity_magic") ;
+    _celerity = p.abilities() ;
+    _ability_count += _celerity.size() ;
+    _ability_list.push_back( _celerity ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/support_magic") ;
+    _support = p.abilities() ;
+    _ability_count += _support.size() ;
+    _ability_list.push_back( _support ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/dragoon_magic") ;
+    _dragoon = p.abilities() ;
+    _ability_count += _dragoon.size() ;
+    _ability_list.push_back( _dragoon ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/combat_magic") ;
+    _combat = p.abilities() ;
+    _ability_count += _combat.size() ;
+    _ability_list.push_back( _combat ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/monk_magic") ;
+    _monk = p.abilities() ;
+    _ability_count += _monk.size() ;
+    _ability_list.push_back( _monk ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/bard_magic") ;
+    _bard = p.abilities() ;
+    _ability_count += _bard.size() ;
+    _ability_list.push_back( _bard ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/spellblade_magic") ;
+    _spellblade = p.abilities() ;
+    _ability_count += _spellblade.size() ;
+    _ability_list.push_back( _spellblade ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/blue_magic") ;
+    _blue = p.abilities() ;
+    _ability_count += _blue.size() ;
+    _ability_list.push_back( _blue ) ;
+
+    p.parse_file("../../ffrk_abilities/spells/engineer_magic") ;
+    _engineer = p.abilities() ;
+    _ability_count += _engineer.size() ;
+    _ability_list.push_back( _engineer ) ;
+
 
     populate_ability_table() ;
     setup_orb_table() ;
@@ -23,9 +122,13 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     for(int i=0; i<_max_row; ++i) {
         _orbs[i] = new int[_max_col] ;
     }
+    read_settings() ;
     _initialized = true ;
 }
 
+/**
+ * Destructor
+ */
 ffrk_abilities::~ffrk_abilities()
 {
     for(int i=0; i<13; ++i) {
@@ -36,24 +139,51 @@ ffrk_abilities::~ffrk_abilities()
 }
 
 /**
+ * Adds persistence to application sessions on position and size
+ */
+void ffrk_abilities::closeEvent(QCloseEvent *e)
+{
+    _settings.setValue("position", pos()) ;
+    _settings.setValue("size", size()) ;
+    e->accept() ;
+}
+
+/**
+ * Restores Position and Size of application from previous session
+ */
+void ffrk_abilities::read_settings()
+{
+    if( _settings.contains("position") )
+        move( _settings.value("position").toPoint() ) ;
+    if( _settings.contains("size") )
+        resize( _settings.value("size").toSize() ) ;
+}
+
+/**
  * Populates the ability table with all of the abilities
  * from the files
  */
 void ffrk_abilities::populate_ability_table()
 {
-    // Add the black magic abilities to the table
-    ui->ability_table->setRowCount( _black.size() ) ;
+    // Set the Maximum number of rows to the number of abilities that
+    // have been added
+    ui->ability_table->setRowCount( _ability_count ) ;
+    std::list<spell_map>::iterator listIt = _ability_list.begin() ;
+    std::list<spell_map>::iterator listIt_end = _ability_list.end() ;
     int count = 0 ;
-    spell_list::iterator It = _black.begin() ;
-    spell_list::iterator It_end = _black.end() ;
-    while( It != It_end ) {
-        ability_table_item *name = new ability_table_item(It->_name, &(*It)) ;
-        name->setFlags( name->flags() ^ Qt::ItemIsEditable ) ;
-        ui->ability_table->setItem(count, ability_table_item::NAME, name) ;
-        ui->ability_table->setItem(count, ability_table_item::COUNT, new QTableWidgetItem() ) ;
-        ui->ability_table->setItem(count, ability_table_item::RANK, new QTableWidgetItem() ) ;
-        It++ ;
-        ui->ability_table->setRowHidden(count++, true) ;
+    while( listIt != listIt_end ) {
+        spell_map::iterator It = listIt->begin() ;
+        spell_map::iterator It_end = listIt->end() ;
+        while( It != It_end ) {
+            ability_table_item *name = new ability_table_item(It->second._name, &It->second) ;
+            name->setFlags( name->flags() ^ Qt::ItemIsEditable ) ;
+            ui->ability_table->setItem(count, ability_table_item::NAME, name) ;
+            ui->ability_table->setItem(count, ability_table_item::COUNT, new QTableWidgetItem() ) ;
+            ui->ability_table->setItem(count, ability_table_item::RANK, new QTableWidgetItem() ) ;
+            It++ ;
+            ui->ability_table->setRowHidden(count++, true) ;
+        }
+        listIt++ ;
     }
 }
 
@@ -76,15 +206,18 @@ void ffrk_abilities::update_ability_table()
 {
     int size = ui->ability_table->rowCount() ;
     for(int i=0; i<size; ++i) {
-        ability_table_item* _curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(i, ability_table_item::NAME)) ;
-        if( (_curr->ability()->_class & _class_filter)
-        &&  ((_curr->ability()->_rarity & _rarity_filter) || _rarity_filter == 0))
+        ability_base* _curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(i, ability_table_item::NAME))->ability() ;
+        if( (_curr->_class & _class_filter)
+        &&  ((_curr->_rarity & _rarity_filter) || _rarity_filter == 0)
+        &&  (check_types::has_orb_type(_curr, _orb_filter) || _orb_filter == 0) )
         {
             ui->ability_table->setRowHidden(i, false) ;
         } else {
             ui->ability_table->setRowHidden(i, true) ;
         }
     }
+    ui->ability_table->resizeColumnsToContents() ;
+    ui->ability_table->horizontalHeader()->stretchLastSection() ;
 }
 
 /**
@@ -237,6 +370,122 @@ void ffrk_abilities::on_theif_cb_clicked()
 void ffrk_abilities::on_white_cb_clicked()
 {
     _class_filter = _class_filter ^ WHM ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Power orbs
+ */
+void ffrk_abilities::on_power_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CPOWER ;
+    update_ability_table() ;
+}
+/**
+ * Toggles view of abilities with White orbs
+ */
+void ffrk_abilities::on_white_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CWHITE ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Black orbs
+ */
+void ffrk_abilities::on_black_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CBLACK ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Summon orbs
+ */
+void ffrk_abilities::on_summon_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CSUMMON ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Non-Elemental orbs
+ */
+void ffrk_abilities::on_non_elem_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CNON_ELEM ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Fire orbs
+ */
+void ffrk_abilities::on_fire_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CFIRE ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Ice orbs
+ */
+void ffrk_abilities::on_ice_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CICE ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Lightning orbs
+ */
+void ffrk_abilities::on_lightning_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CLIGHTNING ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Earth orbs
+ */
+void ffrk_abilities::on_earth_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CEARTH ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Wind orbs
+ */
+void ffrk_abilities::on_wind_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CWIND ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Holy orbs
+ */
+void ffrk_abilities::on_holy_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CHOLY ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Dark orbs
+ */
+void ffrk_abilities::on_dark_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CDARK ;
+    update_ability_table() ;
+}
+
+/**
+ * Toggles view of abilities with Blue orbs
+ */
+void ffrk_abilities::on_blue_orb_cb_clicked()
+{
+    _orb_filter = _orb_filter ^ CBLUE ;
     update_ability_table() ;
 }
 

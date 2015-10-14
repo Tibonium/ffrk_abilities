@@ -10,44 +10,64 @@ spell_parser::~spell_parser()
 
 }
 
-void spell_parser::parse_file(const char *filename)
+int spell_parser::parse_file(const char *filename)
 {
     std::fstream fi( filename ) ;
+    _abilities.clear() ;
+    string_type result ;
+    int count = 0 ;
     while( true ) {
         std::string line ;
         std::getline(fi, line) ;
+        count++ ;
         if( fi.eof() ) break ;
-        if(line.substr(0,7) == "Ability") {
-            parse_ability( line, fi ) ;
+        if(line.substr(0,5) == "Class") {
+            result = parse_ability( line, fi ) ;
+        }
+        if( !result.empty() ) {
+            std::cout << "Error in spell file [" << filename << "] on line:"
+                      << count << ", " << result << std::endl ;
+            return -1 ;
         }
     }
+    return 1 ;
 }
 
-void spell_parser::parse_ability(std::string line, std::fstream &fi)
+spell_parser::string_type
+spell_parser::parse_ability(std::string line, std::fstream &fi)
 {
     ability_base a ;
-    determine_ability_class(line, &a) ;
+    string_type error_msg ;
+    error_msg = determine_ability_class(line, &a) ;
+    if( !error_msg.empty() ) return error_msg ;
     extract_name(fi, &a) ;
-    extract_rank(fi, &a) ;
-    extract_orb_types(fi, &a) ;
-    extract_orb_ranks(fi, &a) ;
-    extract_lvl_ranks(fi, &a) ;
-    _abilities._spells.push_back( a ) ;
+    error_msg = extract_rank(fi, &a) ;
+    if( !error_msg.empty() ) return error_msg ;
+    error_msg = extract_orb_types(fi, &a) ;
+    if( !error_msg.empty() ) return error_msg ;
+    error_msg = extract_orb_ranks(fi, &a) ;
+    if( !error_msg.empty() ) return error_msg ;
+    error_msg = extract_lvl_ranks(fi, &a) ;
+    if( !error_msg.empty() ) return error_msg ;
+    std::pair<map_type::iterator,bool> result = _abilities.insert( std::make_pair(a._name, a) ) ;
+    if( result.second ) {
+        return string_type() ;
+    } else {
+        return string_type("Unable to insert spell with name: " + a._name) ;
+    }
 }
 
 void spell_parser::extract_name(std::fstream &fi, ability_base *a)
 {
     std::string line ;
-    std::stringstream iss ;
     std::getline(fi, line) ;
-    iss << line ;
-    iss >> line ;
     if( line.substr(0,4) == "Name" ) {
-        iss >> a->_name ;
+        a->_name = line.substr(5) ;
     }
 }
 
-void spell_parser::extract_rank(std::fstream &fi, ability_base *a)
+spell_parser::string_type
+spell_parser::extract_rank(std::fstream &fi, ability_base *a)
 {
     std::string line, tmprank ;
     std::stringstream iss ;
@@ -56,7 +76,7 @@ void spell_parser::extract_rank(std::fstream &fi, ability_base *a)
     iss >> line ;
     if( line.substr(0,4) == "Rank" ) {
         iss >> tmprank ;
-        rarity_type _type ;
+        rarity_type _type = STAR_1 ;
         if( tmprank == "1" ) {
             _type = STAR_1 ;
         } else
@@ -75,13 +95,15 @@ void spell_parser::extract_rank(std::fstream &fi, ability_base *a)
         if( tmprank == "6" ) {
             _type = STAR_6 ;
         } else {
-            std::cout << "Unknown Rarity: " << _type << std::endl ;
+            return std::string("Unknown Rarity: " + _type) ;
         }
         a->_rarity = _type ;
     }
+    return string_type() ;
 }
 
-void spell_parser::extract_orb_types(std::fstream &fi, ability_base *a)
+spell_parser::string_type
+spell_parser::extract_orb_types(std::fstream &fi, ability_base *a)
 {
     std::string line, type ;
     std::stringstream iss ;
@@ -91,6 +113,7 @@ void spell_parser::extract_orb_types(std::fstream &fi, ability_base *a)
         iss2 << line.substr(line.find('[')+1) ;
         while( !iss2.eof() ) {
             orb_type _type ;
+            orb_code _code ;
             std::getline(iss2, type, ',') ;
             if( type.find(']') != std::string::npos ) {
                 type.erase( type.find(']'),1 ) ;
@@ -100,51 +123,67 @@ void spell_parser::extract_orb_types(std::fstream &fi, ability_base *a)
             }
             if( type == "Power" ) {
                 _type = POWER ;
+                _code = CPOWER ;
             } else
             if( type == "Black" ) {
                 _type = BLACK ;
+                _code = CBLACK ;
             } else
             if( type == "White" ) {
                 _type = WHITE ;
+                _code = CWHITE ;
             } else
             if( type == "Summon" ) {
                 _type = SUMMON ;
+                _code = CSUMMON ;
             } else
             if( type == "Non-Elem" ) {
                 _type = NON_ELEM ;
+                _code = CNON_ELEM ;
             } else
             if( type == "Fire" ) {
                 _type = FIRE ;
+                _code = CFIRE ;
             } else
             if( type == "Ice" ) {
                 _type = ICE ;
+                _code = CICE ;
             } else
             if( type == "Lightning" ) {
                 _type = LIGHTNING ;
+                _code = CLIGHTNING ;
             } else
             if( type == "Earth" ) {
                 _type = EARTH ;
+                _code = CEARTH ;
             } else
             if( type == "Wind" ) {
                 _type = WIND ;
+                _code = CWIND ;
             } else
             if( type == "Holy" ) {
                 _type = HOLY ;
+                _code = CHOLY ;
             } else
             if( type == "Dark" ) {
                 _type = DARK ;
+                _code = CDARK ;
             } else
             if( type == "Blue" ) {
                 _type = BLUE ;
+                _code = CBLUE ;
             } else {
-                std::cout << "Unknown Orb Type: " << type << std::endl ;
+                return string_type("Unknown Orb Type: " + type) ;
             }
             a->_types.push_back( _type ) ;
+            a->_type_code.push_back( _code ) ;
         }
     }
+    return string_type() ;
 }
 
-void spell_parser::extract_orb_ranks(std::fstream &fi, ability_base *a)
+spell_parser::string_type
+spell_parser::extract_orb_ranks(std::fstream &fi, ability_base *a)
 {
     std::string line, type ;
     std::stringstream iss ;
@@ -179,14 +218,16 @@ void spell_parser::extract_orb_ranks(std::fstream &fi, ability_base *a)
             if( type == "Crystal" ) {
                 _type = CRYSTAL ;
             } else {
-                std::cout << "Unknown Orb Rank: " << type << std::endl ;
+                return string_type("Unknown Orb Rank: " + type ) ;
             }
             a->_rare.push_back( _type ) ;
         }
     }
+    return string_type() ;
 }
 
-void spell_parser::extract_lvl_ranks(std::fstream &fi, ability_base *a)
+spell_parser::string_type
+spell_parser::extract_lvl_ranks(std::fstream &fi, ability_base *a)
 {
     std::string line, type ;
     std::stringstream iss ;
@@ -251,14 +292,16 @@ void spell_parser::extract_lvl_ranks(std::fstream &fi, ability_base *a)
             if( type == "15" ) {
                 _type = RANK_15 ;
             } else {
-                std::cout << "Unknown Level Rank: " << type << std::endl ;
+                return string_type("Unknown Level Rank: " + type) ;
             }
             a->_counts.push_back( _type ) ;
         }
     }
+    return string_type() ;
 }
 
-void spell_parser::determine_ability_class(std::string line, ability_base *a)
+spell_parser::string_type
+spell_parser::determine_ability_class(std::string line, ability_base *a)
 {
     std::string acl, junk ;
     std::stringstream tmp1 ;
@@ -316,6 +359,7 @@ void spell_parser::determine_ability_class(std::string line, ability_base *a)
     if( acl == "Blue" ) {
         a->_class = BLU ;
     } else {
-        std::cout << "Unknown Ability Class: " << acl << std::endl ;
+        return string_type("Unknown Ability Class: " + acl) ;
     }
+    return string_type() ;
 }

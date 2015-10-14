@@ -3,6 +3,8 @@
  */
 #pragma once
 
+#include <list>
+
 /**
  * Rarity Enumerations
  */
@@ -33,6 +35,22 @@ typedef enum {
     DARK      = 11,
     BLUE      = 12
 } orb_type ;
+
+typedef enum {
+    CPOWER     = 0x0001,
+    CWHITE     = 0x0002,
+    CBLACK     = 0x0004,
+    CSUMMON    = 0x0008,
+    CNON_ELEM  = 0x0010,
+    CFIRE      = 0x0020,
+    CICE       = 0x0040,
+    CLIGHTNING = 0x0080,
+    CEARTH     = 0x0100,
+    CWIND      = 0x0200,
+    CHOLY      = 0x0400,
+    CDARK      = 0x0800,
+    CBLUE      = 0x1000
+} orb_code ;
 
 /**
  * Orb Rarities

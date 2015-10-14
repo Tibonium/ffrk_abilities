@@ -1,62 +1,62 @@
-Ability: Monk
+Class: Monk
 Name: Chi Blast
 Rank: 2
 Orb_Types: [Power, Non-Elem]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Monk
+Class: Monk
 Name: Death Strike
 Rank: 2
 Orb_Types: [Power, Lightning]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Monk
+Class: Monk
 Name: Chakra
 Rank: 3
 Orb_Types: [Power, Holy]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Monk
+Class: Monk
 Name: Pressure Point
 Rank: 4
 Orb_Types: [Power, Dark]
 Orb_Ranks: [Greater, Greater]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Monk
+Class: Monk
 Name: Kick
 Rank: 3
 Orb_Types: [Power, Non-Elem, Wind]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Monk
+Class: Monk
 Name: Memento of Power
 Rank: 3
 Orb_Types: [Power, Earth]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Monk
+Class: Monk
 Name: Invigorating Fist
 Rank: 4
 Orb_Types: [Power, Fire, Holy]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Monk
+Class: Monk
 Name: Armor Piercer
 Rank: 4
 Orb_Types: [Power, Lightning, Earth]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Monk
+Class: Monk
 Name: Raging Fist
 Rank: 5
 Orb_Types: [Power, Fire, Lightning]
 Orb_Ranks: [Major, Major, Major]
-Lvl_Ranks: [10, 6A, 6A]
+Lvl_Schema: [10, 6A, 6A]

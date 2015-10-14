@@ -1,293 +1,293 @@
-Ability: Black
+Class: Black
 Name: Fire
 Rank: 1
 Orb_Types: [Black, Fire]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Black
+Class: Black
 Name: Fira
 Rank: 2
 Orb_Types: [Black, Fire]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Firaga
 Rank: 3
 Orb_Types: [Black, Fire]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Firaja
 Rank: 4
 Orb_Types: [Black, Fire]
 Orb_Ranks: [Greater, Greater]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Blizzard
 Rank: 1
 Orb_Types: [Black, Ice]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Black
+Class: Black
 Name: Blizzara
 Rank: 2
 Orb_Types: [Black, Ice]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Blizzaga
 Rank: 3
 Orb_Types: [Black, Ice]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Blizzaja
 Rank: 4
 Orb_Types: [Black, Ice]
 Orb_Ranks: [Greater, Greater]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Thunder
 Rank: 1
 Orb_Types: [Black, Lightning]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Black
+Class: Black
 Name: Thundara
 Rank: 2
 Orb_Types: [Black, Lightning]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Thundaga
 Rank: 3
 Orb_Types: [Black, Lightning]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Thundaja
 Rank: 4
 Orb_Types: [Black, Lightning]
 Orb_Ranks: [Greater, Greater]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Water
 Rank: 1
 Orb_Types: [Black, Fire, Ice]
 Orb_Ranks: [Minor, Minor, Minor]
-Lvl_Ranks: [2A, 2, 2]
+Lvl_Schema: [2A, 2, 2]
 
-Ability: Black
+Class: Black
 Name: Watera
 Rank: 2
 Orb_Types: [Black, Fire, Ice]
 Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Waterga
 Rank: 3
 Orb_Types: [Black, Fire, Ice]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Waterja
 Rank: 4
 Orb_Types: [Black, Fire, Ice]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Bio
 Rank: 2
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Biora
 Rank: 3
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 5]
+Lvl_Schema: [5, 5]
 
-Ability: Black
+Class: Black
 Name: Bioga
 Rank: 4
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Greater, Greater]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Comet
 Rank: 3
 Orb_Types: [Black, Non-Elem, Lightning]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Confuse
 Rank: 1
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Black
+Class: Black
 Name: Poison
 Rank: 1
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Black
+Class: Black
 Name: Sleep
 Rank: 1
 Orb_Types: [Black, Ice, Dark]
 Orb_Ranks: [Minor, Minor, Minor]
-Lvl_Ranks: [2A, 2, 2]
+Lvl_Schema: [2A, 2, 2]
 
-Ability: Black
+Class: Black
 Name: Dark
 Rank: 3
 Orb_Types: [Black, Non-Elem, Dark]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Drain
 Rank: 3
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Gravity
 Rank: 3
 Orb_Types: [Black, Lightning, Dark]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Stop
 Rank: 3
 Orb_Types: [Black, Non-Elem, Dark]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Break
 Rank: 4
 Orb_Types: [Black, Non-Elem, Earth]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Death
 Rank: 4
 Orb_Types: [Black, Ice, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Quake
 Rank: 4
 Orb_Types: [Black, Earth, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Flare
 Rank: 5
 Orb_Types: [Black, Non-Elem, Fire]
 Orb_Ranks: [Major, Major, Major]
-Lvl_Ranks: [10, 6, 6]
+Lvl_Schema: [10, 6, 6]
 
-Ability: Black
+Class: Black
 Name: Meteor
 Rank: 5
 Orb_Types: [Black, Non-Elem, Fire, Earth]
 Orb_Ranks: [Major, Major, Major, Major]
-Lvl_Ranks: [10, 6, 3, 6]
+Lvl_Schema: [10, 6, 3, 6]
 
-Ability: Black
+Class: Black
 Name: Ruinga
 Rank: 4
 Orb_Types: [Black, Holy, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Drainga
 Rank: 4
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Greater, Greater]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Darkra
 Rank: 4
 Orb_Types: [Black, Non-Elem, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Blind
 Rank: 1
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Black
+Class: Black
 Name: Fireball
 Rank: 2
 Orb_Types: [Black, Fire]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Rainstorm
 Rank: 2
 Orb_Types: [Black, Ice]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Ruin
 Rank: 2
 Orb_Types: [Black, Non-Elem, Dark]
 Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Black
+Class: Black
 Name: Thunderstorm
 Rank: 2
 Orb_Types: [Black, Lightning]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Cheerful Snowball
 Rank: 2
 Orb_Types: [Black, Ice]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Black
+Class: Black
 Name: Blindga
 Rank: 3
 Orb_Types: [Black, Dark]
 Orb_Ranks: [Normal, Normal]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]

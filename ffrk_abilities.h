@@ -2,6 +2,8 @@
 #define FFRK_ABILITIES_H
 
 #include <QWidget>
+#include <QSettings>
+#include <QCloseEvent>
 
 #include <map>
 #include "base/spell_parser.h"
@@ -18,6 +20,8 @@ class ffrk_abilities : public QWidget
 public:
     explicit ffrk_abilities(QWidget *parent = 0);
     ~ffrk_abilities();
+
+    void closeEvent(QCloseEvent *e) ;
 
 private slots:
     void on_black_cb_clicked();
@@ -58,30 +62,61 @@ private slots:
 
     void on_ability_table_cellChanged(int row, int column);
 
+    void on_power_orb_cb_clicked();
+
+    void on_white_orb_cb_clicked();
+
+    void on_black_orb_cb_clicked();
+
+    void on_summon_orb_cb_clicked();
+
+    void on_non_elem_orb_cb_clicked();
+
+    void on_fire_orb_cb_clicked();
+
+    void on_ice_orb_cb_clicked();
+
+    void on_lightning_orb_cb_clicked();
+
+    void on_earth_orb_cb_clicked();
+
+    void on_wind_orb_cb_clicked();
+
+    void on_holy_orb_cb_clicked();
+
+    void on_dark_orb_cb_clicked();
+
+    void on_blue_orb_cb_clicked();
+
 private:
-    typedef std::list<ability_base>     spell_list ;
+    typedef spell_parser::map_type     spell_map ;
 
     Ui::ffrk_abilities *ui;
 
+    QSettings _settings ;
+    void read_settings() ;
     bool _initialized ;
 
-    spell_list _black ;
-    spell_list _white ;
-    spell_list _summon ;
-    spell_list _knight ;
-    spell_list _combat ;
-    spell_list _samurai ;
-    spell_list _ninja ;
-    spell_list _dragoon ;
-    spell_list _thief ;
-    spell_list _dancer ;
-    spell_list _bard ;
-    spell_list _support ;
-    spell_list _spellblade ;
-    spell_list _blue ;
-    spell_list _celerity ;
-    spell_list _monk ;
-    spell_list _engineer ;
+    std::list<spell_map> _ability_list ;
+    int _ability_count ;
+
+    spell_map _black ;
+    spell_map _white ;
+    spell_map _summon ;
+    spell_map _knight ;
+    spell_map _combat ;
+    spell_map _samurai ;
+    spell_map _ninja ;
+    spell_map _dragoon ;
+    spell_map _thief ;
+    spell_map _dancer ;
+    spell_map _bard ;
+    spell_map _support ;
+    spell_map _spellblade ;
+    spell_map _blue ;
+    spell_map _celerity ;
+    spell_map _monk ;
+    spell_map _engineer ;
 
     void populate_ability_table() ;
     void setup_orb_table() ;
@@ -90,6 +125,7 @@ private:
 
     long _class_filter ;
     short _rarity_filter ;
+    short _orb_filter ;
     void update_ability_table() ;
 
     struct orb_data {

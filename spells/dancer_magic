@@ -1,48 +1,48 @@
-Ability: Dancer
+Class: Dancer
 Name: Stutter Step
 Rank: 3
 Orb_Types: [Power, Non-Elem, Ice]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Dancer
+Class: Dancer
 Name: Box Step
 Rank: 3
 Orb_Types: [Power, Non-Elem, Earth]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Dancer
+Class: Dancer
 Name: Weak Polka
 Rank: 3
 Orb_Types: [Power, Non-Elem, Earth]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Dancer
+Class: Dancer
 Name: Unfaith
 Rank: 3
 Orb_Types: [Power, Ice, Wind]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [3, 3, 5]
+Lvl_Schema: [3, 3, 5]
 
-Ability: Dancer
+Class: Dancer
 Name: Stop Romba
 Rank: 4
 Orb_Types: [Power, Wind, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [3, 5, 3]
+Lvl_Schema: [3, 5, 3]
 
-Ability: Dancer
+Class: Dancer
 Name: High Stutter Step
 Rank: 4
 Orb_Types: [White, Ice, Wind]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [3, 3, 5]
+Lvl_Schema: [3, 3, 5]
 
-Ability: Dancer
+Class: Dancer
 Name: High Weak Polka
 Rank: 4
 Orb_Types: [Fire, Wind, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [3, 5, 3]
+Lvl_Schema: [3, 5, 3]

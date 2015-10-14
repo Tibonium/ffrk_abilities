@@ -1,111 +1,111 @@
-Ability: Combat
+Classs: Combat
 Name: Blade Bash
 Rank: 1
 Orb_Types: [Power, Lightning]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Combat
+Class: Combat
 Name: Body Slam
 Rank: 1
 Orb_Types: [Power, Non-Elem]
 Orb_Ranks: [Minor, Minor]
-Lvl_Ranks: [3B, 3A]
+Lvl_Schema: [3B, 3A]
 
-Ability: Combat
+Class: Combat
 Name: Double Cut
 Rank: 2
 Orb_Types: [Power, Wind]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Combat
+Class: Combat
 Name: Charge
 Rank: 2
 Orb_Types: [Power, Non-Elem]
 Orb_Ranks: [Lesser, Lesser]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Combat
+Class: Combat
 Name: Armor Break
 Rank: 3
 Orb_Types: [Power, Non-Elem, Earth]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Magic Break
 Rank: 3
 Orb_Types: [Power, Non-Elem, Dark]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Mental Break
 Rank: 3
 Orb_Types: [Power, Non-Elem, Ice]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Power Break
 Rank: 3
 Orb_Types: [Power, Non-Elem, Lightning]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Cripple
 Rank: 3
 Orb_Types: [Power, Fire, Earth]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Launch
 Rank: 3
 Orb_Types: [Power, Non-Elem, Wind]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Bladeblitz
 Rank: 4
 Orb_Types: [Power, Wind]
 Orb_Ranks: [Greater, Greater]
-Lvl_Ranks: [5, 8]
+Lvl_Schema: [5, 8]
 
-Ability: Combat
+Class: Combat
 Name: Pound
 Rank: 4
 Orb_Types: [Power, Non-Elem, Earth]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Barrage
 Rank: 5
 Orb_Types: [Power, Earth, Wind]
 Orb_Ranks: [Major, Major, Major]
-Lvl_Ranks: [10A, 6, 6]
+Lvl_Schema: [10A, 6, 6]
 
-Ability: Combat
+Class: Combat
 Name: Unholy Blitz
 Rank: 4
 Orb_Types: [Power, Non-Elem, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Bonecrusher
 Rank: 4
 Orb_Types: [Power, Fire, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Combat
+Class: Combat
 Name: Lifesiphon
 Rank: 4
 Orb_Types: [Power, Fire, Wind]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]

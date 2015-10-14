@@ -7,11 +7,15 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include <map>
 
-#include "spells_base.h"
+#include "ability_base.h"
 
 class spell_parser {
 public:
+
+    typedef std::string     string_type ;
+    typedef std::map<std::string, ability_base>     map_type ;
 
     /**
      * Constructor
@@ -36,32 +40,32 @@ public:
      * See orb_base and orb_counts for specific requirements on naming and
      * meaning.
      */
-    void parse_file(const char* filename) ;
+    int parse_file(const char* filename) ;
 
     /**
      * Returns a pointer to the list of spells parsed from file
      */
-    std::list<ability_base>* abilities() {
-        return &_abilities._spells ;
+    map_type abilities() {
+        return _abilities ;
     }
 
 private:
 
     /** Helper functions for parsing an individual ability **/
-    void parse_ability(std::string line, std::fstream &fi) ;
+    string_type parse_ability(std::string line, std::fstream &fi) ;
 
-    void determine_ability_class(std::string line, ability_base *a) ;
+    string_type determine_ability_class(std::string line, ability_base *a) ;
 
     void extract_name(std::fstream &fi, ability_base *a) ;
 
-    void extract_rank(std::fstream &fi, ability_base *a) ;
+    string_type extract_rank(std::fstream &fi, ability_base *a) ;
 
-    void extract_orb_types(std::fstream &fi, ability_base *a) ;
+    string_type extract_orb_types(std::fstream &fi, ability_base *a) ;
 
-    void extract_orb_ranks(std::fstream &fi, ability_base *a) ;
+    string_type extract_orb_ranks(std::fstream &fi, ability_base *a) ;
 
-    void extract_lvl_ranks(std::fstream &fi, ability_base *a) ;
+    string_type extract_lvl_ranks(std::fstream &fi, ability_base *a) ;
 
-    spells_base _abilities ;
+    map_type _abilities ;
 };
 

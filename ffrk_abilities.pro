@@ -19,13 +19,6 @@ SOURCES += main.cpp\
     base/spell_parser.cpp
 
 HEADERS  += ffrk_abilities.h \
-    black_magic/blm1.h \
-    black_magic/blm2.h \
-    black_magic/blm3.h \
-    black_magic/blm4.h \
-    black_magic/blm5.h \
-    black_magic/blm6.h \
-    black_magic/blm_spells.h \
     base/ability_base.h \
     base/orb_base.h \
     base/spells_base.h \

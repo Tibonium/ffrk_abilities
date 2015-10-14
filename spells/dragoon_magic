@@ -1,34 +1,34 @@
-Ability: Dragoon
+Class: Dragoon
 Name: Jump
 Rank: 2
 Orb_Types: [Power, Lightning, Wind]
 Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Dragoon
+Class: Dragoon
 Name: Wind Jump
 Rank: 3
 Orb_Types: [Power, Non-Elem, Wind]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Dragoon
+Class: Dragoon
 Name: Ice Jump
 Rank: 3
 Orb_Types: [Power, Non-Elem, Ice]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Dragoon
+Class: Dragoon
 Name: Lightning Jump
 Rank: 3
 Orb_Types: [Power, Non-Elem, Lightning]
 Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]
 
-Ability: Dragoon
+Class: Dragoon
 Name: Mighty Jump
 Rank: 4
 Orb_Types: [Power, Non-Elem, Wind]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Ranks: [5, 3, 3]
+Lvl_Schema: [5, 3, 3]

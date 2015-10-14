@@ -79,90 +79,105 @@ void ffrk_abilities::on_ability_button_pressed()
     spell_parser p ;
 
     std::string file = _filepath + "black_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _black = p.abilities() ;
     _ability_count = _black.size() ;
     _ability_list.push_back( _black ) ;
 
     file = _filepath + "white_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _white = p.abilities() ;
     _ability_count += _white.size() ;
     _ability_list.push_back( _white ) ;
 
     file = _filepath + "summon_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _summon = p.abilities() ;
     _ability_count += _summon.size() ;
     _ability_list.push_back( _summon ) ;
 
     file = _filepath + "knight_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _knight = p.abilities() ;
     _ability_count += _knight.size() ;
     _ability_list.push_back( _knight ) ;
 
     file = _filepath + "ninja_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _ninja = p.abilities() ;
     _ability_count += _ninja.size() ;
     _ability_list.push_back( _ninja ) ;
 
     file = _filepath + "thief_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _thief = p.abilities() ;
     _ability_count += _thief.size() ;
     _ability_list.push_back( _thief ) ;
 
     file = _filepath + "samurai_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _samurai = p.abilities() ;
     _ability_count += _samurai.size() ;
     _ability_list.push_back( _samurai ) ;
 
     file = _filepath + "dancer_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _dancer = p.abilities() ;
     _ability_count += _dancer.size() ;
     _ability_list.push_back( _dancer ) ;
 
     file = _filepath + "bard_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _bard = p.abilities() ;
     _ability_count += _bard.size() ;
     _ability_list.push_back( _bard ) ;
 
     file = _filepath + "spellblade_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _spellblade = p.abilities() ;
     _ability_count += _spellblade.size() ;
     _ability_list.push_back( _spellblade ) ;
 
     file = _filepath + "celerity_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _celerity = p.abilities() ;
     _ability_count += _celerity.size() ;
     _ability_list.push_back( _celerity ) ;
 
     file = _filepath + "support_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _support = p.abilities() ;
     _ability_count += _support.size() ;
     _ability_list.push_back( _support ) ;
 
     file = _filepath + "dragoon_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _dragoon = p.abilities() ;
     _ability_count += _dragoon.size() ;
     _ability_list.push_back( _dragoon ) ;
 
     file = _filepath + "combat_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _combat = p.abilities() ;
     _ability_count += _combat.size() ;
     _ability_list.push_back( _combat ) ;
 
     file = _filepath + "monk_magic" ;
+    std::cout << file << std::endl ;
     p.parse_file(file.c_str()) ;
     _monk = p.abilities() ;
     _ability_count += _monk.size() ;

@@ -40,7 +40,7 @@ public:
      * See orb_base and orb_counts for specific requirements on naming and
      * meaning.
      */
-    int parse_file(const char* filename) ;
+    string_type parse_file(const char* filename) ;
 
     /**
      * Returns a pointer to the list of spells parsed from file

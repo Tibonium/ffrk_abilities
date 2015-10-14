@@ -11,9 +11,16 @@ spell_parser::~spell_parser()
 
 }
 
-int spell_parser::parse_file(const char *filename)
+spell_parser::string_type
+spell_parser::parse_file(const char *filename)
 {
     std::fstream fi( filename ) ;
+    if( !fi.good() ) {
+        string_type tmp = filename ;
+        tmp += ": " ;
+        tmp += std::strerror(errno) ;
+        return tmp ;
+    }
     _abilities.clear() ;
     string_type result ;
     _line_number = 0 ;
@@ -28,10 +35,10 @@ int spell_parser::parse_file(const char *filename)
         if( !result.empty() ) {
             std::cout << "Error in spell file [" << filename << "] on line:"
                       << _line_number << ", " << result << std::endl ;
-            return -1 ;
+            return string_type() ;
         }
     }
-    return 1 ;
+    return string_type() ;
 }
 
 spell_parser::string_type

@@ -77,108 +77,169 @@ void ffrk_abilities::on_ability_button_pressed()
 
     // Setup the parser
     spell_parser p ;
+    QMessageBox msg ;
 
     std::string file = _filepath + "black_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    std::string t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _black = p.abilities() ;
     _ability_count = _black.size() ;
     _ability_list.push_back( _black ) ;
 
     file = _filepath + "white_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _white = p.abilities() ;
     _ability_count += _white.size() ;
     _ability_list.push_back( _white ) ;
 
     file = _filepath + "summon_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _summon = p.abilities() ;
     _ability_count += _summon.size() ;
     _ability_list.push_back( _summon ) ;
 
     file = _filepath + "knight_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _knight = p.abilities() ;
     _ability_count += _knight.size() ;
     _ability_list.push_back( _knight ) ;
 
     file = _filepath + "ninja_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _ninja = p.abilities() ;
     _ability_count += _ninja.size() ;
     _ability_list.push_back( _ninja ) ;
 
     file = _filepath + "thief_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _thief = p.abilities() ;
     _ability_count += _thief.size() ;
     _ability_list.push_back( _thief ) ;
 
     file = _filepath + "samurai_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _samurai = p.abilities() ;
     _ability_count += _samurai.size() ;
     _ability_list.push_back( _samurai ) ;
 
     file = _filepath + "dancer_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _dancer = p.abilities() ;
     _ability_count += _dancer.size() ;
     _ability_list.push_back( _dancer ) ;
 
     file = _filepath + "bard_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _bard = p.abilities() ;
     _ability_count += _bard.size() ;
     _ability_list.push_back( _bard ) ;
 
     file = _filepath + "spellblade_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _spellblade = p.abilities() ;
     _ability_count += _spellblade.size() ;
     _ability_list.push_back( _spellblade ) ;
 
     file = _filepath + "celerity_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _celerity = p.abilities() ;
     _ability_count += _celerity.size() ;
     _ability_list.push_back( _celerity ) ;
 
     file = _filepath + "support_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _support = p.abilities() ;
     _ability_count += _support.size() ;
     _ability_list.push_back( _support ) ;
 
     file = _filepath + "dragoon_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _dragoon = p.abilities() ;
     _ability_count += _dragoon.size() ;
     _ability_list.push_back( _dragoon ) ;
 
     file = _filepath + "combat_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _combat = p.abilities() ;
     _ability_count += _combat.size() ;
     _ability_list.push_back( _combat ) ;
 
     file = _filepath + "monk_magic" ;
-    std::cout << file << std::endl ;
-    p.parse_file(file.c_str()) ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+        exit(0) ;
+    }
     _monk = p.abilities() ;
     _ability_count += _monk.size() ;
     _ability_list.push_back( _monk ) ;
@@ -204,7 +265,9 @@ void ffrk_abilities::on_ability_button_pressed()
 void ffrk_abilities::on_prob_button_clicked()
 {
     orb_statistics_parser os ;
-    os.parse_file("../../ffrk_abilities/spells/orb_statistics") ;
+    std::string t = _filepath ;
+    t += "orb_statistics" ;
+    os.parse_file( t.c_str() ) ;
     _orb_stamina = os.stamina() ;
     _orb_probability = os.probability() ;
     QColor color ;

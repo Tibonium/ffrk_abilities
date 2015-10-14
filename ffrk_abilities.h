@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSettings>
 #include <QCloseEvent>
+#include <QMessageBox>
 
 #include <map>
 #include "base/spell_parser.h"

@@ -15,9 +15,64 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     _rarity_filter(0),
     _orb_filter(0),
     _max_row(13),
-    _max_col(6)
+    _max_col(6),
+    _orb_stamina(_max_col),
+    _orb_probability(_max_row)
 {
     ui->setupUi(this) ;
+    on_ability_button_pressed() ;
+    _orbs = new int*[_max_row] ;
+    for(int i=0; i<_max_row; ++i) {
+        _orbs[i] = new int[_max_col] ;
+    }
+    setup_orb_table() ;
+    on_prob_button_clicked() ;
+    read_settings() ;
+    _initialized = true ;
+}
+
+/**
+ * Destructor
+ */
+ffrk_abilities::~ffrk_abilities()
+{
+    for(int i=0; i<13; ++i) {
+        delete _orbs[i] ;
+    }
+    delete _orbs ;
+    delete ui;
+}
+
+/**
+ * Adds persistence to application sessions on position and size
+ */
+void ffrk_abilities::closeEvent(QCloseEvent *e)
+{
+    _settings.setValue("position", pos()) ;
+    _settings.setValue("size", size()) ;
+    e->accept() ;
+}
+
+/**
+ * Restores Position and Size of application from previous session
+ */
+void ffrk_abilities::read_settings()
+{
+    if( _settings.contains("position") )
+        move( _settings.value("position").toPoint() ) ;
+    if( _settings.contains("size") )
+        resize( _settings.value("size").toSize() ) ;
+}
+
+/**
+ * Reloads the abilities into the table
+ */
+void ffrk_abilities::on_ability_button_pressed()
+{
+    // Clear the table first
+    ui->ability_table->setRowCount( 0 ) ;
+
+    // Setup the parser
     spell_parser p ;
 
     p.parse_file("../../ffrk_abilities/spells/black_magic") ;
@@ -105,58 +160,65 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     _ability_count += _spellblade.size() ;
     _ability_list.push_back( _spellblade ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/blue_magic") ;
-    _blue = p.abilities() ;
-    _ability_count += _blue.size() ;
-    _ability_list.push_back( _blue ) ;
+//    p.parse_file("../../ffrk_abilities/spells/blue_magic") ;
+//    _blue = p.abilities() ;
+//    _ability_count += _blue.size() ;
+//    _ability_list.push_back( _blue ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/engineer_magic") ;
-    _engineer = p.abilities() ;
-    _ability_count += _engineer.size() ;
-    _ability_list.push_back( _engineer ) ;
-
+//    p.parse_file("../../ffrk_abilities/spells/engineer_magic") ;
+//    _engineer = p.abilities() ;
+//    _ability_count += _engineer.size() ;
+//    _ability_list.push_back( _engineer ) ;
 
     populate_ability_table() ;
-    setup_orb_table() ;
-    _orbs = new int*[_max_row] ;
+}
+
+/**
+ * Loads the probability and stamina tables
+ */
+void ffrk_abilities::on_prob_button_clicked()
+{
+    orb_statistics_parser os ;
+    os.parse_file("../../ffrk_abilities/spells/orb_statistics") ;
+    _orb_stamina = os.stamina() ;
+    _orb_probability = os.probability() ;
+    QColor color ;
     for(int i=0; i<_max_row; ++i) {
-        _orbs[i] = new int[_max_col] ;
+        if( _orb_probability[i] > 0 ) {
+            color = Qt::green ;
+        } else {
+            color = Qt::white ;
+        }
+        for(int j=0; j<_max_col; ++j) {
+            ui->orb_table->item(i,j)->setBackgroundColor(color) ;
+        }
     }
-    read_settings() ;
-    _initialized = true ;
+    update_stamina_cost() ;
 }
 
 /**
- * Destructor
+ * Updates the estimated amount of stamina needed to obtain all orbs
+ * computed from the provided <orb_statistics> file
  */
-ffrk_abilities::~ffrk_abilities()
+void ffrk_abilities::update_stamina_cost()
 {
-    for(int i=0; i<13; ++i) {
-        delete _orbs[i] ;
+    if( _initialized ) {
+        double stam = 0 ;
+        for(int i=0; i<_max_row; ++i) {
+            if( _orb_probability[i] <= 0 ) continue ;
+            for(int j=0; j<_max_col; ++j) {
+                double tmp = _orbs[i][j] ;
+                tmp *= _orb_stamina[j] ;
+                tmp /= _orb_probability[i] ;
+                stam += tmp ;
+            }
+        }
+        std::string tmp("Stamina needed (est.): ") ;
+        std::stringstream oss ;
+        oss << stam ;
+        tmp += oss.str() ;
+        ui->stamina_cost->setText( tmp.c_str() ) ;
     }
-    delete _orbs ;
-    delete ui;
-}
-
-/**
- * Adds persistence to application sessions on position and size
- */
-void ffrk_abilities::closeEvent(QCloseEvent *e)
-{
-    _settings.setValue("position", pos()) ;
-    _settings.setValue("size", size()) ;
-    e->accept() ;
-}
-
-/**
- * Restores Position and Size of application from previous session
- */
-void ffrk_abilities::read_settings()
-{
-    if( _settings.contains("position") )
-        move( _settings.value("position").toPoint() ) ;
-    if( _settings.contains("size") )
-        resize( _settings.value("size").toSize() ) ;
 }
 
 /**
@@ -179,12 +241,16 @@ void ffrk_abilities::populate_ability_table()
             name->setFlags( name->flags() ^ Qt::ItemIsEditable ) ;
             ui->ability_table->setItem(count, ability_table_item::NAME, name) ;
             ui->ability_table->setItem(count, ability_table_item::COUNT, new QTableWidgetItem() ) ;
+            ui->ability_table->setItem(count, ability_table_item::HONE, new QTableWidgetItem() ) ;
             ui->ability_table->setItem(count, ability_table_item::RANK, new QTableWidgetItem() ) ;
             It++ ;
-            ui->ability_table->setRowHidden(count++, true) ;
+            count++ ;
         }
         listIt++ ;
     }
+    ui->ability_table->resizeColumnsToContents() ;
+    ui->ability_table->horizontalHeader()->stretchLastSection() ;
+    update_ability_table() ;
 }
 
 /**
@@ -195,6 +261,7 @@ void ffrk_abilities::setup_orb_table()
     for(int i=0; i<_max_row; ++i) {
         for(int j=0; j<_max_col; ++j) {
             ui->orb_table->setItem(i, j, new QTableWidgetItem()) ;
+            _orbs[i][j] = 0 ;
         }
     }
 }
@@ -207,17 +274,14 @@ void ffrk_abilities::update_ability_table()
     int size = ui->ability_table->rowCount() ;
     for(int i=0; i<size; ++i) {
         ability_base* _curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(i, ability_table_item::NAME))->ability() ;
-        if( (_curr->_class & _class_filter)
-        &&  ((_curr->_rarity & _rarity_filter) || _rarity_filter == 0)
-        &&  (check_types::has_orb_type(_curr, _orb_filter) || _orb_filter == 0) )
+        if( (_curr->_class & _class_filter) && ((_curr->_rarity & _rarity_filter) || _rarity_filter == 0)
+             && (check_types::has_orb_type(_curr, _orb_filter) || _orb_filter == 0) )
         {
             ui->ability_table->setRowHidden(i, false) ;
         } else {
             ui->ability_table->setRowHidden(i, true) ;
         }
     }
-    ui->ability_table->resizeColumnsToContents() ;
-    ui->ability_table->horizontalHeader()->stretchLastSection() ;
 }
 
 /**
@@ -530,7 +594,7 @@ void ffrk_abilities::on_ability_table_cellChanged(int row, int column)
     ability_map::iterator FindIt = _cumulative_orbs.find( _curr->ability()->_name ) ;
     ability_map::iterator It_end = _cumulative_orbs.end() ;
     if( FindIt != It_end ) {
-        if( data.toInt() == 0 || data.isEmpty() ) {
+        if( (data.toInt() == 0 || data.isEmpty()) && column != ability_table_item::RANK ) {
             _cumulative_orbs.erase( FindIt ) ;
             ui->ability_table->item(row, column)->setText( QString() ) ;
         } else {
@@ -539,8 +603,19 @@ void ffrk_abilities::on_ability_table_cellChanged(int row, int column)
             } else
             if( column == ability_table_item::RANK ) {
                 int value = data.toInt() ;
-                if( 5 < value ) value = 5 ;
+                if( 5 < value ) {
+                    ui->ability_table->item(row, column)->setText( QString::number(value) ) ;
+                    value = 5 ;
+                }
                 FindIt->second._rank = value ;
+            } else
+            if( column == ability_table_item::HONE ) {
+                int value = data.toInt() ;
+                if( 5 < value ) {
+                    ui->ability_table->item(row, column)->setText( QString::number(value) ) ;
+                    value = 5 ;
+                }
+                FindIt->second._hone = value ;
             }
         }
     } else {
@@ -549,16 +624,23 @@ void ffrk_abilities::on_ability_table_cellChanged(int row, int column)
             o._ability = _curr->ability() ;
             o._number = 0 ;
             o._rank = 0 ;
+            o._hone = 0 ;
             if( column == ability_table_item::COUNT ) {
                 o._number = ui->ability_table->item(row, ability_table_item::COUNT)->text().toInt() ;
             } else
             if( column == ability_table_item::RANK ) {
                 o._rank = ui->ability_table->item(row, ability_table_item::RANK)->text().toInt() ;
+            } else
+            if( column == ability_table_item::HONE ) {
+                o._rank = ui->ability_table->item(row, ability_table_item::HONE)->text().toInt() ;
             }
             _cumulative_orbs.insert( std::make_pair( o._ability->_name, o) ) ;
             return ;
         } else {
-            if( column == ability_table_item::COUNT || column == ability_table_item::RANK ) {
+            if( column == ability_table_item::COUNT
+             || column == ability_table_item::RANK
+             || column == ability_table_item::HONE )
+            {
                 ui->ability_table->item(row, column)->setText( QString() ) ;
             }
         }
@@ -597,7 +679,13 @@ void ffrk_abilities::update_orb_table()
             int multiplier = It->second._number ;
             int s = int(*count) ;
             int r = It->second._rank - 1 ;
-            _orbs[row][column] += (multiplier * _ranks.num_orbs(s, r)) ;
+            int rh = It->second._hone - 1 ;
+            if( rh < 0 ) rh = 0 ;
+            if( r < 1 ) {
+                _orbs[row][column] += (multiplier * _ranks.num_orbs(s,rh)) ;
+            } else {
+                _orbs[row][column] += (multiplier * (_ranks.num_orbs(s,rh) - _ranks.num_orbs(s, r))) ;
+            }
             rare++ ;
             types++ ;
             count++ ;
@@ -614,4 +702,5 @@ void ffrk_abilities::update_orb_table()
             }
         }
     }
+    update_stamina_cost() ;
 }

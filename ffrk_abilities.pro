@@ -16,15 +16,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         ffrk_abilities.cpp \
-    base/spell_parser.cpp
+    base/spell_parser.cpp \
+    base/orb_statistics_parser.cpp
 
 HEADERS  += ffrk_abilities.h \
     base/ability_base.h \
     base/orb_base.h \
-    base/spells_base.h \
     base/spell_parser.h \
     ability_table_entry.h \
     base/orb_ranks.h \
+    base/orb_statistics_parser.h
 
 FORMS    += ffrk_abilities.ui
 

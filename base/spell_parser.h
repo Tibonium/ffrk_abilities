@@ -67,5 +67,7 @@ private:
     string_type extract_lvl_ranks(std::fstream &fi, ability_base *a) ;
 
     map_type _abilities ;
+
+    int _line_number ;
 };
 

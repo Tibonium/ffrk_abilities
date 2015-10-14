@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>715</width>
-    <height>645</height>
+    <width>827</width>
+    <height>626</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -333,29 +333,59 @@
       </layout>
      </item>
      <item>
-      <widget class="QTableWidget" name="ability_table">
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Rank</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Count</string>
-        </property>
-       </column>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0" colspan="2">
+        <widget class="QTableWidget" name="ability_table">
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Rank</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Hone</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Count</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="ability_button">
+         <property name="text">
+          <string>Reload Abilities</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="prob_button">
+         <property name="text">
+          <string>Reload Probabilities</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QLabel" name="stamina_cost">
+         <property name="text">
+          <string>Stamina needed (est.):</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
@@ -511,6 +541,9 @@
   <zorder>earth_orb_cb</zorder>
   <zorder>non_elem_orb_cb</zorder>
   <zorder>blue_orb_cb</zorder>
+  <zorder>prob_button</zorder>
+  <zorder>ability_button</zorder>
+  <zorder>stamina_cost</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

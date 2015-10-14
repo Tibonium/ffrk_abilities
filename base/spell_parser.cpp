@@ -1,6 +1,7 @@
 #include "spell_parser.h"
 
 spell_parser::spell_parser()
+    : _line_number(0)
 {
 
 }
@@ -15,18 +16,18 @@ int spell_parser::parse_file(const char *filename)
     std::fstream fi( filename ) ;
     _abilities.clear() ;
     string_type result ;
-    int count = 0 ;
+    _line_number = 0 ;
     while( true ) {
         std::string line ;
         std::getline(fi, line) ;
-        count++ ;
+        _line_number++ ;
         if( fi.eof() ) break ;
         if(line.substr(0,5) == "Class") {
             result = parse_ability( line, fi ) ;
         }
         if( !result.empty() ) {
             std::cout << "Error in spell file [" << filename << "] on line:"
-                      << count << ", " << result << std::endl ;
+                      << _line_number << ", " << result << std::endl ;
             return -1 ;
         }
     }
@@ -61,6 +62,7 @@ void spell_parser::extract_name(std::fstream &fi, ability_base *a)
 {
     std::string line ;
     std::getline(fi, line) ;
+    _line_number++ ;
     if( line.substr(0,4) == "Name" ) {
         a->_name = line.substr(5) ;
     }
@@ -72,6 +74,7 @@ spell_parser::extract_rank(std::fstream &fi, ability_base *a)
     std::string line, tmprank ;
     std::stringstream iss ;
     std::getline(fi, line) ;
+    _line_number++ ;
     iss << line ;
     iss >> line ;
     if( line.substr(0,4) == "Rank" ) {
@@ -95,7 +98,7 @@ spell_parser::extract_rank(std::fstream &fi, ability_base *a)
         if( tmprank == "6" ) {
             _type = STAR_6 ;
         } else {
-            return std::string("Unknown Rarity: " + _type) ;
+            return string_type(" Unknown Rarity: " + _type) ;
         }
         a->_rarity = _type ;
     }
@@ -108,6 +111,7 @@ spell_parser::extract_orb_types(std::fstream &fi, ability_base *a)
     std::string line, type ;
     std::stringstream iss ;
     std::getline(fi, line) ;
+    _line_number++ ;
     if( line.substr(4,4) == "Type" ) {
         std::stringstream iss2 ;
         iss2 << line.substr(line.find('[')+1) ;
@@ -173,7 +177,7 @@ spell_parser::extract_orb_types(std::fstream &fi, ability_base *a)
                 _type = BLUE ;
                 _code = CBLUE ;
             } else {
-                return string_type("Unknown Orb Type: " + type) ;
+                return string_type(" Unknown Orb Type: " + type) ;
             }
             a->_types.push_back( _type ) ;
             a->_type_code.push_back( _code ) ;
@@ -188,6 +192,7 @@ spell_parser::extract_orb_ranks(std::fstream &fi, ability_base *a)
     std::string line, type ;
     std::stringstream iss ;
     std::getline(fi, line) ;
+    _line_number++ ;
     if( line.substr(4,4) == "Rank" ) {
         std::stringstream iss2 ;
         iss2 << line.substr(line.find('[')+1) ;
@@ -218,7 +223,7 @@ spell_parser::extract_orb_ranks(std::fstream &fi, ability_base *a)
             if( type == "Crystal" ) {
                 _type = CRYSTAL ;
             } else {
-                return string_type("Unknown Orb Rank: " + type ) ;
+                return string_type(" Unknown Orb Rank: " + type ) ;
             }
             a->_rare.push_back( _type ) ;
         }
@@ -232,6 +237,7 @@ spell_parser::extract_lvl_ranks(std::fstream &fi, ability_base *a)
     std::string line, type ;
     std::stringstream iss ;
     std::getline(fi, line) ;
+    _line_number++ ;
     if( line.substr(0,3) == "Lvl" ) {
         std::stringstream iss2 ;
         iss2 << line.substr(line.find('[')+1) ;
@@ -292,7 +298,7 @@ spell_parser::extract_lvl_ranks(std::fstream &fi, ability_base *a)
             if( type == "15" ) {
                 _type = RANK_15 ;
             } else {
-                return string_type("Unknown Level Rank: " + type) ;
+                return string_type(" Unknown Level Schema: " + type) ;
             }
             a->_counts.push_back( _type ) ;
         }
@@ -359,7 +365,7 @@ spell_parser::determine_ability_class(std::string line, ability_base *a)
     if( acl == "Blue" ) {
         a->_class = BLU ;
     } else {
-        return string_type("Unknown Ability Class: " + acl) ;
+        return string_type(" Unknown Ability Class: " + acl) ;
     }
     return string_type() ;
 }

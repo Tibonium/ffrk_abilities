@@ -8,6 +8,7 @@
 #include <map>
 #include "base/spell_parser.h"
 #include "ability_table_entry.h"
+#include "base/orb_statistics_parser.h"
 
 namespace Ui {
 class ffrk_abilities;
@@ -88,6 +89,10 @@ private slots:
 
     void on_blue_orb_cb_clicked();
 
+    void on_ability_button_pressed();
+
+    void on_prob_button_clicked();
+
 private:
     typedef spell_parser::map_type     spell_map ;
 
@@ -131,6 +136,7 @@ private:
     struct orb_data {
         ability_base *_ability ;
         int _rank ;
+        int _hone ;
         int _number ;
     };
 
@@ -139,6 +145,9 @@ private:
     int **_orbs ;
     int _max_row ;
     int _max_col ;
+    orb_statistics_parser::container_type _orb_stamina ;
+    orb_statistics_parser::container_type _orb_probability ;
+    void update_stamina_cost() ;
 
     void update_orb_table() ;
 };

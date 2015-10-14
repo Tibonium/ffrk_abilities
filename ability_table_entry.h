@@ -10,7 +10,8 @@ public:
     typedef enum {
         NAME  = 0,
         RANK  = 1,
-        COUNT = 2
+        HONE  = 2,
+        COUNT = 3
     } column_num ;
 
     ability_table_item(std::string data, ability_base* a=0)

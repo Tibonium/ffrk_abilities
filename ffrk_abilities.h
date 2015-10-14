@@ -100,6 +100,7 @@ private:
 
     QSettings _settings ;
     void read_settings() ;
+    std::string _filepath ;
     bool _initialized ;
 
     std::list<spell_map> _ability_list ;

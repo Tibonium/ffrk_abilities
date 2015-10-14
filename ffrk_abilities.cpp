@@ -8,6 +8,7 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ffrk_abilities),
     _settings("Tibonium Inc.", "FFRK Ability Orb Calculator"),
+    _filepath(),
     _initialized(false),
     _ability_count(0),
     _ranks(),
@@ -20,6 +21,8 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     _orb_probability(_max_row)
 {
     ui->setupUi(this) ;
+    std::fstream file("ffrk_ability_config") ;
+    std::getline(file, _filepath) ;
     on_ability_button_pressed() ;
     _orbs = new int*[_max_row] ;
     for(int i=0; i<_max_row; ++i) {
@@ -75,92 +78,91 @@ void ffrk_abilities::on_ability_button_pressed()
     // Setup the parser
     spell_parser p ;
 
-    std::string filepath = "../../ffrk_abilities/spells/" ;
-    std::string file = filepath + "black_magic" ;
+    std::string file = _filepath + "black_magic" ;
     p.parse_file(file.c_str()) ;
     _black = p.abilities() ;
     _ability_count = _black.size() ;
     _ability_list.push_back( _black ) ;
 
-    file = filepath + "white_magic" ;
+    file = _filepath + "white_magic" ;
     p.parse_file(file.c_str()) ;
     _white = p.abilities() ;
     _ability_count += _white.size() ;
     _ability_list.push_back( _white ) ;
 
-    file = filepath + "summon_magic" ;
+    file = _filepath + "summon_magic" ;
     p.parse_file(file.c_str()) ;
     _summon = p.abilities() ;
     _ability_count += _summon.size() ;
     _ability_list.push_back( _summon ) ;
 
-    file = filepath + "knight_magic" ;
+    file = _filepath + "knight_magic" ;
     p.parse_file(file.c_str()) ;
     _knight = p.abilities() ;
     _ability_count += _knight.size() ;
     _ability_list.push_back( _knight ) ;
 
-    file = filepath + "ninja_magic" ;
+    file = _filepath + "ninja_magic" ;
     p.parse_file(file.c_str()) ;
     _ninja = p.abilities() ;
     _ability_count += _ninja.size() ;
     _ability_list.push_back( _ninja ) ;
 
-    file = filepath + "thief_magic" ;
+    file = _filepath + "thief_magic" ;
     p.parse_file(file.c_str()) ;
     _thief = p.abilities() ;
     _ability_count += _thief.size() ;
     _ability_list.push_back( _thief ) ;
 
-    file = filepath + "samurai_magic" ;
+    file = _filepath + "samurai_magic" ;
     p.parse_file(file.c_str()) ;
     _samurai = p.abilities() ;
     _ability_count += _samurai.size() ;
     _ability_list.push_back( _samurai ) ;
 
-    file = filepath + "dancer_magic" ;
+    file = _filepath + "dancer_magic" ;
     p.parse_file(file.c_str()) ;
     _dancer = p.abilities() ;
     _ability_count += _dancer.size() ;
     _ability_list.push_back( _dancer ) ;
 
-    file = filepath + "bard_magic" ;
+    file = _filepath + "bard_magic" ;
     p.parse_file(file.c_str()) ;
     _bard = p.abilities() ;
     _ability_count += _bard.size() ;
     _ability_list.push_back( _bard ) ;
 
-    file = filepath + "spellblade_magic" ;
+    file = _filepath + "spellblade_magic" ;
     p.parse_file(file.c_str()) ;
     _spellblade = p.abilities() ;
     _ability_count += _spellblade.size() ;
     _ability_list.push_back( _spellblade ) ;
 
-    file = filepath + "celerity_magic" ;
+    file = _filepath + "celerity_magic" ;
     p.parse_file(file.c_str()) ;
     _celerity = p.abilities() ;
     _ability_count += _celerity.size() ;
     _ability_list.push_back( _celerity ) ;
 
-    file = filepath + "support_magic" ;
+    file = _filepath + "support_magic" ;
     p.parse_file(file.c_str()) ;
     _support = p.abilities() ;
     _ability_count += _support.size() ;
     _ability_list.push_back( _support ) ;
 
-    file = filepath + "dragoon_magic" ;
+    file = _filepath + "dragoon_magic" ;
     p.parse_file(file.c_str()) ;
     _dragoon = p.abilities() ;
     _ability_count += _dragoon.size() ;
     _ability_list.push_back( _dragoon ) ;
 
-    file = filepath + "combat_magic" ;
+    file = _filepath + "combat_magic" ;
     p.parse_file(file.c_str()) ;
     _combat = p.abilities() ;
     _ability_count += _combat.size() ;
     _ability_list.push_back( _combat ) ;
 
-    file = filepath + "monk_magic" ;
+    file = _filepath + "monk_magic" ;
     p.parse_file(file.c_str()) ;
     _monk = p.abilities() ;
     _ability_count += _monk.size() ;

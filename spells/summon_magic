@@ -97,7 +97,7 @@ Orb_Ranks: [Greater, Greater, Major, Greater]
 Lvl_Schema: [5, 5, 1, 3C]
 
 Class: Summon
-Name: Quetzalcatl
+Name: Quetzalcoatl
 Rank: 4
 Orb_Types: [Summon, Non-Elem, Lightning, Lightning]
 Orb_Ranks: [Greater, Greater, Greater, Major]

@@ -75,97 +75,105 @@ void ffrk_abilities::on_ability_button_pressed()
     // Setup the parser
     spell_parser p ;
 
-    p.parse_file("../../ffrk_abilities/spells/black_magic") ;
+    std::string filepath = "../../ffrk_abilities/spells/" ;
+    std::string file = filepath + "black_magic" ;
+    p.parse_file(file.c_str()) ;
     _black = p.abilities() ;
     _ability_count = _black.size() ;
     _ability_list.push_back( _black ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/white_magic") ;
+    file = filepath + "white_magic" ;
+    p.parse_file(file.c_str()) ;
     _white = p.abilities() ;
     _ability_count += _white.size() ;
     _ability_list.push_back( _white ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/summon_magic") ;
+    file = filepath + "summon_magic" ;
+    p.parse_file(file.c_str()) ;
     _summon = p.abilities() ;
     _ability_count += _summon.size() ;
     _ability_list.push_back( _summon ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/knight_magic") ;
+    file = filepath + "knight_magic" ;
+    p.parse_file(file.c_str()) ;
     _knight = p.abilities() ;
     _ability_count += _knight.size() ;
     _ability_list.push_back( _knight ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/ninja_magic") ;
+    file = filepath + "ninja_magic" ;
+    p.parse_file(file.c_str()) ;
     _ninja = p.abilities() ;
     _ability_count += _ninja.size() ;
     _ability_list.push_back( _ninja ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/thief_magic") ;
+    file = filepath + "thief_magic" ;
+    p.parse_file(file.c_str()) ;
     _thief = p.abilities() ;
     _ability_count += _thief.size() ;
     _ability_list.push_back( _thief ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/samurai_magic") ;
+    file = filepath + "samurai_magic" ;
+    p.parse_file(file.c_str()) ;
     _samurai = p.abilities() ;
     _ability_count += _samurai.size() ;
     _ability_list.push_back( _samurai ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/dancer_magic") ;
+    file = filepath + "dancer_magic" ;
+    p.parse_file(file.c_str()) ;
     _dancer = p.abilities() ;
     _ability_count += _dancer.size() ;
     _ability_list.push_back( _dancer ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/bard_magic") ;
-    _bard = p.abilities() ;
-    _ability_count += _thief.size() ;
-    _ability_list.push_back( _thief ) ;
-
-    p.parse_file("../../ffrk_abilities/spells/spellblade_magic") ;
-    _spellblade = p.abilities() ;
-    _ability_count += _thief.size() ;
-    _ability_list.push_back( _thief ) ;
-
-    p.parse_file("../../ffrk_abilities/spells/celerity_magic") ;
-    _celerity = p.abilities() ;
-    _ability_count += _celerity.size() ;
-    _ability_list.push_back( _celerity ) ;
-
-    p.parse_file("../../ffrk_abilities/spells/support_magic") ;
-    _support = p.abilities() ;
-    _ability_count += _support.size() ;
-    _ability_list.push_back( _support ) ;
-
-    p.parse_file("../../ffrk_abilities/spells/dragoon_magic") ;
-    _dragoon = p.abilities() ;
-    _ability_count += _dragoon.size() ;
-    _ability_list.push_back( _dragoon ) ;
-
-    p.parse_file("../../ffrk_abilities/spells/combat_magic") ;
-    _combat = p.abilities() ;
-    _ability_count += _combat.size() ;
-    _ability_list.push_back( _combat ) ;
-
-    p.parse_file("../../ffrk_abilities/spells/monk_magic") ;
-    _monk = p.abilities() ;
-    _ability_count += _monk.size() ;
-    _ability_list.push_back( _monk ) ;
-
-    p.parse_file("../../ffrk_abilities/spells/bard_magic") ;
+    file = filepath + "bard_magic" ;
+    p.parse_file(file.c_str()) ;
     _bard = p.abilities() ;
     _ability_count += _bard.size() ;
     _ability_list.push_back( _bard ) ;
 
-    p.parse_file("../../ffrk_abilities/spells/spellblade_magic") ;
+    file = filepath + "spellblade_magic" ;
+    p.parse_file(file.c_str()) ;
     _spellblade = p.abilities() ;
     _ability_count += _spellblade.size() ;
     _ability_list.push_back( _spellblade ) ;
 
-//    p.parse_file("../../ffrk_abilities/spells/blue_magic") ;
+    file = filepath + "celerity_magic" ;
+    p.parse_file(file.c_str()) ;
+    _celerity = p.abilities() ;
+    _ability_count += _celerity.size() ;
+    _ability_list.push_back( _celerity ) ;
+
+    file = filepath + "support_magic" ;
+    p.parse_file(file.c_str()) ;
+    _support = p.abilities() ;
+    _ability_count += _support.size() ;
+    _ability_list.push_back( _support ) ;
+
+    file = filepath + "dragoon_magic" ;
+    p.parse_file(file.c_str()) ;
+    _dragoon = p.abilities() ;
+    _ability_count += _dragoon.size() ;
+    _ability_list.push_back( _dragoon ) ;
+
+    file = filepath + "combat_magic" ;
+    p.parse_file(file.c_str()) ;
+    _combat = p.abilities() ;
+    _ability_count += _combat.size() ;
+    _ability_list.push_back( _combat ) ;
+
+    file = filepath + "monk_magic" ;
+    p.parse_file(file.c_str()) ;
+    _monk = p.abilities() ;
+    _ability_count += _monk.size() ;
+    _ability_list.push_back( _monk ) ;
+
+//    file = filepath + "blue_magic" ;
+//    p.parse_file(file.c_str()) ;
 //    _blue = p.abilities() ;
 //    _ability_count += _blue.size() ;
 //    _ability_list.push_back( _blue ) ;
 
-//    p.parse_file("../../ffrk_abilities/spells/engineer_magic") ;
+//    file = filepath + "engineer_magic" ;
+//    p.parse_file(file.c_str()) ;
 //    _engineer = p.abilities() ;
 //    _ability_count += _engineer.size() ;
 //    _ability_list.push_back( _engineer ) ;

@@ -98,9 +98,9 @@ public:
                 case 12:  // rank_8 {8, 23, 53, 98, 173} -- Base {8, 15, 30, 45, 75}
                     _ranks[i][0] = 8 ;
                     _ranks[i][1] = 23 ;
-                    _ranks[i][2] = 63 ;
-                    _ranks[i][3] = 108 ;
-                    _ranks[i][4] = 183 ;
+                    _ranks[i][2] = 53 ;
+                    _ranks[i][3] = 98 ;
+                    _ranks[i][4] = 173 ;
                     break ;
                 case 13:  // rank_10 {10, 30, 70, 130, 230} -- Base {10, 20, 40, 60, 100}
                     _ranks[i][0] = 10 ;

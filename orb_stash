@@ -1,14 +1,13 @@
-  Type  	Minor  Lesser  Normal  Greater  Major  Crystal
-Power,		0,	   1,	   0,	   2,		1,	   0
-White,		0,	   0,
-Black,,,,,
-Summon,,,,
-Non-Elem,,,,,
-Fire,,,,,
-Ice,,,,,,
-Lightning,,,,,
-Earth,,,,,
-Wind,,,,,
-Holy,,,,,
-Dark,,,,,
-Blue,,,,,
+Power,167,60,55,100,13,0
+White,161,194,47,83,15,0
+Black,88,96,21,42,13,0
+Summon,167,89,88,38,14,0
+Non-Elem,199,262,61,51,12,0
+Fire,192,565,257,27,11,0
+Ice,196,196,126,26,13,0
+Lightning,110,159,182,17,9,0
+Earth,125,590,220,52,5,0
+Wind,127,122,288,36,17,0
+Holy,76,160,332,4,7,0
+Dark,191,429,92,11,11,0
+Blue,0,0,0,0,0,0

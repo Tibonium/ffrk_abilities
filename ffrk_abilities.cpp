@@ -11,6 +11,7 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     _abilities(0),
     _filepath(),
     _initialized(false),
+    _stash_table(0),
     _ranks(),
     _max_row(13),
     _max_col(6),
@@ -19,6 +20,8 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
 {
     ui->setupUi(this) ;
     _abilities = new ability_selector() ;
+    _stash_table = new orb_stash_table() ;
+    _stash_table->add_listener(this) ;
     std::fstream file("ffrk_ability_config") ;
     std::getline(file, _filepath) ;
     on_ability_button_pressed() ;
@@ -40,13 +43,17 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
  */
 ffrk_abilities::~ffrk_abilities()
 {
-    for(int i=0; i<13; ++i) {
+    for(int i=0; i<_max_row; ++i) {
         delete _orbs[i] ;
     }
     delete _orbs ;
     if( _abilities ) {
         delete _abilities ;
         _abilities = 0 ;
+    }
+    if( _stash_table ) {
+        delete _stash_table ;
+        _stash_table = 0 ;
     }
     delete ui ;
 }
@@ -96,10 +103,10 @@ void ffrk_abilities::load_table()
 {
     std::fstream fi("ability_table", std::fstream::in) ;
     if( !fi.good() ) {
-        QMessageBox msg ;
-        msg.setWindowTitle("Error loading table data") ;
-        msg.setText( std::strerror(errno) ) ;
-        msg.exec() ;
+//        QMessageBox msg ;
+//        msg.setWindowTitle("Error loading table data") ;
+//        msg.setText( std::strerror(errno) ) ;
+//        msg.exec() ;
         return ;
     }
     while( true ) {
@@ -257,6 +264,10 @@ void ffrk_abilities::update_orb_table()
                 if( -1 < r ) {
                     value -= _ranks.num_orbs(s,r) ;
                 }
+                value -= _stash_table->stash_count(row, column) ;
+                if( value < 0 ) {
+                    value = 0 ;
+                }
                 _orbs[row][column] += (multiplier * value) ;
                 rare++ ;
                 types++ ;
@@ -361,4 +372,12 @@ void ffrk_abilities::on_ability_table_doubleClicked(const QModelIndex &index)
         default:
             break ;
     }
+}
+
+/**
+ * Displays the Orb stash table
+ */
+void ffrk_abilities::on_show_stash_clicked()
+{
+    _stash_table->unhide() ;
 }

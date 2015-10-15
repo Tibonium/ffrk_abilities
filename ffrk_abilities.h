@@ -10,6 +10,7 @@
 #include "ability_selector.h"
 #include "ability_table_item.h"
 #include "base/orb_statistics_parser.h"
+#include "orb_stash_table.h"
 
 namespace Ui {
 class ffrk_abilities;
@@ -38,17 +39,21 @@ private slots:
 
     void on_ability_table_doubleClicked(const QModelIndex &index);
 
+    void on_show_stash_clicked();
+
 private:
     typedef spell_parser::map_type     spell_map ;
+    friend class orb_stash_table ;
 
     Ui::ffrk_abilities *ui ;
 
-    ability_selector* _abilities ;
     QSettings _settings ;
+    ability_selector* _abilities ;
     void read_settings() ;
     std::string _filepath ;
     bool _initialized ;
     void setup_orb_table() ;
+    orb_stash_table *_stash_table ;
 
     orb_ranks _ranks ;
     int **_orbs ;

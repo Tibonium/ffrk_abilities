@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>orb_stash_table</class>
+ <widget class="QWidget" name="orb_stash_table">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>673</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Orb Stash</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTableWidget" name="stash_table">
+     <row>
+      <property name="text">
+       <string>PWR</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>WHT</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>BLK</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>SMN</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>N-EL</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>FIRE</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>ICE</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>LGTN</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>ERTH</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>WIND</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>HOLY</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>DARK</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>BLUE</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>Minor</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Lesser</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Normal</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Greater</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Major</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Crystal</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

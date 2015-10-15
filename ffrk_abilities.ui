@@ -13,206 +13,224 @@
   <property name="windowTitle">
    <string>FFRK Ability Orb Calculator</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
-   <item row="1" column="0">
-    <widget class="QTableWidget" name="ability_table">
-     <property name="rowCount">
-      <number>0</number>
-     </property>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="verticalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
-     <column>
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Rank</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Hone</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Count</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QTableWidget" name="orb_table">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="rowCount">
-      <number>13</number>
-     </property>
-     <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>31</number>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="verticalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
-     <row>
-      <property name="text">
-       <string>PWR</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>WHT</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>BLK</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>SMN</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>N-EL</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>FIRE</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>ICE</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>LGTN</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>ERTH</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>WIND</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>HOLY</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>DARK</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>BLUE</string>
-      </property>
-     </row>
-     <column>
-      <property name="text">
-       <string>Minor</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Lesser</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Normal</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Greater</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Major</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Crystal</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <widget class="QPushButton" name="ability_button">
-       <property name="text">
-        <string>Reload Abilities</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="prob_button">
-       <property name="text">
-        <string>Reload Statistics</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout">
+  <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QPushButton" name="addRow_button">
-       <property name="text">
-        <string>Add row</string>
+      <widget class="QTableWidget" name="ability_table">
+       <property name="rowCount">
+        <number>0</number>
        </property>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Rank</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Hone</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Count</string>
+        </property>
+       </column>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="removeRow_button">
-       <property name="text">
-        <string>Remove row</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="addRow_button">
+         <property name="text">
+          <string>Add row</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="removeRow_button">
+         <property name="text">
+          <string>Remove row</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="stamina_cost">
-     <property name="text">
-      <string>Stamina needed (est.):</string>
-     </property>
-    </widget>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTableWidget" name="orb_table">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="rowCount">
+        <number>13</number>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>31</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>PWR</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>WHT</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>BLK</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>SMN</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>N-EL</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>FIRE</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>ICE</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>LGTN</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>ERTH</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>WIND</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>HOLY</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>DARK</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>BLUE</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Minor</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Lesser</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Normal</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Greater</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Major</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Crystal</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="QPushButton" name="ability_button">
+         <property name="text">
+          <string>Reload Abilities</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="prob_button">
+         <property name="text">
+          <string>Reload Statistics</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="show_stash">
+         <property name="text">
+          <string>Show Orb Stash</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="stamina_cost">
+         <property name="text">
+          <string>Stamina needed (est.):</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </item>
   </layout>
   <zorder>orb_table</zorder>
   <zorder>ability_table</zorder>
-  <zorder>prob_button</zorder>
-  <zorder>ability_button</zorder>
   <zorder>stamina_cost</zorder>
+  <zorder>show_stash</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

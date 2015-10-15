@@ -21,6 +21,7 @@ typedef enum {
  * Orb Type Enumerations
  */
 typedef enum {
+    UNKNOWN   = -1,
     POWER     = 0,
     WHITE     = 1,
     BLACK     = 2,

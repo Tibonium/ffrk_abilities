@@ -19,7 +19,8 @@ SOURCES += main.cpp\
         ffrk_abilities.cpp \
     base/spell_parser.cpp \
     base/orb_statistics_parser.cpp \
-    ability_selector.cpp
+    ability_selector.cpp \
+    orb_stash_table.cpp
 
 HEADERS  += ffrk_abilities.h \
     base/ability_base.h \
@@ -29,7 +30,9 @@ HEADERS  += ffrk_abilities.h \
     base/orb_statistics_parser.h \
     ability_selector.h \
     ability_list_item.h \
-    ability_table_item.h
+    ability_table_item.h \
+    orb_stash_table.h
 
 FORMS    += ffrk_abilities.ui \
-    ability_selector.ui
+    ability_selector.ui \
+    orb_stash_table.ui

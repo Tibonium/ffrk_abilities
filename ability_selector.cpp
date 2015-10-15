@@ -604,3 +604,21 @@ void ability_selector::on_rarity_filter_currentIndexChanged(int index)
     }
     update_ability_list() ;
 }
+
+/**
+ * Searches for the requested ability
+ */
+ability_base* ability_selector::find_ability(std::string name)
+{
+    std::list<spell_map>::iterator listIt = _ability_list.begin() ;
+    std::list<spell_map>::iterator listIt_end = _ability_list.end() ;
+    while( listIt != listIt_end ) {
+        spell_map::iterator FindIt = listIt->find( name ) ;
+        spell_map::iterator It_end = listIt->end() ;
+        if( FindIt != It_end ) {
+            return &FindIt->second ;
+        }
+        listIt++ ;
+    }
+    return 0 ;
+}

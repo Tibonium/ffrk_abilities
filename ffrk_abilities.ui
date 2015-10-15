@@ -14,7 +14,7 @@
    <string>FFRK Ability Orb Calculator</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
+   <item row="1" column="0">
     <widget class="QTableWidget" name="ability_table">
      <property name="rowCount">
       <number>0</number>
@@ -47,7 +47,7 @@
      </column>
     </widget>
    </item>
-   <item row="0" column="1">
+   <item row="1" column="1">
     <widget class="QTableWidget" name="orb_table">
      <property name="minimumSize">
       <size>
@@ -164,7 +164,25 @@
      </column>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item row="2" column="1">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QPushButton" name="ability_button">
+       <property name="text">
+        <string>Reload Abilities</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="prob_button">
+       <property name="text">
+        <string>Reload Statistics</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="addRow_button">
@@ -182,30 +200,12 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="1">
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0" colspan="2">
-      <widget class="QLabel" name="stamina_cost">
-       <property name="text">
-        <string>Stamina needed (est.):</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QPushButton" name="ability_button">
-       <property name="text">
-        <string>Reload Abilities</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="prob_button">
-       <property name="text">
-        <string>Reload Statistics</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+   <item row="3" column="1">
+    <widget class="QLabel" name="stamina_cost">
+     <property name="text">
+      <string>Stamina needed (est.):</string>
+     </property>
+    </widget>
    </item>
   </layout>
   <zorder>orb_table</zorder>

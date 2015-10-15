@@ -60,7 +60,8 @@ private:
     void update_stamina_cost() ;
 
     void update_orb_table() ;
-
+    void load_table() ;
+    void save_table() ;
 };
 
 #endif // FFRK_ABILITIES_H

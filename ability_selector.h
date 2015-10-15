@@ -29,6 +29,8 @@ public:
         return _focus_ability ;
     }
 
+    ability_base* find_ability(std::string name) ;
+
 private slots:
     void on_ability_list_doubleClicked(const QModelIndex &index) ;
 

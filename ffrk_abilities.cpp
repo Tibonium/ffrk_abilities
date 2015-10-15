@@ -30,6 +30,8 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     ui->orb_table->verticalHeader()->setHidden(false) ;
     on_prob_button_clicked() ;
     read_settings() ;
+    load_table() ;
+    update_orb_table() ;
     _initialized = true ;
 }
 
@@ -56,7 +58,73 @@ void ffrk_abilities::closeEvent(QCloseEvent *e)
 {
     _settings.setValue("position", pos()) ;
     _settings.setValue("size", size()) ;
+    save_table() ;
     e->accept() ;
+}
+
+/**
+ * Saves the current table for persistence.
+ */
+void ffrk_abilities::save_table()
+{
+    std::fstream of("ability_table", std::fstream::out) ;
+    if( !of.good() ) {
+        QMessageBox msg ;
+        msg.setWindowTitle("Error saving table data") ;
+        msg.setText( std::strerror(errno) ) ;
+        msg.exec() ;
+    }
+    int count( ui->ability_table->rowCount() ) ;
+    for(int i=0; i<count; ++i) {
+        std::string line = ui->ability_table->item(i, ability_table_item::NAME)->text().toLatin1().data() ;
+        line += "," ;
+        line += ui->ability_table->item(i, ability_table_item::RANK)->text().toLatin1().data() ;
+        line += "," ;
+        line += ui->ability_table->item(i, ability_table_item::HONE)->text().toLatin1().data() ;
+        line += "," ;
+        line += ui->ability_table->item(i, ability_table_item::COUNT)->text().toLatin1().data() ;
+        line += "\n" ;
+        of << line ;
+    }
+    of.close() ;
+}
+
+/**
+ * Loads existing table data, if it exists
+ */
+void ffrk_abilities::load_table()
+{
+    std::fstream fi("ability_table", std::fstream::in) ;
+    if( !fi.good() ) {
+        QMessageBox msg ;
+        msg.setWindowTitle("Error loading table data") ;
+        msg.setText( std::strerror(errno) ) ;
+        msg.exec() ;
+        return ;
+    }
+    while( true ) {
+        std::string line ;
+        std::getline(fi, line) ;
+        if( fi.eof() ) break ;
+        std::stringstream iss ;
+        iss << line ;
+        std::string name, rank, hone, count ;
+        std::getline(iss, name, ',') ;
+        std::getline(iss, rank, ',') ;
+        std::getline(iss, hone, ',') ;
+        std::getline(iss, count, ',') ;
+        ability_base* a = _abilities->find_ability(name) ;
+        if( a ) {
+            on_addRow_button_clicked() ;
+            int row = ui->ability_table->rowCount() - 1 ;
+            reinterpret_cast<ability_table_item*>(ui->ability_table->item(row, ability_table_item::NAME))->setAbility(a) ;
+            ui->ability_table->item(row, ability_table_item::NAME)->setText( name.c_str() ) ;
+            ui->ability_table->item(row, ability_table_item::RANK)->setText( rank.c_str() ) ;
+            ui->ability_table->item(row, ability_table_item::HONE)->setText( hone.c_str() ) ;
+            ui->ability_table->item(row, ability_table_item::COUNT)->setText( count.c_str() ) ;
+        }
+    }
+    fi.close() ;
 }
 
 /**
@@ -186,7 +254,7 @@ void ffrk_abilities::update_orb_table()
                 int r = ui->ability_table->item(i, ability_table_item::RANK)->text().toInt() - 1 ;
                 int rh = ui->ability_table->item(i, ability_table_item::HONE)->text().toInt() - 1 ;
                 int value = _ranks.num_orbs(s,rh) ;
-                if( 0 < r ) {
+                if( -1 < r ) {
                     value -= _ranks.num_orbs(s,r) ;
                 }
                 _orbs[row][column] += (multiplier * value) ;
@@ -215,7 +283,6 @@ void ffrk_abilities::update_orb_table()
 void ffrk_abilities::on_addRow_button_clicked()
 {
     ui->ability_table->insertRow( ui->ability_table->rowCount() ) ;
-    std::cout << ui->ability_table << std::endl ;
     int curr_row = ui->ability_table->rowCount() - 1 ;
     ui->ability_table->setItem(curr_row, ability_table_item::COUNT, new QTableWidgetItem(QString("0")) ) ;
     ui->ability_table->setItem(curr_row, ability_table_item::HONE, new QTableWidgetItem(QString("0")) ) ;
@@ -286,7 +353,6 @@ void ffrk_abilities::on_ability_table_doubleClicked(const QModelIndex &index)
                 ability_base *a = _abilities->result() ;
                 if( a != 0 ) {
                     ability_table_item *curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(row, col)) ;
-                    std::cout << typeid(curr).name() << std::endl ;
                     curr->setAbility( a ) ;
                     curr->setText( a->_name.c_str() ) ;
                 }

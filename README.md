@@ -2,7 +2,7 @@
 
 This is a light-weight application that allows the calculation of orbs needed for the abilities in FFRK. The data is stored within flat files and parsed at application runtime.
 
-To use the application, download the <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/windows_build_14_10_2015.zip">Windows</a> or <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/linux_build_14_10_2015.tar.gz">Linux</a> version. After doing so, unpack the files to any folder. Before running the application, you'll need to make sure the filepath for the application is correct. To do this, open the ffrk_ability_config file and change the line to "spells/", save and then close. Then you should be able to open the application.
+To use the application, download the <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/windows_release.zip">Windows</a> or <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/linux_build_14_10_2015.tar.gz">Linux</a> version. After doing so, unpack the files to any folder. Before running the application, you'll need to make sure the filepath for the application is correct. To do this, open the ffrk_ability_config file and change the line to "spells/", save and then close. Then you should be able to open the application.
 
 A few notes about usage. Without going into major depth right now (I plan to have a better ReadMe) in the future, the application runs off of flat files provided in the spells directory. There is a "set of files", the "_magic" files, and then the orb_statistics file.
 
@@ -21,7 +21,7 @@ Schema  Cumulative Count        Base per Rank
 6       {6, 18, 36, 66, 126}    {6, 12, 18, 30, 60}
 6A      {6, 18, 42, 78, 138}    {6, 12, 24, 36, 60}
 6B      {6, 16, 36, 76, 136}    {6, 10, 20, 40, 60}
-8       {8, 23, 63, 108, 183}   {8, 15, 30, 45, 75}
+8       {8, 23, 53, 98, 173}    {8, 15, 30, 45, 75}
 10      {10, 30, 70, 130, 230}  {10, 20, 40, 60, 100}
 10A     {10, 30, 60, 110, 210}  {10, 20, 30, 50, 100}
 15      {15, 45, 90, 165, 315}  {15, 30, 45, 75, 150}

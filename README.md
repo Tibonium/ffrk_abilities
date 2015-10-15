@@ -7,6 +7,8 @@ This is a light-weight application that allows the calculation of orbs needed fo
 
 To use the application, download the <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/windows_release.zip">Windows</a> or <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/linux_release.tar.gz">Linux</a> version. After doing so, unpack the files to any folder. Before running the application, you'll need to make sure the filepath for the application is correct. To do this, open the ffrk_ability_config file and change the line to "spells/", save and then close. Then you should be able to open the application.
 
+* If you're unable to run the application because of an error "Missing MSVCR120.DLL" you can download and install this file [here](https://www.microsoft.com/en-US/download/details.aspx?id=40784). There error should then go away.
+
 A few notes about usage. Without going into major depth right now (I plan to have a better ReadMe) in the future, the application runs off of flat files provided in the spells directory. There is a "set of files", the "_magic" files, and then the orb_statistics file.
 
 The "_magic" files contain the abilities from FFRK. The format should be pretty evident when viewing a single file, and hence you can add any missed ones. Please let me know if I missed any though, as I want to add it to the download files so future people won't have to worry about it. The parser is case sensative and the format is set in stone, so be careful when editing the files. If you do break the parser, you'll receive a notification in the stdout with where and what the file error is, so you can easily find and correct it. Lastly, you'll need to have the definition of the Lvl Schemas, which are provided below:

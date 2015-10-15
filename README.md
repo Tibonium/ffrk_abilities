@@ -1,4 +1,7 @@
 # FFRK Ability Orb Calculator
+![alt-tag](https://cloud.githubusercontent.com/assets/2381953/10517775/70fe4e16-732c-11e5-9ccb-1c4cd12fba3f.png)
+
+![alt-tag](https://cloud.githubusercontent.com/assets/2381953/10517780/7485b93e-732c-11e5-9569-6ddca55d88d8.png)
 
 This is a light-weight application that allows the calculation of orbs needed for the abilities in FFRK. The data is stored within flat files and parsed at application runtime.
 

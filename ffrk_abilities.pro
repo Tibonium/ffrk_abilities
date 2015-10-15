@@ -11,7 +11,8 @@ QMAKE_CXXFLAGS += -std=c++0x
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ffrk_abilities
-QMAKE_EXTRA_TARGETS += ability_selector
+QMAKE_EXTRA_TARGETS += ability_selector \
+                        orb_stash_table
 TEMPLATE = app
 
 

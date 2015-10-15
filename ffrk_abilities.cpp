@@ -8,19 +8,17 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ffrk_abilities),
     _settings("Tibonium Inc.", "FFRK Ability Orb Calculator"),
+    _abilities(0),
     _filepath(),
     _initialized(false),
-    _ability_count(0),
     _ranks(),
-    _class_filter(0),
-    _rarity_filter(0),
-    _orb_filter(0),
     _max_row(13),
     _max_col(6),
     _orb_stamina(_max_col),
     _orb_probability(_max_row)
 {
     ui->setupUi(this) ;
+    _abilities = new ability_selector() ;
     std::fstream file("ffrk_ability_config") ;
     std::getline(file, _filepath) ;
     on_ability_button_pressed() ;
@@ -29,6 +27,7 @@ ffrk_abilities::ffrk_abilities(QWidget *parent) :
         _orbs[i] = new int[_max_col] ;
     }
     setup_orb_table() ;
+    ui->orb_table->verticalHeader()->setHidden(false) ;
     on_prob_button_clicked() ;
     read_settings() ;
     _initialized = true ;
@@ -43,7 +42,11 @@ ffrk_abilities::~ffrk_abilities()
         delete _orbs[i] ;
     }
     delete _orbs ;
-    delete ui;
+    if( _abilities ) {
+        delete _abilities ;
+        _abilities = 0 ;
+    }
+    delete ui ;
 }
 
 /**
@@ -68,220 +71,16 @@ void ffrk_abilities::read_settings()
 }
 
 /**
- * Reloads the abilities into the table
+ * Initializes all of the table cells for the orbs
  */
-void ffrk_abilities::on_ability_button_pressed()
+void ffrk_abilities::setup_orb_table()
 {
-    // Clear the table first
-    ui->ability_table->setRowCount( 0 ) ;
-
-    // Setup the parser
-    spell_parser p ;
-    QMessageBox msg ;
-
-    std::string file = _filepath + "black_magic" ;
-    std::string t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _black = p.abilities() ;
-    _ability_count = _black.size() ;
-    _ability_list.push_back( _black ) ;
-
-    file = _filepath + "white_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _white = p.abilities() ;
-    _ability_count += _white.size() ;
-    _ability_list.push_back( _white ) ;
-
-    file = _filepath + "summon_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _summon = p.abilities() ;
-    _ability_count += _summon.size() ;
-    _ability_list.push_back( _summon ) ;
-
-    file = _filepath + "knight_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _knight = p.abilities() ;
-    _ability_count += _knight.size() ;
-    _ability_list.push_back( _knight ) ;
-
-    file = _filepath + "ninja_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _ninja = p.abilities() ;
-    _ability_count += _ninja.size() ;
-    _ability_list.push_back( _ninja ) ;
-
-    file = _filepath + "thief_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _thief = p.abilities() ;
-    _ability_count += _thief.size() ;
-    _ability_list.push_back( _thief ) ;
-
-    file = _filepath + "samurai_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _samurai = p.abilities() ;
-    _ability_count += _samurai.size() ;
-    _ability_list.push_back( _samurai ) ;
-
-    file = _filepath + "dancer_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _dancer = p.abilities() ;
-    _ability_count += _dancer.size() ;
-    _ability_list.push_back( _dancer ) ;
-
-    file = _filepath + "bard_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _bard = p.abilities() ;
-    _ability_count += _bard.size() ;
-    _ability_list.push_back( _bard ) ;
-
-    file = _filepath + "spellblade_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _spellblade = p.abilities() ;
-    _ability_count += _spellblade.size() ;
-    _ability_list.push_back( _spellblade ) ;
-
-    file = _filepath + "celerity_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _celerity = p.abilities() ;
-    _ability_count += _celerity.size() ;
-    _ability_list.push_back( _celerity ) ;
-
-    file = _filepath + "support_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _support = p.abilities() ;
-    _ability_count += _support.size() ;
-    _ability_list.push_back( _support ) ;
-
-    file = _filepath + "dragoon_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _dragoon = p.abilities() ;
-    _ability_count += _dragoon.size() ;
-    _ability_list.push_back( _dragoon ) ;
-
-    file = _filepath + "combat_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _combat = p.abilities() ;
-    _ability_count += _combat.size() ;
-    _ability_list.push_back( _combat ) ;
-
-    file = _filepath + "monk_magic" ;
-    t = p.parse_file(file.c_str()) ;
-    if( !t.empty() ) {
-        msg.setText( t.c_str() ) ;
-        msg.exec() ;
-        exit(0) ;
-    }
-    _monk = p.abilities() ;
-    _ability_count += _monk.size() ;
-    _ability_list.push_back( _monk ) ;
-
-//    file = filepath + "blue_magic" ;
-//    p.parse_file(file.c_str()) ;
-//    _blue = p.abilities() ;
-//    _ability_count += _blue.size() ;
-//    _ability_list.push_back( _blue ) ;
-
-//    file = filepath + "engineer_magic" ;
-//    p.parse_file(file.c_str()) ;
-//    _engineer = p.abilities() ;
-//    _ability_count += _engineer.size() ;
-//    _ability_list.push_back( _engineer ) ;
-
-    populate_ability_table() ;
-}
-
-/**
- * Loads the probability and stamina tables
- */
-void ffrk_abilities::on_prob_button_clicked()
-{
-    orb_statistics_parser os ;
-    std::string t = _filepath ;
-    t += "orb_statistics" ;
-    os.parse_file( t.c_str() ) ;
-    _orb_stamina = os.stamina() ;
-    _orb_probability = os.probability() ;
-    QColor color ;
     for(int i=0; i<_max_row; ++i) {
-        if( _orb_probability[i] > 0 ) {
-            color = Qt::green ;
-        } else {
-            color = Qt::white ;
-        }
         for(int j=0; j<_max_col; ++j) {
-            ui->orb_table->item(i,j)->setBackgroundColor(color) ;
+            ui->orb_table->setItem(i, j, new QTableWidgetItem()) ;
+            _orbs[i][j] = 0 ;
         }
     }
-    update_stamina_cost() ;
 }
 
 /**
@@ -310,429 +109,46 @@ void ffrk_abilities::update_stamina_cost()
 }
 
 /**
- * Populates the ability table with all of the abilities
- * from the files
- */
-void ffrk_abilities::populate_ability_table()
-{
-    // Set the Maximum number of rows to the number of abilities that
-    // have been added
-    ui->ability_table->setRowCount( _ability_count ) ;
-    std::list<spell_map>::iterator listIt = _ability_list.begin() ;
-    std::list<spell_map>::iterator listIt_end = _ability_list.end() ;
-    int count = 0 ;
-    while( listIt != listIt_end ) {
-        spell_map::iterator It = listIt->begin() ;
-        spell_map::iterator It_end = listIt->end() ;
-        while( It != It_end ) {
-            ability_table_item *name = new ability_table_item(It->second._name, &It->second) ;
-            name->setFlags( name->flags() ^ Qt::ItemIsEditable ) ;
-            ui->ability_table->setItem(count, ability_table_item::NAME, name) ;
-            ui->ability_table->setItem(count, ability_table_item::COUNT, new QTableWidgetItem() ) ;
-            ui->ability_table->setItem(count, ability_table_item::HONE, new QTableWidgetItem() ) ;
-            ui->ability_table->setItem(count, ability_table_item::RANK, new QTableWidgetItem() ) ;
-            It++ ;
-            count++ ;
-        }
-        listIt++ ;
-    }
-    ui->ability_table->resizeColumnsToContents() ;
-    ui->ability_table->horizontalHeader()->stretchLastSection() ;
-    update_ability_table() ;
-}
-
-/**
- * Initializes all of the table cells for the orbs
- */
-void ffrk_abilities::setup_orb_table()
-{
-    for(int i=0; i<_max_row; ++i) {
-        for(int j=0; j<_max_col; ++j) {
-            ui->orb_table->setItem(i, j, new QTableWidgetItem()) ;
-            _orbs[i][j] = 0 ;
-        }
-    }
-}
-
-/**
- * Updates the current table view used for searching
- */
-void ffrk_abilities::update_ability_table()
-{
-    int size = ui->ability_table->rowCount() ;
-    for(int i=0; i<size; ++i) {
-        ability_base* _curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(i, ability_table_item::NAME))->ability() ;
-        if( (_curr->_class & _class_filter) && ((_curr->_rarity & _rarity_filter) || _rarity_filter == 0)
-             && (check_types::has_orb_type(_curr, _orb_filter) || _orb_filter == 0) )
-        {
-            ui->ability_table->setRowHidden(i, false) ;
-        } else {
-            ui->ability_table->setRowHidden(i, true) ;
-        }
-    }
-}
-
-/**
- * Toggles view of Bard abilities
- */
-void ffrk_abilities::on_bard_cb_clicked()
-{
-    _class_filter = _class_filter ^ BRD ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Black Magic abilities
- */
-void ffrk_abilities::on_black_cb_clicked()
-{
-    _class_filter = _class_filter ^ BLM ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Blue Magic abilities
- */
-void ffrk_abilities::on_blue_cb_clicked()
-{
-    _class_filter = _class_filter ^ BLU ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Celerity abilities
- */
-void ffrk_abilities::on_celerity_cb_clicked()
-{
-    _class_filter = _class_filter ^ CEL ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Combat abilities
- */
-void ffrk_abilities::on_combat_cb_clicked()
-{
-    _class_filter = _class_filter ^ CBT ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Dancer abilities
- */
-void ffrk_abilities::on_dance_cb_clicked()
-{
-    _class_filter = _class_filter ^ DNC ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Dragoon abilities
- */
-void ffrk_abilities::on_dragoon_cb_clicked()
-{
-    _class_filter = _class_filter ^ DRG ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Engineer abilities
- */
-void ffrk_abilities::on_engineer_cb_clicked()
-{
-    _class_filter = _class_filter ^ ENG ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Knight abilities
- */
-void ffrk_abilities::on_knight_cb_clicked()
-{
-    _class_filter = _class_filter ^ KNT ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Monk abilities
- */
-void ffrk_abilities::on_monk_cb_clicked()
-{
-    _class_filter = _class_filter ^ MNK ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Ninja abilities
- */
-void ffrk_abilities::on_ninja_cb_clicked()
-{
-    _class_filter = _class_filter ^ NIN ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Samurai abilities
- */
-void ffrk_abilities::on_samurai_cb_clicked()
-{
-    _class_filter = _class_filter ^ SAM ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Spellblade abilities
- */
-void ffrk_abilities::on_spellblade_cb_clicked()
-{
-    _class_filter = _class_filter ^ SPB ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Summoning abilities
- */
-void ffrk_abilities::on_summon_cb_clicked()
-{
-    _class_filter = _class_filter ^ SMN ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Support abilities
- */
-void ffrk_abilities::on_support_cb_clicked()
-{
-    _class_filter = _class_filter ^ SPT ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of Thief abilities
- */
-void ffrk_abilities::on_theif_cb_clicked()
-{
-    _class_filter = _class_filter ^ THF ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of White Magic abilities
- */
-void ffrk_abilities::on_white_cb_clicked()
-{
-    _class_filter = _class_filter ^ WHM ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Power orbs
- */
-void ffrk_abilities::on_power_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CPOWER ;
-    update_ability_table() ;
-}
-/**
- * Toggles view of abilities with White orbs
- */
-void ffrk_abilities::on_white_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CWHITE ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Black orbs
- */
-void ffrk_abilities::on_black_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CBLACK ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Summon orbs
- */
-void ffrk_abilities::on_summon_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CSUMMON ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Non-Elemental orbs
- */
-void ffrk_abilities::on_non_elem_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CNON_ELEM ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Fire orbs
- */
-void ffrk_abilities::on_fire_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CFIRE ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Ice orbs
- */
-void ffrk_abilities::on_ice_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CICE ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Lightning orbs
- */
-void ffrk_abilities::on_lightning_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CLIGHTNING ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Earth orbs
- */
-void ffrk_abilities::on_earth_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CEARTH ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Wind orbs
- */
-void ffrk_abilities::on_wind_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CWIND ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Holy orbs
- */
-void ffrk_abilities::on_holy_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CHOLY ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Dark orbs
- */
-void ffrk_abilities::on_dark_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CDARK ;
-    update_ability_table() ;
-}
-
-/**
- * Toggles view of abilities with Blue orbs
- */
-void ffrk_abilities::on_blue_orb_cb_clicked()
-{
-    _orb_filter = _orb_filter ^ CBLUE ;
-    update_ability_table() ;
-}
-
-/**
- * Filters by ability rarity
- */
-void ffrk_abilities::on_rarity_filter_currentIndexChanged(int index)
-{
-    switch(index) {
-        case 1:
-            _rarity_filter = STAR_1 ;
-            break ;
-        case 2:
-            _rarity_filter = STAR_2 ;
-            break ;
-        case 3:
-            _rarity_filter = STAR_3 ;
-            break ;
-        case 4:
-            _rarity_filter = STAR_4 ;
-            break ;
-        case 5:
-            _rarity_filter = STAR_5 ;
-            break ;
-        case 6:
-            _rarity_filter = STAR_6 ;
-            break ;
-        default:
-            _rarity_filter = 0 ;
-            break ;
-    }
-    update_ability_table() ;
-}
-
-/**
  * Callback when the Ability Table Items have been changed.
  */
 void ffrk_abilities::on_ability_table_cellChanged(int row, int column)
 {
-    ability_table_item* _curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(row, ability_table_item::NAME)) ;
-    QString data = ui->ability_table->item(row,column)->text() ;
-    ability_map::iterator FindIt = _cumulative_orbs.find( _curr->ability()->_name ) ;
-    ability_map::iterator It_end = _cumulative_orbs.end() ;
-    if( FindIt != It_end ) {
-        if( (data.toInt() == 0 || data.isEmpty()) && column != ability_table_item::RANK ) {
-            _cumulative_orbs.erase( FindIt ) ;
-            ui->ability_table->item(row, column)->setText( QString() ) ;
-        } else {
-            if( column == ability_table_item::COUNT ) {
-                FindIt->second._number = data.toInt() ;
-            } else
-            if( column == ability_table_item::RANK ) {
-                int value = data.toInt() ;
-                if( 5 < value ) {
-                    ui->ability_table->item(row, column)->setText( QString::number(value) ) ;
-                    value = 5 ;
-                }
-                FindIt->second._rank = value ;
-            } else
-            if( column == ability_table_item::HONE ) {
-                int value = data.toInt() ;
-                if( 5 < value ) {
-                    ui->ability_table->item(row, column)->setText( QString::number(value) ) ;
-                    value = 5 ;
-                }
-                FindIt->second._hone = value ;
-            }
-        }
-    } else {
-        if( data.toInt() != 0 && !data.isEmpty() ) {
-            orb_data o ;
-            o._ability = _curr->ability() ;
-            o._number = 0 ;
-            o._rank = 0 ;
-            o._hone = 0 ;
-            if( column == ability_table_item::COUNT ) {
-                o._number = ui->ability_table->item(row, ability_table_item::COUNT)->text().toInt() ;
-            } else
-            if( column == ability_table_item::RANK ) {
-                o._rank = ui->ability_table->item(row, ability_table_item::RANK)->text().toInt() ;
-            } else
-            if( column == ability_table_item::HONE ) {
-                o._rank = ui->ability_table->item(row, ability_table_item::HONE)->text().toInt() ;
-            }
-            _cumulative_orbs.insert( std::make_pair( o._ability->_name, o) ) ;
-            return ;
-        } else {
-            if( column == ability_table_item::COUNT
-             || column == ability_table_item::RANK
-             || column == ability_table_item::HONE )
+    QTableWidgetItem* curr = ui->ability_table->item(row, column) ;
+    switch(column) {
+        case ability_table_item::RANK:
             {
-                ui->ability_table->item(row, column)->setText( QString() ) ;
+                int r = curr->text().toInt() ;
+                if( r < 0 ) {
+                    curr->setText( QString::number(0) ) ;
+                } else
+                if( 5 < r ) {
+                    curr->setText( QString::number(5) ) ;
+                }
             }
-        }
+            break ;
+        case ability_table_item::HONE:
+            {
+                int h = curr->text().toInt() ;
+                if( h < 0 ) {
+                    curr->setText( QString::number(0) ) ;
+                } else
+                if( 5 < h ) {
+                    curr->setText( QString::number(5) ) ;
+                }
+            }
+            break ;
+        case ability_table_item::COUNT:
+            {
+                int c = curr->text().toInt() ;
+                if( c < 0 ) {
+                    curr->setText( QString::number(0) ) ;
+                }
+            }
+            break ;
+        default:
+            break ;
     }
+
     if( _initialized ) {
         update_orb_table() ;
     }
@@ -747,38 +163,38 @@ void ffrk_abilities::update_orb_table()
     typedef std::list<orb_rarity>       rarity_list ;
     typedef std::list<orb_type>         orb_list ;
     typedef std::list<rank_type>        rank_list ;
-    ability_map::iterator It = _cumulative_orbs.begin() ;
-    ability_map::iterator It_end = _cumulative_orbs.end() ;
     for(int i=0; i<_max_row; ++i) {
         for(int j=0; j<_max_col; ++j) {
             _orbs[i][j] = 0 ;
         }
     }
-    while( It != It_end ) {
-        rarity_list::iterator rare = It->second._ability->_rare.begin() ;
-        rarity_list::iterator rare_end = It->second._ability->_rare.end() ;
-        orb_list::iterator types = It->second._ability->_types.begin() ;
-        orb_list::iterator types_end = It->second._ability->_types.end() ;
-        rank_list::iterator count = It->second._ability->_counts.begin() ;
-        rank_list::iterator count_end = It->second._ability->_counts.end() ;
-        while( (rare != rare_end) && (types != types_end) && (count != count_end) ) {
-            int row = orb_type(*types) ;
-            int column = *rare ;
-            int multiplier = It->second._number ;
-            int s = int(*count) ;
-            int r = It->second._rank - 1 ;
-            int rh = It->second._hone - 1 ;
-            if( rh < 0 ) rh = 0 ;
-            if( r < 1 ) {
-                _orbs[row][column] += (multiplier * _ranks.num_orbs(s,rh)) ;
-            } else {
-                _orbs[row][column] += (multiplier * (_ranks.num_orbs(s,rh) - _ranks.num_orbs(s, r))) ;
+    int size( ui->ability_table->rowCount() ) ;
+    for(int i=0; i<size; ++i) {
+        int multiplier = ui->ability_table->item(i, ability_table_item::COUNT)->text().toInt() ;
+        if( 0 < multiplier ) {
+            ability_base* _curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(i, ability_table_item::NAME))->getAbility() ;
+            rarity_list::iterator rare = _curr->_rare.begin() ;
+            rarity_list::iterator rare_end = _curr->_rare.end() ;
+            orb_list::iterator types = _curr->_types.begin() ;
+            orb_list::iterator types_end = _curr->_types.end() ;
+            rank_list::iterator count = _curr->_counts.begin() ;
+            rank_list::iterator count_end = _curr->_counts.end() ;
+            while( (rare != rare_end) && (types != types_end) && (count != count_end) ) {
+                int row = orb_type(*types) ;
+                int column = *rare ;
+                int s = int(*count) ;
+                int r = ui->ability_table->item(i, ability_table_item::RANK)->text().toInt() - 1 ;
+                int rh = ui->ability_table->item(i, ability_table_item::HONE)->text().toInt() - 1 ;
+                int value = _ranks.num_orbs(s,rh) ;
+                if( 0 < r ) {
+                    value -= _ranks.num_orbs(s,r) ;
+                }
+                _orbs[row][column] += (multiplier * value) ;
+                rare++ ;
+                types++ ;
+                count++ ;
             }
-            rare++ ;
-            types++ ;
-            count++ ;
         }
-        It++ ;
     }
     for(int i=0; i<_max_row; ++i) {
         for(int j=0; j<_max_col; ++j) {
@@ -791,4 +207,92 @@ void ffrk_abilities::update_orb_table()
         }
     }
     update_stamina_cost() ;
+}
+
+/**
+ * Adds another ability row to the table
+ */
+void ffrk_abilities::on_addRow_button_clicked()
+{
+    ui->ability_table->insertRow( ui->ability_table->rowCount() ) ;
+    std::cout << ui->ability_table << std::endl ;
+    int curr_row = ui->ability_table->rowCount() - 1 ;
+    ui->ability_table->setItem(curr_row, ability_table_item::COUNT, new QTableWidgetItem(QString("0")) ) ;
+    ui->ability_table->setItem(curr_row, ability_table_item::HONE, new QTableWidgetItem(QString("0")) ) ;
+    ui->ability_table->setItem(curr_row, ability_table_item::RANK, new QTableWidgetItem(QString("0")) ) ;
+    ability_table_item *name = new ability_table_item() ;
+    ui->ability_table->setItem(curr_row, ability_table_item::NAME, name ) ;
+}
+
+/**
+ * Removes a row from the table
+ */
+void ffrk_abilities::on_removeRow_button_clicked()
+{
+    int row = ui->ability_table->currentRow() ;
+    ui->ability_table->removeRow( row ) ;
+}
+
+/**
+ * Loads the probability and stamina tables
+ */
+void ffrk_abilities::on_prob_button_clicked()
+{
+    orb_statistics_parser os ;
+    std::string t = _filepath ;
+    t += "orb_statistics" ;
+    os.parse_file( t.c_str() ) ;
+    _orb_stamina = os.stamina() ;
+    _orb_probability = os.probability() ;
+    QColor color ;
+    for(int i=0; i<_max_row; ++i) {
+        if( _orb_probability[i] > 0 ) {
+            color = Qt::green ;
+        } else {
+            color = Qt::white ;
+        }
+        for(int j=0; j<_max_col; ++j) {
+            ui->orb_table->item(i,j)->setBackgroundColor(color) ;
+        }
+    }
+    update_stamina_cost() ;
+}
+
+/**
+ * Reloads the abilities into the table
+ */
+void ffrk_abilities::on_ability_button_pressed()
+{
+    if( _abilities ) {
+        delete _abilities ;
+    }
+    _abilities = new ability_selector() ;
+}
+
+/**
+ * Opens the ability_selector
+ */
+void ffrk_abilities::on_ability_table_doubleClicked(const QModelIndex &index)
+{
+    int row = index.row() ;
+    int col = index.column() ;
+    switch( col ) {
+        case ability_table_item::NAME:
+            {
+                _abilities->choose_ability() ;
+                while( _abilities->isVisible() ) {
+                    QApplication::processEvents() ;
+                }
+                ability_base *a = _abilities->result() ;
+                if( a != 0 ) {
+                    ability_table_item *curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(row, col)) ;
+                    std::cout << typeid(curr).name() << std::endl ;
+                    curr->setAbility( a ) ;
+                    curr->setText( a->_name.c_str() ) ;
+                }
+            }
+            break ;
+        default:
+            break ;
+    }
 }

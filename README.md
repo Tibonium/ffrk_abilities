@@ -1,8 +1,11 @@
 # FFRK Ability Orb Calculator
+![alt-tag](https://cloud.githubusercontent.com/assets/2381953/10517775/70fe4e16-732c-11e5-9ccb-1c4cd12fba3f.png)
+
+![alt-tag](https://cloud.githubusercontent.com/assets/2381953/10517780/7485b93e-732c-11e5-9569-6ddca55d88d8.png)
 
 This is a light-weight application that allows the calculation of orbs needed for the abilities in FFRK. The data is stored within flat files and parsed at application runtime.
 
-To use the application, download the <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/windows_release.zip">Windows</a> or <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/linux_build_14_10_2015.tar.gz">Linux</a> version. After doing so, unpack the files to any folder. Before running the application, you'll need to make sure the filepath for the application is correct. To do this, open the ffrk_ability_config file and change the line to "spells/", save and then close. Then you should be able to open the application.
+To use the application, download the <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/windows_release.zip">Windows</a> or <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/linux_release.tar.gz">Linux</a> version. After doing so, unpack the files to any folder. Before running the application, you'll need to make sure the filepath for the application is correct. To do this, open the ffrk_ability_config file and change the line to "spells/", save and then close. Then you should be able to open the application.
 
 A few notes about usage. Without going into major depth right now (I plan to have a better ReadMe) in the future, the application runs off of flat files provided in the spells directory. There is a "set of files", the "_magic" files, and then the orb_statistics file.
 

@@ -36,7 +36,7 @@ Schema  Cumulative Count        Base per Rank
 ````
 Finally, the orb_statistics file provides a fun way to attempt to figure out how much stamina is going to be required to get all the juicy orbs that you're looking for. Simply change the Stamina/orb values to the currently accepted values, then change the probability of orb drop for each orb type to the required value. If you do this while the application is running, you can save the file then click ont he "Reload Probablities" button to update the application with the new information.
 
-* If you're unable to run the application because of an error "Missing MSVCR120.DLL" you can download and install this file [here](https://www.microsoft.com/en-US/download/details.aspx?id=40784). There error should then go away.
+* If you're unable to run the application because of an error "Missing MSVCR120.DLL" you can download and install this file [here](https://www.microsoft.com/en-US/download/details.aspx?id=40784). You'll need to install the ".._x86" version for the application to work properly.
 
 NOTICE: I do have abilities in the application flat files that have NOT been released globally yet, so be aware of this when planning.
 

@@ -164,7 +164,12 @@ void orb_stash_table::import_stash()
     }
     for(int i=0; i<_max_row; ++i) {
         for(int j=0; j<_max_col; ++j) {
-            ui->stash_table->item(i, j)->setText( QString::number(_stash[i][j]) ) ;
+            int value = _stash[i][j] ;
+            if( value == 0 ) {
+                ui->stash_table->item(i, j)->setText( QString() ) ;
+            } else {
+                ui->stash_table->item(i, j)->setText( QString::number(_stash[i][j]) ) ;
+            }
         }
     }
     fi.close() ;
@@ -223,12 +228,14 @@ orb_type orb_stash_table::find_type(std::string type)
 void orb_stash_table::on_stash_table_cellChanged(int row, int column)
 {
     int value = ui->stash_table->item(row, column)->text().toInt() ;
-    if( value < 0 ) {
+    if( value <= 0 ) {
         value = 0 ;
+        ui->stash_table->item(row, column)->setText( QString() ) ;
+    } else {
         ui->stash_table->item(row, column)->setText( QString::number(value) ) ;
     }
     _stash[row][column] = value ;
     if( _listener ) {
-        _listener->update_orb_table() ;
+        _listener->update_orb_cell(row, column) ;
     }
 }

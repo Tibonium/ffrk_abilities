@@ -65,6 +65,7 @@ private:
     void update_stamina_cost() ;
 
     void update_orb_table() ;
+    void update_orb_cell(int type, int rank) ;
     void load_table() ;
     void save_table() ;
 };

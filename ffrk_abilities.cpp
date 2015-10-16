@@ -289,6 +289,64 @@ void ffrk_abilities::update_orb_table()
 }
 
 /**
+ * Used during the callback fromt he stash, to reduce amount of effort
+ * in updating the table values when data is updated.
+ */
+void ffrk_abilities::update_orb_cell(int type, int rank)
+{
+    typedef std::list<orb_rarity>       rarity_list ;
+    typedef std::list<orb_type>         orb_list ;
+    typedef std::list<rank_type>        rank_list ;
+
+    // Reset only the one cell that were interested in
+    _orbs[type][rank] = 0 ;
+
+    int size( ui->ability_table->rowCount() ) ;
+    for(int i=0; i<size; ++i) {
+        int multiplier = ui->ability_table->item(i, ability_table_item::COUNT)->text().toInt() ;
+        if( 0 < multiplier ) {
+            ability_base* _curr = reinterpret_cast<ability_table_item*>(ui->ability_table->item(i, ability_table_item::NAME))->getAbility() ;
+            rarity_list::iterator rare = _curr->_rare.begin() ;
+            rarity_list::iterator rare_end = _curr->_rare.end() ;
+            orb_list::iterator types = _curr->_types.begin() ;
+            orb_list::iterator types_end = _curr->_types.end() ;
+            rank_list::iterator count = _curr->_counts.begin() ;
+            rank_list::iterator count_end = _curr->_counts.end() ;
+            while( (rare != rare_end) && (types != types_end) && (count != count_end) ) {
+                int row = orb_type(*types) ;
+                if( row == type ) {
+                    int column = *rare ;
+                    if( column == rank ) {
+                        int s = int(*count) ;
+                        int r = ui->ability_table->item(i, ability_table_item::RANK)->text().toInt() - 1 ;
+                        int rh = ui->ability_table->item(i, ability_table_item::HONE)->text().toInt() - 1 ;
+                        int value = _ranks.num_orbs(s,rh) ;
+                        if( -1 < r ) {
+                            value -= _ranks.num_orbs(s,r) ;
+                        }
+                        value -= _stash_table->stash_count(row, column) ;
+                        if( value < 0 ) {
+                            value = 0 ;
+                        }
+                        _orbs[row][column] += (multiplier * value) ;
+                    }
+                }
+                rare++ ;
+                types++ ;
+                count++ ;
+            }
+        }
+    }
+    int value = _orbs[type][rank] ;
+    if( value == 0 ) {
+        ui->orb_table->item(type, rank)->setText( QString() ) ;
+    } else {
+        ui->orb_table->item(type, rank)->setText( QString::number(value) ) ;
+    }
+    update_stamina_cost() ;
+}
+
+/**
  * Adds another ability row to the table
  */
 void ffrk_abilities::on_addRow_button_clicked()

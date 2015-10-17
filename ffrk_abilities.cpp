@@ -264,10 +264,10 @@ void ffrk_abilities::update_orb_table()
                 if( -1 < r ) {
                     value -= _ranks.num_orbs(s,r) ;
                 }
-                value *= multiplier ;
-                value -= _stash_table->stash_count(row, column) ;
                 if( value < 0 ) {
                     value = 0 ;
+                } else {
+                    value *= multiplier ;
                 }
                 _orbs[row][column] += value ;
                 rare++ ;
@@ -278,8 +278,8 @@ void ffrk_abilities::update_orb_table()
     }
     for(int i=0; i<_max_row; ++i) {
         for(int j=0; j<_max_col; ++j) {
-            int value = _orbs[i][j] ;
-            if( value == 0 ) {
+            int value = _orbs[i][j] - _stash_table->stash_count(i, j) ;
+            if( value <= 0 ) {
                 ui->orb_table->item(i, j)->setText( QString() ) ;
             } else {
                 ui->orb_table->item(i, j)->setText( QString::number(value) ) ;
@@ -325,10 +325,10 @@ void ffrk_abilities::update_orb_cell(int type, int rank)
                         if( -1 < r ) {
                             value -= _ranks.num_orbs(s,r) ;
                         }
-                        value *= multiplier ;
-                        value -= _stash_table->stash_count(row, column) ;
                         if( value < 0 ) {
                             value = 0 ;
+                        } else {
+                            value *= multiplier ;
                         }
                         _orbs[row][column] += value ;
                     }
@@ -339,8 +339,8 @@ void ffrk_abilities::update_orb_cell(int type, int rank)
             }
         }
     }
-    int value = _orbs[type][rank] ;
-    if( value == 0 ) {
+    int value = _orbs[type][rank] - _stash_table->stash_count(type, rank) ;
+    if( value <= 0 ) {
         ui->orb_table->item(type, rank)->setText( QString() ) ;
     } else {
         ui->orb_table->item(type, rank)->setText( QString::number(value) ) ;

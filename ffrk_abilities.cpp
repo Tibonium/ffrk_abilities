@@ -264,11 +264,12 @@ void ffrk_abilities::update_orb_table()
                 if( -1 < r ) {
                     value -= _ranks.num_orbs(s,r) ;
                 }
+                value *= multiplier ;
                 value -= _stash_table->stash_count(row, column) ;
                 if( value < 0 ) {
                     value = 0 ;
                 }
-                _orbs[row][column] += (multiplier * value) ;
+                _orbs[row][column] += value ;
                 rare++ ;
                 types++ ;
                 count++ ;
@@ -324,11 +325,12 @@ void ffrk_abilities::update_orb_cell(int type, int rank)
                         if( -1 < r ) {
                             value -= _ranks.num_orbs(s,r) ;
                         }
+                        value *= multiplier ;
                         value -= _stash_table->stash_count(row, column) ;
                         if( value < 0 ) {
                             value = 0 ;
                         }
-                        _orbs[row][column] += (multiplier * value) ;
+                        _orbs[row][column] += value ;
                     }
                 }
                 rare++ ;

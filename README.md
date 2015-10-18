@@ -5,7 +5,7 @@
 
 This is a light-weight application that allows the calculation of orbs needed for the abilities in FFRK. The data is stored within flat files and parsed at application runtime.
 
-To use the application, download the <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/windows_release.zip">Windows</a> or <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/linux_release.tar.gz">Linux</a> version. After doing so, unpack the files to any folder. Before running the application, you'll need to make sure the filepath for the application is correct. To do this, open the ffrk_ability_config file and change the line to "spells/", save and then close. Then you should be able to open the application.
+To use the application, download the <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/windows_release.zip">Windows Full</a> or <a href="https://github.com/Tibonium/ffrk_abilities/raw/master/builds/linux_release.tar.gz">Linux Full</a> version. After doing so, unpack the files to any folder. Before running the application, you'll need to make sure the filepath for the application is correct. To do this, open the ffrk_ability_config file and change the line to "spells/", save and then close. Then you should be able to open the application.
 
 If you just need the most recent exectuable, you can select from the below:
 

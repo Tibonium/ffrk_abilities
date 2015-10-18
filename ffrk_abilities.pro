@@ -5,8 +5,13 @@
 #-------------------------------------------------
 
 QT       += core gui
-CONFIG += static
-QMAKE_CXXFLAGS += -std=c++0x
+CONFIG   += static
+win32-msvc* {
+    QMAKE_CXXFLAGS += -std=c++11
+}
+#g++* {
+#    QMAKE_CXXFLAGS += -std=c++0x
+#}
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

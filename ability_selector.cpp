@@ -284,7 +284,8 @@ void ability_selector::on_cancel_button_clicked()
  */
 void ability_selector::on_ability_list_itemSelectionChanged()
 {
-    _focus_ability = reinterpret_cast<ability_list_item*>(ui->ability_list->currentItem())->ability() ;
+    if( -1 < ui->ability_list->currentRow() )
+        _focus_ability = reinterpret_cast<ability_list_item*>(ui->ability_list->currentItem())->ability() ;
 }
 
 /**

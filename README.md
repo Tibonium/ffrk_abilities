@@ -41,3 +41,5 @@ Finally, the orb_statistics file provides a fun way to attempt to figure out how
 NOTICE: I do have abilities in the application flat files that have NOT been released globally yet, so be aware of this when planning.
 
 DISCLAIMER: The estimated stamina in the application is the most LIKELY amount of stamina required to obtain the amount of orbs with the statistics provided. This means you could have anything from WAY MORE or LESS stamina required to achieve your goal.
+
+UPDATE: Added Darkness and enabled Blue, Engineer (Machinist). When spell maps are created, if the file does not exist the user will be instructed that it was not loaded and the reason, but will continue to load all available files. Contributions to names and spells by /u/OberonGX

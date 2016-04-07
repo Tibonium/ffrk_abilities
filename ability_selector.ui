@@ -147,6 +147,13 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QCheckBox" name="darkness_cb">
+           <property name="text">
+            <string>Darkness</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item row="3" column="0" rowspan="2" colspan="2">

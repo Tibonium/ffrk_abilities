@@ -6,13 +6,6 @@ Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [6B, 3B]
 
 Class: Summon
-Name: Bomb
-Rank: 1
-Orb_Types: [Summon, Fire]
-Orb_Ranks: [Minor, Minor]
-Lvl_Schema: [6B, 3B]
-
-Class: Summon
 Name: Chocobo
 Rank: 2
 Orb_Types: [Summon, Non-Elem]
@@ -27,18 +20,11 @@ Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [10, 5]
 
 Class: Summon
-Name: Kirin
-Rank: 2
-Orb_Types: [Summon, White, Holy]
-Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Schema: [10, 6, 6]
-
-Class: Summon
-Name: Ifrit
-Rank: 3
+Name: Bomb
+Rank: 1
 Orb_Types: [Summon, Fire]
-Orb_Ranks: [Normal, Normal]
-Lvl_Schema: [10, 5]
+Orb_Ranks: [Minor, Lesser]
+Lvl_Schema: [6B, 3B]
 
 Class: Summon
 Name: Shiva
@@ -55,16 +41,65 @@ Orb_Ranks: [Normal, Normal]
 Lvl_Schema: [10, 5]
 
 Class: Summon
-Name: Alexander
+Name: Ifrit
+Rank: 3
+Orb_Types: [Summon, Fire]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [10, 5]
+
+Class: Summon
+Name: Syldra
 Rank: 4
-Orb_Types: [White, Summon, Holy, Holy]
+Orb_Types: [Summon, Lightning, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Summon
+Name: Leviathan
+Rank: 4
+Orb_Types: [Summon, Fire, Ice]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Summon
+Name: Kirin
+Rank: 2
+Orb_Types: [Summon, White, Holy]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Schema: [10, 6, 6]
+
+Class: Summon
+Name: Maduin
+Rank: 4
+Orb_Types: [Summon, Non-Elem]
+Orb_Ranks: [Greater, Greater]
+Lvl_Schema: [10, 5]
+
+Class: Summon
+Name: Odin
+Rank: 5
+Orb_Types: [Summon, Lightning, Dark]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Summon
+Name: Phoenix
+Rank: 4
+Orb_Types: [Summon, Fire, Fire, Holy]
+Orb_Ranks: [Greater, Greater, Major, Greater]
+Lvl_Schema: [5, 5, 1, 3C]
+
+Class: Summon
+Name: Valefor
+Rank: 4
+Orb_Types: [Summon, Non-Elem, Wind, Wind]
 Orb_Ranks: [Greater, Greater, Greater, Major]
-Lvl_Schema: [3C, 5, 5, 1]
+Lvl_Schema: [5, 3C, 5, 1]
 
 Class: Summon
 Name: Carbuncle
 Rank: 4
-Orb_Types: [Summon, Wind]
+Orb_Types: [Summon, Holy]
 Orb_Ranks: [Greater, Greater]
 Lvl_Schema: [10, 5]
 
@@ -76,44 +111,16 @@ Orb_Ranks: [Greater, Greater, Major, Greater]
 Lvl_Schema: [5, 5, 1, 3C]
 
 Class: Summon
-Name: Leviathan
+Name: Alexander
 Rank: 4
-Orb_Types: [Summon, Fire, Ice]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [10, 6A, 6A]
-
-Class: Summon
-Name: Maduin
-Rank: 4
-Orb_Types: [Summon, Non-Elem]
-Orb_Ranks: [Greater, Greater]
-Lvl_Schema: [10, 5]
-
-Class: Summon
-Name: Phoenix
-Rank: 4
-Orb_Types: [Summon, Fire, Fire, Holy]
-Orb_Ranks: [Greater, Greater, Major, Greater]
-Lvl_Schema: [5, 5, 1, 3C]
+Orb_Types: [White, Summon, Holy, Holy]
+Orb_Ranks: [Greater, Greater, Greater, Major]
+Lvl_Schema: [3C, 5, 5, 1]
 
 Class: Summon
 Name: Quetzalcoatl
 Rank: 4
 Orb_Types: [Summon, Non-Elem, Lightning, Lightning]
-Orb_Ranks: [Greater, Greater, Greater, Major]
-Lvl_Schema: [5, 3C, 5, 1]
-
-Class: Summon
-Name: Syldra
-Rank: 4
-Orb_Types: [Summon, Lightning, Wind]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [10, 6A, 6A]
-
-Class: Summon
-Name: Valefor
-Rank: 4
-Orb_Types: [Summon, Non-Elem, Wind, Wind]
 Orb_Ranks: [Greater, Greater, Greater, Major]
 Lvl_Schema: [5, 3C, 5, 1]
 
@@ -125,13 +132,6 @@ Orb_Ranks: [Major, Major, Major]
 Lvl_Schema: [10, 6A, 6A]
 
 Class: Summon
-Name: Odin
-Rank: 5
-Orb_Types: [Summon, Lightning, Dark]
-Orb_Ranks: [Major, Major, Major]
-Lvl_Schema: [10, 6A, 6A]
-
-Class: Summon
 Name: Cactuar
 Rank: 4
 Orb_Types: [Summon, Non-Elem, Earth]
@@ -139,8 +139,22 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [10, 6, 6]
 
 Class: Summon
-Name: Ultros
+Name: Fat Chocobo
 Rank: 4
-Orb_Types: [Power, Ice, Earth]
+Orb_Types: [Summon, Fire, Earth]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [10, 6A, 6A]
+
+Class: Summon
+Name: Orthros
+Rank: 4
+Orb_Types: [Summon, Ice, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Summon
+Name: Neo Bahamut
+Rank: 6
+Orb_Types: [Summon, Non-Elem, Dark]
+Orb_Ranks: [Crystal, Crystal, Crystal]
+Lvl_Schema: [10, 6, 6]

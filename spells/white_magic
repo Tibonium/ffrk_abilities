@@ -27,14 +27,21 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: White
-Name: Blindna
+Name: Vox
+Rank: 1
+Orb_Types: [White, Ice]
+Orb_Ranks: [Minor, Minor]
+Lvl_Schema: [3B, 3A]
+
+Class: White
+Name: Poisona
 Rank: 1
 Orb_Types: [White, Dark]
 Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [3B, 3A]
 
 Class: White
-Name: Poisona
+Name: Blindna
 Rank: 1
 Orb_Types: [White, Dark]
 Orb_Ranks: [Minor, Minor]
@@ -48,11 +55,25 @@ Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [3B, 3A]
 
 Class: White
+Name: Protectga
+Rank: 4
+Orb_Types: [White, Earth]
+Orb_Ranks: [Greater, Greater]
+Lvl_Schema: [5, 8]
+
+Class: White
 Name: Shell
 Rank: 1
 Orb_Types: [White, Earth, Holy]
 Orb_Ranks: [Minor, Minor, Minor]
 Lvl_Schema: [2A, 2, 2]
+
+Class: White
+Name: Shellga
+Rank: 4
+Orb_Types: [White, Earth, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
 
 Class: White
 Name: Silence
@@ -62,6 +83,13 @@ Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [3B, 3A]
 
 Class: White
+Name: Silencega
+Rank: 3
+Orb_Types: [White, Ice]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [5, 8]
+
+Class: White
 Name: Slow
 Rank: 1
 Orb_Types: [White, Wind]
@@ -69,25 +97,11 @@ Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [3B, 3A]
 
 Class: White
-Name: Vox
-Rank: 1
-Orb_Types: [White, Lightning]
-Orb_Ranks: [Minor, Minor]
-Lvl_Schema: [3B, 3A]
-
-Class: White
-Name: Dia
-Rank: 2
-Orb_Types: [White, Wind, Holy]
-Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Schema: [5, 3, 3]
-
-Class: White
-Name: Hold
-Rank: 2
-Orb_Types: [White, Earth, Holy]
-Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Schema: [5, 3, 3]
+Name: Slowga
+Rank: 4
+Orb_Types: [White, Wind]
+Orb_Ranks: [Greater, Greater]
+Lvl_Schema: [5, 8]
 
 Class: White
 Name: Regen
@@ -104,30 +118,9 @@ Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
 
 Class: White
-Name: Berserk
+Name: Haste
 Rank: 3
-Orb_Types: [White, Non-Elem]
-Orb_Ranks: [Normal, Normal]
-Lvl_Schema: [5, 8]
-
-Class: White
-Name: Diara
-Rank: 3
-Orb_Types: [White, Wind, Holy]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: White
-Name: Dispel
-Rank: 3
-Orb_Types: [White, Wind, Holy]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: White
-Name: Faith
-Rank: 3
-Orb_Types: [White, Dark]
+Orb_Types: [White, Wind]
 Orb_Ranks: [Normal, Normal]
 Lvl_Schema: [5, 8]
 
@@ -139,58 +132,9 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: White
-Name: Haste
-Rank: 3
-Orb_Types: [White, Wind]
-Orb_Ranks: [Normal, Normal]
-Lvl_Schema: [5, 8]
-
-Class: White
-Name: Reflect
-Rank: 3
-Orb_Types: [White, Holy]
-Orb_Ranks: [Normal, Normal]
-Lvl_Schema: [5, 8]
-
-Class: White
-Name: Silencega
-Rank: 3
-Orb_Types: [White, Ice]
-Orb_Ranks: [Normal, Normal]
-Lvl_Schema: [5, 8]
-
-Class: White
-Name: Diaga
-Rank: 4
-Orb_Types: [White, Wind, Holy]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: White
-Name: Protectga
-Rank: 4
-Orb_Types: [White, Earth]
-Orb_Ranks: [Greater, Greater]
-Lvl_Schema: [5, 8]
-
-Class: White
 Name: Raise
 Rank: 4
 Orb_Types: [White, Holy]
-Orb_Ranks: [Greater, Greater]
-Lvl_Schema: [5, 8]
-
-Class: White
-Name: Shellga
-Rank: 4
-Orb_Types: [White, Earth, Holy]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: White
-Name: Slowga
-Rank: 4
-Orb_Types: [White, Wind]
 Orb_Ranks: [Greater, Greater]
 Lvl_Schema: [5, 8]
 
@@ -202,14 +146,56 @@ Orb_Ranks: [Major, Major, Major]
 Lvl_Schema: [10A, 6, 6]
 
 Class: White
-Name: Power Water
+Name: Hold
+Rank: 2
+Orb_Types: [White, Earth, Holy]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Schema: [5, 3, 3]
+
+Class: White
+Name: Dia
+Rank: 2
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Schema: [5, 3, 3]
+
+Class: White
+Name: Diara
 Rank: 3
-Orb_Types: [White, Power]
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: White
+Name: Diaga
+Rank: 4
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: White
+Name: Dispel
+Rank: 3
+Orb_Types: [White, Non-Elem, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: White
+Name: Berserk
+Rank: 3
+Orb_Types: [White, Non-Elem]
 Orb_Ranks: [Normal, Normal]
 Lvl_Schema: [5, 8]
 
 Class: White
-Name: Therapy Cure
+Name: Faith
+Rank: 3
+Orb_Types: [White, Dark]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [5, 8]
+
+Class: White
+Name: Renewing Cure
 Rank: 3
 Orb_Types: [White, Wind, Holy]
 Orb_Ranks: [Normal, Normal, Normal]
@@ -221,3 +207,38 @@ Rank: 3
 Orb_Types: [White, Earth, Holy]
 Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
+
+Class: White
+Name: Reflect
+Rank: 3
+Orb_Types: [White, Holy]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [5, 8]
+
+Class: White
+Name: Water of Strength
+Rank: 3
+Orb_Types: [White, Power]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [5, 8]
+
+Class: White
+Name: Curaise
+Rank: 4
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: White
+Name: Arise
+Rank: 5
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: White
+Name: Reraise
+Rank: 6
+Orb_Types: [White, Wind, Holy]
+Orb_Ranks: [Crystal, Crystal, Crystal]
+Lvl_Schema: [10, 6, 6]

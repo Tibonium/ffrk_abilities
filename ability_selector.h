@@ -102,6 +102,8 @@ private slots:
 
     void on_rarity_filter_currentIndexChanged(int index) ;
 
+    void on_darkness_cb_clicked();
+
 private:
     typedef spell_parser::map_type     spell_map ;
 
@@ -129,6 +131,7 @@ private:
     spell_map _celerity ;
     spell_map _monk ;
     spell_map _engineer ;
+    spell_map _darkness ;
 
     QSettings _settings ;
     std::string _filepath ;

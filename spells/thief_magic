@@ -31,4 +31,11 @@ Name: Mug Time
 Rank: 5
 Orb_Types: [Power, Lightning, Wind]
 Orb_Ranks: [Major, Major, Major]
-Lvl_Schema: [10, 6, 6]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Thief
+Name: Thief's Revenge
+Rank: 5
+Orb_Types: [Wind, Lightning, Dark]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6A, 6A]

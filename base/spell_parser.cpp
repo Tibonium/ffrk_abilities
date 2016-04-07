@@ -33,8 +33,12 @@ spell_parser::parse_file(const char *filename)
             result = parse_ability( line, fi ) ;
         }
         if( !result.empty() ) {
-            std::cout << "Error in spell file [" << filename << "] on line:"
-                      << _line_number << ", " << result << std::endl ;
+            QMessageBox msg ;
+            std::stringstream iss ;
+            iss << "Error in spell file [" << filename << "] on line:"
+                << _line_number << ", " << result ;
+            msg.setText( iss.str().c_str() ) ;
+            msg.exec() ;
             return string_type() ;
         }
     }
@@ -368,6 +372,9 @@ spell_parser::determine_ability_class(std::string line, ability_base *a)
     } else
     if( acl == "Thief" ) {
         a->_class = THF ;
+    } else
+    if( acl ==  "Darkness" ) {
+        a->_class = DRK ;
     } else
     if( acl == "Blue" ) {
         a->_class = BLU ;

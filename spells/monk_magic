@@ -1,14 +1,14 @@
 Class: Monk
-Name: Chi Blast
+Name: Death Strike
 Rank: 2
-Orb_Types: [Power, Non-Elem]
+Orb_Types: [Power, Lightning]
 Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
 
 Class: Monk
-Name: Death Strike
+Name: Chi Blast
 Rank: 2
-Orb_Types: [Power, Lightning]
+Orb_Types: [Power, Non-Elem]
 Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
 
@@ -27,6 +27,13 @@ Orb_Ranks: [Greater, Greater]
 Lvl_Schema: [5, 8]
 
 Class: Monk
+Name: Punishing Palm
+Rank: 4
+Orb_Types: [Power, Fire, Holy]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Monk
 Name: Kick
 Rank: 3
 Orb_Types: [Power, Non-Elem, Wind]
@@ -34,29 +41,22 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Monk
-Name: Memento of Power
+Name: Memento of Might
 Rank: 3
 Orb_Types: [Power, Earth]
 Orb_Ranks: [Normal, Normal]
 Lvl_Schema: [5, 8]
 
 Class: Monk
-Name: Invigorating Fist
-Rank: 4
-Orb_Types: [Power, Fire, Holy]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: Monk
-Name: Armor Piercer
-Rank: 4
-Orb_Types: [Power, Lightning, Earth]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: Monk
-Name: Raging Fist
+Name: Exploding Fist
 Rank: 5
 Orb_Types: [Power, Fire, Lightning]
 Orb_Ranks: [Major, Major, Major]
 Lvl_Schema: [10, 6A, 6A]
+
+Class: Monk
+Name: Piercing Strike
+Rank: 4
+Orb_Types: [Power, Lightning, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]

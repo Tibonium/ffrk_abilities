@@ -13,6 +13,13 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Dragoon
+Name: Soaring Jump
+Rank: 4
+Orb_Types: [Power, Non-Elem, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Dragoon
 Name: Ice Jump
 Rank: 3
 Orb_Types: [Power, Non-Elem, Ice]
@@ -27,8 +34,29 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Dragoon
-Name: Mighty Jump
+Name: Sky Grinder
+Rank: 5
+Orb_Types: [Ice, Lightning, Wind]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [6, 10, 6]
+
+Class: Dragoon
+Name: Leeching Leap
 Rank: 4
-Orb_Types: [Power, Non-Elem, Wind]
+Orb_Types: [Lightning, Wind, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
+
+Class: Dragoon
+Name: Blood of the Dragon
+Rank: 4
+Orb_Types: [Ice, Lightning, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Dragoon
+Name: Dragonfire Dive
+Rank: 5
+Orb_Types: [Fire, Non-Elem, Lightning]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]

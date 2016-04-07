@@ -26,7 +26,8 @@ typedef enum {
     THF = 0x00002000, // <Thief>
     BLU = 0x00004000, // <Blue> Magic
     ENG = 0x00008000, // <Engineer>
-    SPB = 0x00010000  // <Spellblade>
+    SPB = 0x00010000, // <Spellblade>
+    DRK = 0x00020000  // <Darkness>
 } ability_type ;
 
 /**

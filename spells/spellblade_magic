@@ -1,18 +1,4 @@
 Class: Spellblade
-Name: Aero Strike
-Rank: 2
-Orb_Types: [Power, Wind]
-Orb_Ranks: [Lesser, Lesser]
-Lvl_Schema: [5, 8]
-
-Class: Spellblade
-Name: Blizzard Strike
-Rank: 2
-Orb_Types: [Power, Black, Ice]
-Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
 Name: Fire Strike
 Rank: 2
 Orb_Types: [Power, Black, Fire]
@@ -20,79 +6,9 @@ Orb_Ranks: [Lesser, Lesser, Lesser]
 Lvl_Schema: [5, 3, 3]
 
 Class: Spellblade
-Name: Thunder Strike
-Rank: 2
-Orb_Types: [Power, Black, Lightning]
-Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Water Strike
-Rank: 2
-Orb_Types: [Power, Ice, Lightning]
-Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Blizzara Strike
-Rank: 3
-Orb_Types: [Power, Black, Ice]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
 Name: Fira Strike
 Rank: 3
 Orb_Types: [Power, Black, Fire]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Thundara Strike
-Rank: 3
-Orb_Types: [Power, Black, Lightning]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Drain Strike
-Rank: 3
-Orb_Types: [Power, Black, Dark]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Break Strike
-Rank: 4
-Orb_Types: [Power, Black, Earth]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Flare Strike
-Rank: 5
-Orb_Types: [Power, Non-Elem, Fire]
-Orb_Ranks: [Major, Major, Major]
-Lvl_Schema: [10, 6, 6]
-
-Class: Spellblade
-Name: Aerora Strike
-Rank: 3
-Orb_Types: [Power, Black, Wind]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Watera Strike
-Rank: 3
-Orb_Types: [Power, Ice, Lightning]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Spellblade
-Name: Bio Strike
-Rank: 3
-Orb_Types: [Power, Black, Dark]
 Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
@@ -104,10 +20,38 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Spellblade
+Name: Blizzard Strike
+Rank: 2
+Orb_Types: [Power, Black, Ice]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Blizzara Strike
+Rank: 3
+Orb_Types: [Power, Black, Ice]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
 Name: Blizzaga Strike
 Rank: 4
 Orb_Types: [Power, Black, Ice]
 Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Thunder Strike
+Rank: 2
+Orb_Types: [Power, Black, Lightning]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Thundara Strike
+Rank: 3
+Orb_Types: [Power, Black, Lightning]
+Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Spellblade
@@ -116,3 +60,80 @@ Rank: 4
 Orb_Types: [Power, Black, Lightning]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Drain Strike
+Rank: 3
+Orb_Types: [Power, Black, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Flare Strike
+Rank: 5
+Orb_Types: [Power, Non-Elem, Fire]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10A, 6, 6]
+
+Class: Spellblade
+Name: Water Strike
+Rank: 2
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Watera Strike
+Rank: 3
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Wateraga Strike
+Rank: 4
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Aero Strike
+Rank: 2
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Schema: [5, 8]
+
+Class: Spellblade
+Name: Aerora Strike
+Rank: 3
+Orb_Types: [Power, Black, Wind]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Break Strike
+Rank: 4
+Orb_Types: [Power, Black, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Bio Strike
+Rank: 3
+Orb_Types: [Power, Black, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Biora Strike
+Rank: 4
+Orb_Types: [Power, Black, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Spellblade
+Name: Tornado Strike
+Rank: 5
+Orb_Types: [Power, Black, Wind]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]

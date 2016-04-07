@@ -8,6 +8,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <QMessageBox>
 
 #include "ability_base.h"
 

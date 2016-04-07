@@ -13,13 +13,6 @@ Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [3B, 3A]
 
 Class: Combat
-Name: Double Cut
-Rank: 2
-Orb_Types: [Power, Wind]
-Orb_Ranks: [Lesser, Lesser]
-Lvl_Schema: [5, 8]
-
-Class: Combat
 Name: Charge
 Rank: 2
 Orb_Types: [Power, Non-Elem]
@@ -27,11 +20,18 @@ Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
 
 Class: Combat
-Name: Armor Break
-Rank: 3
-Orb_Types: [Power, Non-Elem, Earth]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
+Name: Double Cut
+Rank: 2
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Schema: [5, 8]
+
+Class: Combat
+Name: Bladeblitz
+Rank: 4
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Greater, Greater]
+Lvl_Schema: [5, 8]
 
 Class: Combat
 Name: Magic Break
@@ -41,9 +41,9 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Combat
-Name: Mental Break
+Name: Armor Break
 Rank: 3
-Orb_Types: [Power, Non-Elem, Ice]
+Orb_Types: [Power, Non-Elem, Earth]
 Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
@@ -55,25 +55,11 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Combat
-Name: Cripple
+Name: Mental Break
 Rank: 3
-Orb_Types: [Power, Fire, Earth]
+Orb_Types: [Power, Non-Elem, Ice]
 Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
-
-Class: Combat
-Name: Launch
-Rank: 3
-Orb_Types: [Power, Non-Elem, Wind]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Combat
-Name: Bladeblitz
-Rank: 4
-Orb_Types: [Power, Wind]
-Orb_Ranks: [Greater, Greater]
-Lvl_Schema: [5, 8]
 
 Class: Combat
 Name: Pound
@@ -90,10 +76,17 @@ Orb_Ranks: [Major, Major, Major]
 Lvl_Schema: [10A, 6, 6]
 
 Class: Combat
-Name: Unholy Blitz
-Rank: 4
-Orb_Types: [Power, Non-Elem, Dark]
-Orb_Ranks: [Greater, Greater, Greater]
+Name: Cripple
+Rank: 3
+Orb_Types: [Power, Fire, Earth]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Combat
+Name: Launch
+Rank: 3
+Orb_Types: [Power, Non-Elem, Wind]
+Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Combat
@@ -104,8 +97,29 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Combat
-Name: Lifesiphon
+Name: Unholy Blitz
 Rank: 4
-Orb_Types: [Power, Fire, Wind]
+Orb_Types: [Power, Non-Elem, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
+
+Class: Combat
+Name: Lifesiphon
+Rank: 4
+Orb_Types: [Power, Ice, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Combat
+Name: Full Charge
+Rank: 5
+Orb_Types: [Power, Earth, Wind]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]
+
+Class: Combat
+Name: Crushdown
+Rank: 6
+Orb_Types: [Power, Fire, Earth]
+Orb_Ranks: [Crystal, Crystal, Crystal]
+Lvl_Schema: [10, 6, 6]

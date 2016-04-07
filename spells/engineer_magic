@@ -1,6 +1,34 @@
 Class: Engineer
-Name:
-Rank:
-Orb_Types: []
-Orb_Ranks: []
-Lvl_Schema: []
+Name: Blind Shell
+Rank: 4
+Orb_Types: [Power, Lightning, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Engineer
+Name: Silence Shell
+Rank: 4
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Engineer
+Name: Venom Shell
+Rank: 4
+Orb_Types: [Power, Fire, Ice]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Engineer
+Name: Confuse Shell
+Rank: 4
+Orb_Types: [Ice, Lightning, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Engineer
+Name: Bio Grenade
+Rank: 5
+Orb_Types: [Power, Fire, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [10, 6, 6]

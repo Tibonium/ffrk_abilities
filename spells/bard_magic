@@ -34,8 +34,8 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [3, 5, 3]
 
 Class: Bard
-Name: Strong Defense Etude
+Name: Enveloping Etude
 Rank: 4
 Orb_Types: [Power, White, Earth]
-Orb_Ranks: [Normal, Normal, Normal]
+Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [3, 5, 3]

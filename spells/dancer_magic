@@ -1,4 +1,11 @@
 Class: Dancer
+Name: Box Step
+Rank: 3
+Orb_Types: [Power, Non-Elem, Earth]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Dancer
 Name: Stutter Step
 Rank: 3
 Orb_Types: [Power, Non-Elem, Ice]
@@ -6,11 +13,11 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Dancer
-Name: Box Step
-Rank: 3
-Orb_Types: [Power, Non-Elem, Earth]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
+Name: Stumble Step
+Rank: 4
+Orb_Types: [White, Ice, Wind]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [3, 3, 5]
 
 Class: Dancer
 Name: Weak Polka
@@ -20,29 +27,43 @@ Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Dancer
-Name: Unfaith
-Rank: 3
-Orb_Types: [Power, Ice, Wind]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [3, 3, 5]
+Name: Exhausting Polka
+Rank: 4
+Orb_Types: [Fire, Wind, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [3, 5, 3]
 
 Class: Dancer
-Name: Stop Romba
+Name: Halting Rumba
 Rank: 4
 Orb_Types: [Power, Wind, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [3, 5, 3]
 
 Class: Dancer
-Name: High Stutter Step
-Rank: 4
-Orb_Types: [White, Ice, Wind]
-Orb_Ranks: [Greater, Greater, Greater]
+Name: Heathen Frolic
+Rank: 3
+Orb_Types: [Power, Ice, Wind]
+Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [3, 3, 5]
 
 Class: Dancer
-Name: High Weak Polka
+Name: High Box Step
 Rank: 4
-Orb_Types: [Fire, Wind, Dark]
+Orb_Types: [Holy, White, Earth]
 Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [3, 5, 3]
+Lvl_Schema: [5, 3, 3]
+
+Class: Dancer
+Name: High Heathen Frolic
+Rank: 4
+Orb_Types: [Holy, White, Lightning]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Dancer
+Name: Break Fever
+Rank: 5
+Orb_Types: [Holy, White, Dark]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]

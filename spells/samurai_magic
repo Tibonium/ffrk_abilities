@@ -20,22 +20,29 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Samurai
-Name: Meikyo
+Name: Flashing Blade
+Rank: 5
+Orb_Types: [Power, Non-Elem, Ice]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Samurai
+Name: Mirror of Equity
 Rank: 4
 Orb_Types: [Power, Lightning, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Samurai
-Name: Burning Flower
+Name: Darkmoon
 Rank: 4
-Orb_Types: [Power, Non-Elem, Fire]
+Orb_Types: [Power, Non-Elem, Ice]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Samurai
-Name: Sword Flash
-Rank: 5
-Orb_Types: [Power, Non-Elem, Ice]
-Orb_Ranks: [Major, Major, Major]
-Lvl_Schema: [10, 6A, 6A]
+Name: Fire Blossom
+Rank: 4
+Orb_Types: [Power, Non-Elem, Fire]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]

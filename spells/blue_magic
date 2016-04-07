@@ -1,6 +1,6 @@
 Class: Blue
-Name:
-Rank:
-Orb_Types: []
-Orb_Ranks: []
-Lvl_Schema: []
+Name: Test
+Rank: 1
+Orb_Types: [Blue]
+Orb_Ranks: [Minor]
+Lvl_Schema: [3]

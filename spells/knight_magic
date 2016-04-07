@@ -20,30 +20,30 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [3, 3, 5]
 
 Class: Knight
-Name: Mental Bash
+Name: Bracing Bash
 Rank: 3
 Orb_Types: [Power, Non-Elem, Earth]
 Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
 
 Class: Knight
-Name: Memento of Defense
+Name: Magic Lure
+Rank: 4
+Orb_Types: [Power, Black, Fire]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Knight
+Name: Memento of Protection
 Rank: 3
 Orb_Types: [Power, Earth]
 Orb_Ranks: [Normal, Normal]
 Lvl_Schema: [8, 5]
 
 Class: Knight
-Name: Shield Bash
-Rank: 3
-Orb_Types: [Power, Earth, Holy]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Knight
-Name: Magic Taunt
+Name: Banishing Strike
 Rank: 4
-Orb_Types: [Power, Black, Lightning]
+Orb_Types: [Power, Non-Elem, Holy]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
@@ -55,8 +55,15 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Knight
-Name: Banish Blade
-Rank: 4
-Orb_Types: [Power, Non-Elem, Holy]
-Orb_Ranks: [Greater, Greater, Greater]
+Name: Shield Bash
+Rank: 3
+Orb_Types: [Power, Earth, Holy]
+Orb_Ranks: [Normal, Normal, Normal]
 Lvl_Schema: [5, 3, 3]
+
+Class: Knight
+Name: Saint's Cross
+Rank: 5
+Orb_Types: [Holy, Earth, Wind]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]

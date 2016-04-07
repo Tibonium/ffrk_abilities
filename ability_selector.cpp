@@ -79,162 +79,180 @@ void ability_selector::import_spells()
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _black = p.abilities() ;
+        _ability_list.push_back( _black ) ;
     }
-    _black = p.abilities() ;
-    _ability_list.push_back( _black ) ;
 
     file = _filepath + "white_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _white = p.abilities() ;
+        _ability_list.push_back( _white ) ;
     }
-    _white = p.abilities() ;
-    _ability_list.push_back( _white ) ;
 
     file = _filepath + "summon_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _summon = p.abilities() ;
+        _ability_list.push_back( _summon ) ;
     }
-    _summon = p.abilities() ;
-    _ability_list.push_back( _summon ) ;
 
     file = _filepath + "knight_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _knight = p.abilities() ;
+        _ability_list.push_back( _knight ) ;
     }
-    _knight = p.abilities() ;
-    _ability_list.push_back( _knight ) ;
 
     file = _filepath + "ninja_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _ninja = p.abilities() ;
+        _ability_list.push_back( _ninja ) ;
     }
-    _ninja = p.abilities() ;
-    _ability_list.push_back( _ninja ) ;
 
     file = _filepath + "thief_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _thief = p.abilities() ;
+        _ability_list.push_back( _thief ) ;
     }
-    _thief = p.abilities() ;
-    _ability_list.push_back( _thief ) ;
 
     file = _filepath + "samurai_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _samurai = p.abilities() ;
+        _ability_list.push_back( _samurai ) ;
     }
-    _samurai = p.abilities() ;
-    _ability_list.push_back( _samurai ) ;
 
     file = _filepath + "dancer_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _dancer = p.abilities() ;
+        _ability_list.push_back( _dancer ) ;
     }
-    _dancer = p.abilities() ;
-    _ability_list.push_back( _dancer ) ;
 
     file = _filepath + "bard_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _bard = p.abilities() ;
+        _ability_list.push_back( _bard ) ;
     }
-    _bard = p.abilities() ;
-    _ability_list.push_back( _bard ) ;
 
     file = _filepath + "spellblade_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _spellblade = p.abilities() ;
+        _ability_list.push_back( _spellblade ) ;
     }
-    _spellblade = p.abilities() ;
-    _ability_list.push_back( _spellblade ) ;
 
     file = _filepath + "celerity_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _celerity = p.abilities() ;
+        _ability_list.push_back( _celerity ) ;
     }
-    _celerity = p.abilities() ;
-    _ability_list.push_back( _celerity ) ;
 
     file = _filepath + "support_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _support = p.abilities() ;
+        _ability_list.push_back( _support ) ;
     }
-    _support = p.abilities() ;
-    _ability_list.push_back( _support ) ;
 
     file = _filepath + "dragoon_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _dragoon = p.abilities() ;
+        _ability_list.push_back( _dragoon ) ;
     }
-    _dragoon = p.abilities() ;
-    _ability_list.push_back( _dragoon ) ;
 
     file = _filepath + "combat_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _combat = p.abilities() ;
+        _ability_list.push_back( _combat ) ;
     }
-    _combat = p.abilities() ;
-    _ability_list.push_back( _combat ) ;
 
     file = _filepath + "monk_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
-        exit(0) ;
+    } else {
+        _monk = p.abilities() ;
+        _ability_list.push_back( _monk ) ;
     }
-    _monk = p.abilities() ;
-    _ability_list.push_back( _monk ) ;
 
-//    file = filepath + "blue_magic" ;
-//    p.parse_file(file.c_str()) ;
-//    _blue = p.abilities() ;
-//    _ability_count += _blue.size() ;
-//    _ability_list.push_back( _blue ) ;
+    file = _filepath + "blue_magic" ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+    } else {
+        _blue = p.abilities() ;
+        _ability_list.push_back( _blue ) ;
+    }
 
-//    file = filepath + "engineer_magic" ;
-//    p.parse_file(file.c_str()) ;
-//    _engineer = p.abilities() ;
-//    _ability_count += _engineer.size() ;
-//    _ability_list.push_back( _engineer ) ;
+    file = _filepath + "engineer_magic" ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+    } else {
+        _engineer = p.abilities() ;
+        _ability_list.push_back( _engineer ) ;
+    }
+
+    file = _filepath + "darkness_magic" ;
+    t = p.parse_file(file.c_str()) ;
+    if( !t.empty() ) {
+        msg.setText( t.c_str() ) ;
+        msg.exec() ;
+    } else {
+        _darkness = p.abilities() ;
+        _ability_list.push_back( _darkness ) ;
+    }
 
     populate_list() ;
 }
@@ -447,6 +465,15 @@ void ability_selector::on_support_cb_clicked()
 void ability_selector::on_theif_cb_clicked()
 {
     _class_filter = _class_filter ^ THF ;
+    update_ability_list() ;
+}
+
+/**
+ * Toggles view of Darkness abilities
+ */
+void ability_selector::on_darkness_cb_clicked()
+{
+    _class_filter = _class_filter ^ DRK ;
     update_ability_list() ;
 }
 

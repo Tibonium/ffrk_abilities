@@ -1,0 +1,27 @@
+Class: Darkness
+Name: Dark Raid
+Rank: 4
+Orb_Types: [Power, Fire, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Darkness
+Name: Memento Mori
+Rank: 4
+Orb_Types: [Dark, Black, Non-Elem]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Darkness
+Name: Bloody Cross
+Rank: 5
+Orb_Types: [Power, Earth, Dark]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Darkness
+Name: Dark Zone
+Rank: 5
+Orb_Types: [Dark, Black, Non-Elem]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6A, 6A]

@@ -6,10 +6,17 @@ Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [3B, 3A]
 
 Class: Celerity
-Name: Dagger Toss
-Rank: 2
+Name: Quickness
+Rank: 3
 Orb_Types: [Power, Wind]
-Orb_Ranks: [Lesser, Lesser]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [5, 8]
+
+Class: Celerity
+Name: Shadowbind
+Rank: 4
+Orb_Types: [Power, Non-Elem]
+Orb_Ranks: [Greater, Greater]
 Lvl_Schema: [5, 8]
 
 Class: Celerity
@@ -27,10 +34,17 @@ Orb_Ranks: [Normal, Normal]
 Lvl_Schema: [5, 8]
 
 Class: Celerity
-Name: Quickness
-Rank: 3
+Name: Quick Hit
+Rank: 5
 Orb_Types: [Power, Wind]
-Orb_Ranks: [Normal, Normal]
+Orb_Ranks: [Major, Major]
+Lvl_Schema: [10A, 15]
+
+Class: Celerity
+Name: Dagger Toss
+Rank: 2
+Orb_Types: [Power, Wind]
+Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
 
 Class: Celerity
@@ -48,22 +62,22 @@ Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Celerity
-Name: Shadowbind
-Rank: 4
-Orb_Types: [Power, Non-Elem]
-Orb_Ranks: [Greater, Greater]
-Lvl_Schema: [5, 8]
-
-Class: Celerity
-Name: Quick Hit
-Rank: 5
-Orb_Types: [Power, Wind]
-Orb_Ranks: [Major, Major]
-Lvl_Schema: [10A, 15]
-
-Class: Celerity
-Name: Paralyze Shot
+Name: Paralyzing Shot
 Rank: 4
 Orb_Types: [Power, Lightning, Wind]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
+
+Class: Celerity
+Name: Faultsiphon
+Rank: 5
+Orb_Types: [Power, White, Wind]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]
+
+Class: Celerity
+Name: Northern Cross
+Rank: 6
+Orb_Types: [Power, Ice, Wind]
+Orb_Ranks: [Crystal, Crystal, Crystal]
+Lvl_Schema: [10, 6, 6]

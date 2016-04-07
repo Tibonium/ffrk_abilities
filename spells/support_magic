@@ -1,16 +1,9 @@
 Class: Support
-Name: Pulse of Life
-Rank: 2
+Name: Salve
+Rank: 1
 Orb_Types: [Power, Holy]
-Orb_Ranks: [Lesser, Lesser]
-Lvl_Schema: [5, 8]
-
-Class: Support
-Name: Full Break
-Rank: 5
-Orb_Types: [Power, Ice, Lightning]
-Orb_Ranks: [Major, Major, Major]
-Lvl_Schema: [10, 6, 6]
+Orb_Ranks: [Minor, Minor]
+Lvl_Schema: [3B, 3A]
 
 Class: Support
 Name: Boost
@@ -20,42 +13,21 @@ Orb_Ranks: [Minor, Minor]
 Lvl_Schema: [3B, 3A]
 
 Class: Support
-Name: Salve
-Rank: 1
-Orb_Types: [Power, Holy]
-Orb_Ranks: [Minor, Minor]
-Lvl_Schema: [3B, 3A]
-
-Class: Support
-Name: Cry
-Rank: 2
-Orb_Types: [White, Non-Elem, Dark]
-Orb_Ranks: [Lesser, Lesser, Lesser]
-Lvl_Schema: [5, 3, 3]
-
-Class: Support
-Name: Revive 
-Rank: 2
-Orb_Types: [Power, Holy]
-Orb_Ranks: [Lesser, Lesser]
+Name: Intimidate
+Rank: 3
+Orb_Types: [Power, Lightning]
+Orb_Ranks: [Normal, Normal]
 Lvl_Schema: [5, 8]
 
 Class: Support
-Name: Dark Attack
-Rank: 2
-Orb_Types: [Power, Dark]
-Orb_Ranks: [Lesser, Lesser]
-Lvl_Schema: [5, 8]
-
-Class: Support
-Name: Silence Attack
+Name: Sleep Attack
 Rank: 2
 Orb_Types: [Power, Ice]
 Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
 
 Class: Support
-Name: Sleep Attack
+Name: Silence Attack
 Rank: 2
 Orb_Types: [Power, Ice]
 Orb_Ranks: [Lesser, Lesser]
@@ -69,67 +41,11 @@ Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
 
 Class: Support
-Name: Dark Buster
-Rank: 3
-Orb_Types: [Power, Non-Elem]
-Orb_Ranks: [Normal, Normal]
+Name: Dark Attack
+Rank: 2
+Orb_Types: [Power, Dark]
+Orb_Ranks: [Lesser, Lesser]
 Lvl_Schema: [5, 8]
-
-Class: Support
-Name: Silence Buster
-Rank: 3
-Orb_Types: [Power, Ice]
-Orb_Ranks: [Normal, Normal]
-Lvl_Schema: [5, 8]
-
-Class: Support
-Name: Sleep Buster
-Rank: 3
-Orb_Types: [Power, Ice, Dark]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Support
-Name: Venom Buster
-Rank: 3
-Orb_Types: [Power, Non-Elem, Dark]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Support
-Name: Intimidate
-Rank: 3
-Orb_Types: [Power, Lightning]
-Orb_Ranks: [Normal, Normal]
-Lvl_Schema: [5, 8]
-
-Class: Support
-Name: Armor Breakdown
-Rank: 4
-Orb_Types: [Power, Non-Elem, Earth]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: Support
-Name: Magic Breakdown
-Rank: 4
-Orb_Types: [Power, Non-Elem, Dark]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: Support
-Name: Mental Breakdown
-Rank: 4
-Orb_Types: [Power, Non-Elem, Ice]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
-
-Class: Support
-Name: Power Breakdown
-Rank: 4
-Orb_Types: [Power, Non-Elem, Lightning]
-Orb_Ranks: [Greater, Greater, Greater]
-Lvl_Schema: [5, 3, 3]
 
 Class: Support
 Name: Wraith
@@ -143,4 +59,95 @@ Name: Entrust
 Rank: 5
 Orb_Types: [Power, White, Black]
 Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]
+
+Class: Support
+Name: Cry
+Rank: 2
+Orb_Types: [White, Non-Elem, Dark]
+Orb_Ranks: [Lesser, Lesser, Lesser]
+Lvl_Schema: [5, 3, 3]
+
+Class: Support
+Name: Silence Buster
+Rank: 3
+Orb_Types: [Power, Ice]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [5, 8]
+
+Class: Support
+Name: Dark Buster
+Rank: 3
+Orb_Types: [Power, Non-Elem]
+Orb_Ranks: [Normal, Normal]
+Lvl_Schema: [5, 8]
+
+Class: Support
+Name: Venom Buster
+Rank: 3
+Orb_Types: [Power, Non-Elem, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Support
+Name: Sleep Buster
+Rank: 3
+Orb_Types: [Power, Ice, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Support
+Name: Mental Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Ice]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Support
+Name: Magic Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Support
+Name: Power Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Lightning]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Support
+Name: Armor Breakdown
+Rank: 4
+Orb_Types: [Power, Non-Elem, Earth]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Support
+Name: Revive 
+Rank: 2
+Orb_Types: [Power, Holy]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Schema: [5, 8]
+
+Class: Support
+Name: Full Break
+Rank: 5
+Orb_Types: [Power, Ice, Lightning]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6A, 6A]
+
+Class: Support
+Name: Pulse of Life 
+Rank: 2
+Orb_Types: [Power, Holy]
+Orb_Ranks: [Lesser, Lesser]
+Lvl_Schema: [5, 8]
+
+Class: Support
+Name: Tetra Foul
+Rank: 6
+Orb_Types: [Power, Non-Elem, Lightning]
+Orb_Ranks: [Crystal, Crystal, Crystal]
 Lvl_Schema: [10, 6, 6]

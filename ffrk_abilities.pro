@@ -6,9 +6,9 @@
 
 QT       += core gui
 CONFIG   += static
-win32-msvc* {
-    QMAKE_CXXFLAGS += -std=c++11
-}
+#win32-msvc* {
+#    QMAKE_CXXFLAGS += -std=c++11
+#}
 #g++* {
 #    QMAKE_CXXFLAGS += -std=c++0x
 #}

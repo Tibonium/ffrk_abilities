@@ -6,36 +6,57 @@ Orb_Ranks: [Lesser, Lesser, Lesser]
 Lvl_Schema: [5, 3, 3]
 
 Class: Ninja
-Name: Lightning Scroll
-Rank: 3
-Orb_Types: [Power, Lightning, Dark]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Ninja
-Name: Katon
-Rank: 3
-Orb_Types: [Power, Fire, Dark]
-Orb_Ranks: [Normal, Normal, Normal]
-Lvl_Schema: [5, 3, 3]
-
-Class: Ninja
-Name: Scatter Blossom
+Name: Flurry of Petals
 Rank: 4
 Orb_Types: [Power, Dark]
 Orb_Ranks: [Greater, Greater]
 Lvl_Schema: [5, 8]
 
 Class: Ninja
-Name: Shadow Blade
+Name: Swift Bolt
+Rank: 3
+Orb_Types: [Power, Lightning, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Ninja
+Name: Water Veil
+Rank: 3
+Orb_Types: [Power, Ice, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Ninja
+Name: Shadowsteel
 Rank: 4
 Orb_Types: [Power, Ice, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
 
 Class: Ninja
-Name: Illusion Dream
+Name: Fire Veil
+Rank: 3
+Orb_Types: [Power, Fire, Dark]
+Orb_Ranks: [Normal, Normal, Normal]
+Lvl_Schema: [5, 3, 3]
+
+Class: Ninja
+Name: Phantasm
 Rank: 4
 Orb_Types: [Power, Black, Dark]
 Orb_Ranks: [Greater, Greater, Greater]
 Lvl_Schema: [5, 3, 3]
+
+Class: Ninja
+Name: Whirlwind
+Rank: 4
+Orb_Types: [Wind, Non-Elem, Dark]
+Orb_Ranks: [Greater, Greater, Greater]
+Lvl_Schema: [5, 3, 3]
+
+Class: Ninja
+Name: Doppelblade
+Rank: 5
+Orb_Types: [Power, Ice, Dark]
+Orb_Ranks: [Major, Major, Major]
+Lvl_Schema: [10, 6, 6]

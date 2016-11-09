@@ -10,13 +10,14 @@
 #include <map>
 #include <QMessageBox>
 
-#include "ability_base.h"
+#include "AbilityBase.h"
 
-class spell_parser {
+class spell_parser
+{
 public:
 
     typedef std::string     string_type ;
-    typedef std::map<std::string, ability_base>     map_type ;
+    typedef std::map<std::string, AbilityBase>     map_type ;
 
     /**
      * Constructor
@@ -55,17 +56,17 @@ private:
     /** Helper functions for parsing an individual ability **/
     string_type parse_ability(std::string line, std::fstream &fi) ;
 
-    string_type determine_ability_class(std::string line, ability_base *a) ;
+    string_type determine_ability_class(std::string line, AbilityBase *a) ;
 
-    void extract_name(std::fstream &fi, ability_base *a) ;
+    void extract_name(std::fstream &fi, AbilityBase *a) ;
 
-    string_type extract_rank(std::fstream &fi, ability_base *a) ;
+    string_type extract_rank(std::fstream &fi, AbilityBase *a) ;
 
-    string_type extract_orb_types(std::fstream &fi, ability_base *a) ;
+    string_type extract_orb_types(std::fstream &fi, AbilityBase *a) ;
 
-    string_type extract_orb_ranks(std::fstream &fi, ability_base *a) ;
+    string_type extract_orb_ranks(std::fstream &fi, AbilityBase *a) ;
 
-    string_type extract_lvl_ranks(std::fstream &fi, ability_base *a) ;
+    string_type extract_lvl_ranks(std::fstream &fi, AbilityBase *a) ;
 
     map_type _abilities ;
 

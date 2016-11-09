@@ -144,7 +144,7 @@ void orb_stash_table::import_stash()
         // First determine the type
         std::getline(iss, tmp, ',') ;
         if( iss.eof() ) break ;
-        orb_type t = find_type( tmp ) ;
+        OrbType t = find_type( tmp ) ;
         // skip this line if the type is not one of the pre-defined ones
         if( t == UNKNOWN ) continue ;
 
@@ -178,7 +178,7 @@ void orb_stash_table::import_stash()
 /**
  * Returns the type of orb
  */
-orb_type orb_stash_table::find_type(std::string type)
+OrbType orb_stash_table::find_type(std::string type)
 {
     if( type == _labels[POWER] ) {
         return POWER ;

@@ -9,7 +9,7 @@
 #include <map>
 #include "ability_selector.h"
 #include "ability_table_item.h"
-#include "base/orb_statistics_parser.h"
+#include "base/OrbStatisticsParser.h"
 #include "orb_stash_table.h"
 
 namespace Ui {
@@ -42,7 +42,7 @@ private slots:
     void on_show_stash_clicked();
 
 private:
-    typedef spell_parser::map_type     spell_map ;
+    typedef SpellParser::map_type     spell_map ;
     friend class orb_stash_table ;
 
     Ui::ffrk_abilities *ui ;
@@ -55,12 +55,12 @@ private:
     void setup_orb_table() ;
     orb_stash_table *_stash_table ;
 
-    orb_ranks _ranks ;
+    OrbRanks _ranks ;
     int **_orbs ;
     int _max_row ;
     int _max_col ;
-    orb_statistics_parser::container_type _orb_stamina ;
-    orb_statistics_parser::container_type _orb_probability ;
+    OrbStatisticsParser::container_type _orb_stamina ;
+    OrbStatisticsParser::container_type _orb_probability ;
 
     void update_stamina_cost() ;
 

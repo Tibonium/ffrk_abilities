@@ -8,19 +8,19 @@
 ability_selector::ability_selector(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ability_selector),
-    _ability_count(0),
-    _settings("Tibonium Inc.", "FFRK Ability Selector"),
-    _filepath(),
-    _focus_ability(0),
-    _cancel(false),
-    _class_filter(0),
-    _orb_filter(0),
-    _rarity_filter(0)
+    m_iAbilityCount(0),
+    m_oSettings("Tibonium Inc.", "FFRK Ability Selector"),
+    m_sFilepath(),
+    m_poFocus(0),
+    m_bCancel(false),
+    m_lClassFilter(0),
+    m_uOrbFilter(0),
+    m_uRarityFilter(0)
 {
     ui->setupUi(this);
     std::fstream file("ffrk_ability_config") ;
-    std::getline(file, _filepath) ;
-    import_spells() ;
+    std::getline(file, m_sFilepath) ;
+    importSpellMaps() ;
 }
 
 /**
@@ -37,8 +37,8 @@ ability_selector::~ability_selector()
  */
 void ability_selector::closeEvent(QCloseEvent *e)
 {
-    _settings.setValue("position", pos()) ;
-    _settings.setValue("size", size()) ;
+    m_oSettings.setValue("position", pos()) ;
+    m_oSettings.setValue("size", size()) ;
     on_ability_list_itemSelectionChanged() ;
     e->accept() ;
 }
@@ -49,7 +49,7 @@ void ability_selector::closeEvent(QCloseEvent *e)
  */
 void ability_selector::on_ability_list_doubleClicked(const QModelIndex &index)
 {
-    _focus_ability = reinterpret_cast<ability_list_item*>(ui->ability_list->item(index.row()))->ability() ;
+    m_poFocus = reinterpret_cast<ability_list_item*>(ui->ability_list->item(index.row()))->ability() ;
     close() ;
 }
 
@@ -59,215 +59,225 @@ void ability_selector::on_ability_list_doubleClicked(const QModelIndex &index)
  */
 void ability_selector::choose_ability()
 {
-    _cancel = false ;
-    _focus_ability = 0 ;
-    if( _settings.contains("position") )
-        move( _settings.value("position").toPoint() ) ;
-    if( _settings.contains("size") )
-        resize( _settings.value("size").toSize() ) ;
+    m_bCancel = false ;
+    m_poFocus = 0 ;
+    if( m_oSettings.contains("position") )
+        move( m_oSettings.value("position").toPoint() ) ;
+    if( m_oSettings.contains("size") )
+        resize( m_oSettings.value("size").toSize() ) ;
     exec() ;
 }
 
-void ability_selector::import_spells()
+void ability_selector::importSpellMaps()
 {
     // Setup the parser
     spell_parser p ;
     QMessageBox msg ;
 
-    std::string file = _filepath + "black_magic" ;
+    std::string file = m_sFilepath + "black_magic" ;
     std::string t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _black = p.abilities() ;
-        _ability_list.push_back( _black ) ;
+        m_oBlack = p.abilities() ;
+        m_xoAbilityList.push_back( m_oBlack ) ;
     }
 
-    file = _filepath + "white_magic" ;
+    file = m_sFilepath + "white_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _white = p.abilities() ;
-        _ability_list.push_back( _white ) ;
+        m_oWhite = p.abilities() ;
+        m_xoAbilityList.push_back( m_oWhite ) ;
     }
 
-    file = _filepath + "summon_magic" ;
+    file = m_sFilepath + "summon_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _summon = p.abilities() ;
-        _ability_list.push_back( _summon ) ;
+        m_oSummon = p.abilities() ;
+        m_xoAbilityList.push_back( m_oSummon ) ;
     }
 
-    file = _filepath + "knight_magic" ;
+    file = m_sFilepath + "knight_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _knight = p.abilities() ;
-        _ability_list.push_back( _knight ) ;
+        m_oKnight = p.abilities() ;
+        m_xoAbilityList.push_back( m_oKnight ) ;
     }
 
-    file = _filepath + "ninja_magic" ;
+    file = m_sFilepath + "ninja_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _ninja = p.abilities() ;
-        _ability_list.push_back( _ninja ) ;
+        m_oNinja = p.abilities() ;
+        m_xoAbilityList.push_back( m_oNinja ) ;
     }
 
-    file = _filepath + "thief_magic" ;
+    file = m_sFilepath + "thief_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _thief = p.abilities() ;
-        _ability_list.push_back( _thief ) ;
+        m_oThief = p.abilities() ;
+        m_xoAbilityList.push_back( m_oThief ) ;
     }
 
-    file = _filepath + "samurai_magic" ;
+    file = m_sFilepath + "samurai_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _samurai = p.abilities() ;
-        _ability_list.push_back( _samurai ) ;
+        m_oSamurai = p.abilities() ;
+        m_xoAbilityList.push_back( m_oSamurai ) ;
     }
 
-    file = _filepath + "dancer_magic" ;
+    file = m_sFilepath + "dancer_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _dancer = p.abilities() ;
-        _ability_list.push_back( _dancer ) ;
+        m_oDancer = p.abilities() ;
+        m_xoAbilityList.push_back( m_oDancer ) ;
     }
 
-    file = _filepath + "bard_magic" ;
+    file = m_sFilepath + "bard_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _bard = p.abilities() ;
-        _ability_list.push_back( _bard ) ;
+        m_oBard = p.abilities() ;
+        m_xoAbilityList.push_back( m_oBard ) ;
     }
 
-    file = _filepath + "spellblade_magic" ;
+    file = m_sFilepath + "spellblade_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _spellblade = p.abilities() ;
-        _ability_list.push_back( _spellblade ) ;
+        m_oSpellblade = p.abilities() ;
+        m_xoAbilityList.push_back( m_oSpellblade ) ;
     }
 
-    file = _filepath + "celerity_magic" ;
+    file = m_sFilepath + "celerity_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _celerity = p.abilities() ;
-        _ability_list.push_back( _celerity ) ;
+        m_oCelerity = p.abilities() ;
+        m_xoAbilityList.push_back( m_oCelerity ) ;
     }
 
-    file = _filepath + "support_magic" ;
+    file = m_sFilepath + "support_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _support = p.abilities() ;
-        _ability_list.push_back( _support ) ;
+        m_oSupport = p.abilities() ;
+        m_xoAbilityList.push_back( m_oSupport ) ;
     }
 
-    file = _filepath + "dragoon_magic" ;
+    file = m_sFilepath + "dragoon_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _dragoon = p.abilities() ;
-        _ability_list.push_back( _dragoon ) ;
+        m_oDragoon = p.abilities() ;
+        m_xoAbilityList.push_back( m_oDragoon ) ;
     }
 
-    file = _filepath + "combat_magic" ;
+    file = m_sFilepath + "combat_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _combat = p.abilities() ;
-        _ability_list.push_back( _combat ) ;
+        m_oCombat = p.abilities() ;
+        m_xoAbilityList.push_back( m_oCombat ) ;
     }
 
-    file = _filepath + "monk_magic" ;
+    file = m_sFilepath + "monk_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _monk = p.abilities() ;
-        _ability_list.push_back( _monk ) ;
+        m_oMonk = p.abilities() ;
+        m_xoAbilityList.push_back( m_oMonk ) ;
     }
 
-    file = _filepath + "blue_magic" ;
+    file = m_sFilepath + "blue_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _blue = p.abilities() ;
-        _ability_list.push_back( _blue ) ;
+        m_oBlue = p.abilities() ;
+        m_xoAbilityList.push_back( m_oBlue ) ;
     }
 
-    file = _filepath + "engineer_magic" ;
+    file = m_sFilepath + "engineer_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _engineer = p.abilities() ;
-        _ability_list.push_back( _engineer ) ;
+        m_oEngineer = p.abilities() ;
+        m_xoAbilityList.push_back( m_oEngineer ) ;
     }
 
-    file = _filepath + "darkness_magic" ;
+    file = m_sFilepath + "darkness_magic" ;
     t = p.parse_file(file.c_str()) ;
     if( !t.empty() ) {
         msg.setText( t.c_str() ) ;
         msg.exec() ;
     } else {
-        _darkness = p.abilities() ;
-        _ability_list.push_back( _darkness ) ;
+        m_oDarkness = p.abilities() ;
+        m_xoAbilityList.push_back( m_oDarkness ) ;
     }
 
-    populate_list() ;
+    populateList() ;
+}
+
+QSettings ability_selector::settings() const
+{
+    return m_oSettings;
+}
+
+void ability_selector::setSettings(const QSettings &settings)
+{
+    m_oSettings = settings;
 }
 
 /**
  * Adds all Abilities to the list
  */
-void ability_selector::populate_list()
+void ability_selector::populateList()
 {
-    std::list<spell_map>::iterator listIt = _ability_list.begin() ;
-    std::list<spell_map>::iterator listIt_end = _ability_list.end() ;
+    std::list<SpellMapType>::iterator listIt = m_xoAbilityList.begin() ;
+    std::list<SpellMapType>::iterator listIt_end = m_xoAbilityList.end() ;
     int count = 0 ;
     while( listIt != listIt_end ) {
-        spell_map::iterator It = listIt->begin() ;
-        spell_map::iterator It_end = listIt->end() ;
+        SpellMapType::iterator It = listIt->begin() ;
+        SpellMapType::iterator It_end = listIt->end() ;
         while( It != It_end ) {
             ability_list_item *ability = new ability_list_item(It->second._name, &It->second) ;
             ui->ability_list->addItem( ability ) ;
@@ -283,7 +293,7 @@ void ability_selector::populate_list()
  */
 void ability_selector::on_ok_button_clicked()
 {
-    _focus_ability = reinterpret_cast<ability_list_item*>(ui->ability_list->currentItem())->ability() ;
+    m_poFocus = reinterpret_cast<ability_list_item*>(ui->ability_list->currentItem())->ability() ;
     close() ;
 }
 
@@ -292,8 +302,8 @@ void ability_selector::on_ok_button_clicked()
  */
 void ability_selector::on_cancel_button_clicked()
 {
-    _focus_ability = 0 ;
-    _cancel = true ;
+    m_poFocus = 0 ;
+    m_bCancel = true ;
     close() ;
 }
 
@@ -303,19 +313,19 @@ void ability_selector::on_cancel_button_clicked()
 void ability_selector::on_ability_list_itemSelectionChanged()
 {
     if( -1 < ui->ability_list->currentRow() )
-        _focus_ability = reinterpret_cast<ability_list_item*>(ui->ability_list->currentItem())->ability() ;
+        m_poFocus = reinterpret_cast<ability_list_item*>(ui->ability_list->currentItem())->ability() ;
 }
 
 /**
  * Updates the current table view used for searching
  */
-void ability_selector::update_ability_list()
+void ability_selector::updateAbilityList()
 {
     int size = ui->ability_list->count() ;
     for(int i=0; i<size; ++i) {
         ability_base* _curr = reinterpret_cast<ability_list_item*>(ui->ability_list->item(i))->ability() ;
-        if( (_curr->_class & _class_filter) && ((_curr->_rarity & _rarity_filter) || _rarity_filter == 0)
-             && (check_types::has_orb_type(_curr, _orb_filter) || _orb_filter == 0) )
+        if( (_curr->_class & m_lClassFilter) && ((_curr->_rarity & m_uRarityFilter) || m_uRarityFilter == 0)
+             && (check_types::has_orb_type(_curr, m_uOrbFilter) || m_uOrbFilter == 0) )
         {
             ui->ability_list->setRowHidden(i, false) ;
         } else {
@@ -329,8 +339,8 @@ void ability_selector::update_ability_list()
  */
 void ability_selector::on_bard_cb_clicked()
 {
-    _class_filter = _class_filter ^ BRD ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ BRD ;
+    updateAbilityList() ;
 }
 
 /**
@@ -338,8 +348,8 @@ void ability_selector::on_bard_cb_clicked()
  */
 void ability_selector::on_black_cb_clicked()
 {
-    _class_filter = _class_filter ^ BLM ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ BLM ;
+    updateAbilityList() ;
 }
 
 /**
@@ -347,8 +357,8 @@ void ability_selector::on_black_cb_clicked()
  */
 void ability_selector::on_blue_cb_clicked()
 {
-    _class_filter = _class_filter ^ BLU ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ BLU ;
+    updateAbilityList() ;
 }
 
 /**
@@ -356,8 +366,8 @@ void ability_selector::on_blue_cb_clicked()
  */
 void ability_selector::on_celerity_cb_clicked()
 {
-    _class_filter = _class_filter ^ CEL ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ CEL ;
+    updateAbilityList() ;
 }
 
 /**
@@ -365,8 +375,8 @@ void ability_selector::on_celerity_cb_clicked()
  */
 void ability_selector::on_combat_cb_clicked()
 {
-    _class_filter = _class_filter ^ CBT ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ CBT ;
+    updateAbilityList() ;
 }
 
 /**
@@ -374,8 +384,8 @@ void ability_selector::on_combat_cb_clicked()
  */
 void ability_selector::on_dance_cb_clicked()
 {
-    _class_filter = _class_filter ^ DNC ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ DNC ;
+    updateAbilityList() ;
 }
 
 /**
@@ -383,8 +393,8 @@ void ability_selector::on_dance_cb_clicked()
  */
 void ability_selector::on_dragoon_cb_clicked()
 {
-    _class_filter = _class_filter ^ DRG ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ DRG ;
+    updateAbilityList() ;
 }
 
 /**
@@ -392,8 +402,8 @@ void ability_selector::on_dragoon_cb_clicked()
  */
 void ability_selector::on_engineer_cb_clicked()
 {
-    _class_filter = _class_filter ^ ENG ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ ENG ;
+    updateAbilityList() ;
 }
 
 /**
@@ -401,8 +411,8 @@ void ability_selector::on_engineer_cb_clicked()
  */
 void ability_selector::on_knight_cb_clicked()
 {
-    _class_filter = _class_filter ^ KNT ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ KNT ;
+    updateAbilityList() ;
 }
 
 /**
@@ -410,8 +420,8 @@ void ability_selector::on_knight_cb_clicked()
  */
 void ability_selector::on_monk_cb_clicked()
 {
-    _class_filter = _class_filter ^ MNK ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ MNK ;
+    updateAbilityList() ;
 }
 
 /**
@@ -419,8 +429,8 @@ void ability_selector::on_monk_cb_clicked()
  */
 void ability_selector::on_ninja_cb_clicked()
 {
-    _class_filter = _class_filter ^ NIN ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ NIN ;
+    updateAbilityList() ;
 }
 
 /**
@@ -428,8 +438,8 @@ void ability_selector::on_ninja_cb_clicked()
  */
 void ability_selector::on_samurai_cb_clicked()
 {
-    _class_filter = _class_filter ^ SAM ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ SAM ;
+    updateAbilityList() ;
 }
 
 /**
@@ -437,8 +447,17 @@ void ability_selector::on_samurai_cb_clicked()
  */
 void ability_selector::on_spellblade_cb_clicked()
 {
-    _class_filter = _class_filter ^ SPB ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ SPB ;
+    updateAbilityList() ;
+}
+
+/**
+ * Toggles view of Sharpshooter abilities
+ */
+void ability_selector::on_shooter_cb_clicked()
+{
+    m_lClassFilter = m_lClassFilter ^ SRP ;
+    updateAbilityList() ;
 }
 
 /**
@@ -446,8 +465,8 @@ void ability_selector::on_spellblade_cb_clicked()
  */
 void ability_selector::on_summon_cb_clicked()
 {
-    _class_filter = _class_filter ^ SMN ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ SMN ;
+    updateAbilityList() ;
 }
 
 /**
@@ -455,8 +474,8 @@ void ability_selector::on_summon_cb_clicked()
  */
 void ability_selector::on_support_cb_clicked()
 {
-    _class_filter = _class_filter ^ SPT ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ SPT ;
+    updateAbilityList() ;
 }
 
 /**
@@ -464,8 +483,8 @@ void ability_selector::on_support_cb_clicked()
  */
 void ability_selector::on_theif_cb_clicked()
 {
-    _class_filter = _class_filter ^ THF ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ THF ;
+    updateAbilityList() ;
 }
 
 /**
@@ -473,8 +492,8 @@ void ability_selector::on_theif_cb_clicked()
  */
 void ability_selector::on_darkness_cb_clicked()
 {
-    _class_filter = _class_filter ^ DRK ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ DRK ;
+    updateAbilityList() ;
 }
 
 /**
@@ -482,8 +501,8 @@ void ability_selector::on_darkness_cb_clicked()
  */
 void ability_selector::on_white_cb_clicked()
 {
-    _class_filter = _class_filter ^ WHM ;
-    update_ability_list() ;
+    m_lClassFilter = m_lClassFilter ^ WHM ;
+    updateAbilityList() ;
 }
 
 /**
@@ -491,16 +510,16 @@ void ability_selector::on_white_cb_clicked()
  */
 void ability_selector::on_power_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CPOWER ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CPOWER ;
+    updateAbilityList() ;
 }
 /**
  * Toggles view of abilities with White orbs
  */
 void ability_selector::on_white_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CWHITE ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CWHITE ;
+    updateAbilityList() ;
 }
 
 /**
@@ -508,8 +527,8 @@ void ability_selector::on_white_orb_cb_clicked()
  */
 void ability_selector::on_black_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CBLACK ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CBLACK ;
+    updateAbilityList() ;
 }
 
 /**
@@ -517,8 +536,8 @@ void ability_selector::on_black_orb_cb_clicked()
  */
 void ability_selector::on_summon_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CSUMMON ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CSUMMON ;
+    updateAbilityList() ;
 }
 
 /**
@@ -526,8 +545,8 @@ void ability_selector::on_summon_orb_cb_clicked()
  */
 void ability_selector::on_non_elem_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CNON_ELEM ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CNON_ELEM ;
+    updateAbilityList() ;
 }
 
 /**
@@ -535,8 +554,8 @@ void ability_selector::on_non_elem_orb_cb_clicked()
  */
 void ability_selector::on_fire_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CFIRE ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CFIRE ;
+    updateAbilityList() ;
 }
 
 /**
@@ -544,8 +563,8 @@ void ability_selector::on_fire_orb_cb_clicked()
  */
 void ability_selector::on_ice_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CICE ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CICE ;
+    updateAbilityList() ;
 }
 
 /**
@@ -553,8 +572,8 @@ void ability_selector::on_ice_orb_cb_clicked()
  */
 void ability_selector::on_lightning_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CLIGHTNING ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CLIGHTNING ;
+    updateAbilityList() ;
 }
 
 /**
@@ -562,8 +581,8 @@ void ability_selector::on_lightning_orb_cb_clicked()
  */
 void ability_selector::on_earth_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CEARTH ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CEARTH ;
+    updateAbilityList() ;
 }
 
 /**
@@ -571,8 +590,8 @@ void ability_selector::on_earth_orb_cb_clicked()
  */
 void ability_selector::on_wind_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CWIND ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CWIND ;
+    updateAbilityList() ;
 }
 
 /**
@@ -580,8 +599,8 @@ void ability_selector::on_wind_orb_cb_clicked()
  */
 void ability_selector::on_holy_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CHOLY ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CHOLY ;
+    updateAbilityList() ;
 }
 
 /**
@@ -589,8 +608,8 @@ void ability_selector::on_holy_orb_cb_clicked()
  */
 void ability_selector::on_dark_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CDARK ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CDARK ;
+    updateAbilityList() ;
 }
 
 /**
@@ -598,8 +617,8 @@ void ability_selector::on_dark_orb_cb_clicked()
  */
 void ability_selector::on_blue_orb_cb_clicked()
 {
-    _orb_filter = _orb_filter ^ CBLUE ;
-    update_ability_list() ;
+    m_uOrbFilter = m_uOrbFilter ^ CBLUE ;
+    updateAbilityList() ;
 }
 
 /**
@@ -609,28 +628,28 @@ void ability_selector::on_rarity_filter_currentIndexChanged(int index)
 {
     switch(index) {
         case 1:
-            _rarity_filter = STAR_1 ;
+            m_uRarityFilter = STAR_1 ;
             break ;
         case 2:
-            _rarity_filter = STAR_2 ;
+            m_uRarityFilter = STAR_2 ;
             break ;
         case 3:
-            _rarity_filter = STAR_3 ;
+            m_uRarityFilter = STAR_3 ;
             break ;
         case 4:
-            _rarity_filter = STAR_4 ;
+            m_uRarityFilter = STAR_4 ;
             break ;
         case 5:
-            _rarity_filter = STAR_5 ;
+            m_uRarityFilter = STAR_5 ;
             break ;
         case 6:
-            _rarity_filter = STAR_6 ;
+            m_uRarityFilter = STAR_6 ;
             break ;
         default:
-            _rarity_filter = 0 ;
+            m_uRarityFilter = 0 ;
             break ;
     }
-    update_ability_list() ;
+    updateAbilityList() ;
 }
 
 /**
@@ -638,11 +657,11 @@ void ability_selector::on_rarity_filter_currentIndexChanged(int index)
  */
 ability_base* ability_selector::find_ability(std::string name)
 {
-    std::list<spell_map>::iterator listIt = _ability_list.begin() ;
-    std::list<spell_map>::iterator listIt_end = _ability_list.end() ;
+    std::list<SpellMapType>::iterator listIt = m_xoAbilityList.begin() ;
+    std::list<SpellMapType>::iterator listIt_end = m_xoAbilityList.end() ;
     while( listIt != listIt_end ) {
-        spell_map::iterator FindIt = listIt->find( name ) ;
-        spell_map::iterator It_end = listIt->end() ;
+        SpellMapType::iterator FindIt = listIt->find( name ) ;
+        SpellMapType::iterator It_end = listIt->end() ;
         if( FindIt != It_end ) {
             return &FindIt->second ;
         }

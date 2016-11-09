@@ -12,7 +12,7 @@
 #include <iostream>
 #include <vector>
 
-#include "base/orb_base.h"
+#include "base/OrbBase.h"
 
 namespace Ui {
 class orb_stash_table;
@@ -49,7 +49,7 @@ private:
     void setup_table() ;
     void import_stash() ;
     void save_stash() ;
-    orb_type find_type(std::string line) ;
+    OrbType find_type(std::string line) ;
     int _max_row ;
     int _max_col ;
     int **_stash ;

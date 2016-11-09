@@ -1,9 +1,9 @@
-#include "base/orb_statistics_parser.h"
+#include "base/OrbStatisticsParser.h"
 
 /**
  * Constructor
  */
-orb_statistics_parser::orb_statistics_parser()
+OrbStatisticsParser::OrbStatisticsParser()
     : _stamina(6,0), _probability(13,0), _line_number(0)
 {
 
@@ -12,7 +12,7 @@ orb_statistics_parser::orb_statistics_parser()
 /**
  * Destructor
  */
-orb_statistics_parser::~orb_statistics_parser()
+OrbStatisticsParser::~OrbStatisticsParser()
 {
 
 }
@@ -20,7 +20,7 @@ orb_statistics_parser::~orb_statistics_parser()
 /**
  * Parses the file and determines when to call which sub-parser
  */
-int orb_statistics_parser::parse_file(const char *filename)
+int OrbStatisticsParser::parse_file(const char *filename)
 {
     string_type line, result ;
     _line_number = 0 ;
@@ -47,8 +47,8 @@ int orb_statistics_parser::parse_file(const char *filename)
 /**
  * Extracts the stamina per orb values
  */
-orb_statistics_parser::string_type
-orb_statistics_parser::parse_stamina(std::fstream &file)
+OrbStatisticsParser::string_type
+OrbStatisticsParser::parse_stamina(std::fstream &file)
 {
     string_type value ;
     int type ;
@@ -91,8 +91,8 @@ orb_statistics_parser::parse_stamina(std::fstream &file)
 /**
  * Extracts the probability of a specific orb type dropping
  */
-orb_statistics_parser::string_type
-orb_statistics_parser::parse_probability(std::fstream &file)
+OrbStatisticsParser::string_type
+OrbStatisticsParser::parse_probability(std::fstream &file)
 {
     string_type value ;
     int type ;

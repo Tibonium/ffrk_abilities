@@ -9,9 +9,10 @@
 #include <sstream>
 #include <iostream>
 
-#include "orb_base.h"
+#include "OrbBase.h"
 
-class orb_statistics_parser {
+class OrbStatisticsParser
+{
 public:
     typedef std::vector<double>     container_type ;
     typedef std::string             string_type ;
@@ -19,12 +20,12 @@ public:
     /**
      * Constructor
      */
-    orb_statistics_parser() ;
+    OrbStatisticsParser() ;
 
     /**
      * Destructor
      */
-    virtual ~orb_statistics_parser() ;
+    virtual ~OrbStatisticsParser() ;
 
     /**
      * Primary parser

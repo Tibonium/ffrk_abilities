@@ -1,12 +1,12 @@
 #pragma once
 
 #include <QListWidgetItem>
-#include "base/ability_base.h"
+#include "base/AbilityBase.h"
 
 class ability_list_item : public QListWidgetItem {
 public:
 
-    ability_list_item(std::string name, ability_base *a = 0)
+    ability_list_item(std::string name, AbilityBase *a = 0)
         : QListWidgetItem(name.c_str()), _ability(a)
     {
 
@@ -17,12 +17,12 @@ public:
 
     }
 
-    ability_base* ability() {
+    AbilityBase* ability() {
         return _ability ;
     }
 
 private:
 
-    ability_base *_ability ;
+    AbilityBase *_ability ;
 
 };

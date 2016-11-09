@@ -1,8 +1,8 @@
 #pragma once
 
 #include <QTableWidgetItem>
-#include "base/ability_base.h"
-#include "base/orb_ranks.h"
+#include "base/AbilityBase.h"
+#include "base/OrbRanks.h"
 
 class ability_table_item : public QTableWidgetItem {
 public:
@@ -20,7 +20,7 @@ public:
 
     }
 
-    ability_table_item(std::string data, ability_base* a=0)
+    ability_table_item(std::string data, AbilityBase* a=0)
         : QTableWidgetItem(data.c_str()), _ability(a)
     {
 
@@ -31,16 +31,16 @@ public:
 
     }
 
-    ability_base* getAbility() {
+    AbilityBase* getAbility() {
         return _ability ;
     }
 
-    void setAbility(ability_base *a) {
+    void setAbility(AbilityBase *a) {
         _ability = a ;
     }
 
 private:
 
-    ability_base *_ability ;
+    AbilityBase *_ability ;
 };
 
